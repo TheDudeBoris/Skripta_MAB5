@@ -1,0 +1,717 @@
+\chapter{Funkcion\'aln\'i Hilbertovy prostory}
+
+\section{V\'ychoz\'i pojmy}
+
+\subsection{Znaèení}
+
+$\CC^n(M)$ je tøída všech funkcí, které mají na množinì $M$ spojité derivace až do øádu $n$, pøièemž $\CC(M)=\CC^0(M)$. Nachází-li se index nula dole $\CC^n_0(M)$, pak $M$ je kompakt. Symbol $\CC^n_0$ znaèí všechny funkce tøídy $\CC^n(\Er)$, které mají libovolný, ale kompatní nosiè. $\LLL(G)$ je tøída Lebesgueovsky integrovatelných funkcí na množinì G. Tøída funkcí majících Lebesgueoùv integrál na G se znaèí $\LLL^\star(G).$ Tøídu Lebesgueovsky lokálnì integrabilních funkcí znaèíme $\LOC(G)$ a definujeme ji v následujícím textu.
+
+\subsection{Úmluva}
+
+Symbol $G$ bude nadále reprezentovat $r-$dimenzionální \emph{oblast}, tj. otevøenou a souvislou podmnožinu množiny $\Er.$ 
+Dále symbol $J$ bude oznaèovat \emph{kompakt}, tj. uzavøenou a omezenou podmnožinu množiny $\Er.$
+Funkcí budeme rozumìt zobrazení $f(\x):\Er\mapsto\C.$
+
+
+\subsection{Úmluva}
+
+V celém následujícím textu budeme pøedpokládat, že je zadána klasická a úplná Lebesgueova míra $\lambda(X):\Mlambda\mapsto \R^\star$ generovaná ve všech dimenzích klasickou vytvoøující $\phi(x)=x.$ Tudíž soustava $\Mlambda$ všech $\lambda-$mìøitelných podmnožin množiny $\Er$ je $\sigma-$algebrou a $\lambda(X)$ je na ní $\sigma-$aditivní mírou. Systém $\bigl\{\Er,\Mlambda,\lambda(X)\bigr\}$ je tedy pro nás nyní výchozím prostorem s úplnou mírou.
+
+
+
+\subsection{Definice}
+
+Nech? $r\in\N$ a $\mumu\in\R^r.$ \emph{Heavisideovou}\index{Heavisideova funkce} \texttt{[hevisajdovou]} funkcí budeme rozumìt
+funkci $\Theta(\x):~\E^r \mapsto \{0,1\}$ definovanou pøedpisem
+%
+\BE \Theta(\x):=\left\{
+\begin{array}{cll}
+    1 & \ldots & x_1 >0 ~\wedge~ x_2 >0 ~\wedge~ \ldots ~\wedge~ x_r >0  \\
+    0 & \ldots & x_1 \leq 0 ~\vee~ x_2 \leq 0 ~\vee~ \ldots ~\vee~ x_r \leq 0.  \\
+\end{array}
+\right. \label{Heaviside}\EE
+%
+\emph{Centrovanou Heavisideovou}\index{centrovaná Heavisideova funkce} funkcí budeme rozumìt
+funkci $\Theta_\mumu(\x):~\E^r \mapsto \{0,1\}$ definovanou pøedpisem
+%
+\BE \Theta_\mumu(\x):=\left\{
+\begin{array}{cll}
+    1 & \ldots & x_1 > \mu_1 ~\wedge~ x_2 > \mu_2 ~\wedge~ \ldots ~\wedge~ x_r > \mu_r  \\
+    0 & \ldots & x_1 \leq \mu_1 ~\vee~ x_2 \leq \mu_2 ~\vee~ \ldots ~\vee~ x_r \leq \mu_r.  \\
+\end{array}
+\right. \label{Heaviside-centered}\EE
+
+
+\subsection{Pozn\'amka}
+
+Funkce $f(\x)$ je, podle vìty 5.3.45 a dùsledku 5.3.46 v \cite{Teorie_Míry_Krbálek}, na G Lebesgueovsky integrabilní právì tehdy, když je $\lambda$-mìøitelná a její absolutní hodnota je Lebesgueovsky integrabilní.
+
+$$f(\x)\in\LLL(G,\mu) \quad \Leftrightarrow \quad|f(x)|\in\LLL(G,\mu)~\wedge f(x)\in \LA_\mu(G).$$
+Budeme-li tedy mluvit o mìøitelných funkcích, tak platí, že
+
+$$f(x)\in\LLL(G,\mu) \quad \Leftrightarrow \quad |f(x)|\in\LLL(G,\mu)$$
+
+
+\subsection{Definice}
+
+Nech?je dána funkce $f(\x):G\mapsto\R.$ Øekneme, že funkce
+$f(\x)$ je \emph{lokálnì integrabilní}\index{lokálnì integrabilní funkce} na $G$ a oznaèíme
+symbolem $f(\x)\in \LOC \bigl(G,\mu(X)\bigr)$ nebo zkrácenì
+$f(\x)\in \LOC(G),$ jestliže pro každý bod $\ccc \in G$ existuje $\ep>0$ tak, že $f(\x)\in \LLL\bigl(\U_\ep(\ccc)\bigr),$ tj.
+%
+$$\int_{\U_\ep(\ccc)} f(\x)~\dmu(\x)\in\R.$$
+
+\subsection{Vìta}
+
+Nech?$G$ je oblast v $\Er.$ Funkce $f(\x):G\mapsto\R$ je lok\'aln\v e integrabiln\'i na $G$ pr\'av\v e tehdy, kdy\v z pro ka\v zdou kompaktn\'i
+mno\v zinu $J\subset G$ plat\'i, \v ze
+%
+$$\int_{J} f(\x)~\dmu(\x)\in\R.$$
+
+\Proof
+
+\begin{itemize}
+\item dokážeme nejprve, že pokud pro každou kompaktní množinu $J\subset G$ platí, že integrál $\int_{J} f(\x)~\dmu(\x)$ konverguje, pak je  $f(\x)$ je lokálnì integrabilní na $G$
+\item zvolme tedy libovolnì bod $\c\in G$
+\item jelikož $G$ je otevøená, jistì existuje $\ep>0$ tak, že $K=\overline{\U_\ep(\c)},$ $K\subset G,$ $K$ je kompakt  a $\c\in \U_\ep(\c)$
+\item integrál $\int_{K} f(\x)~\dmu(\x)$ ale existuje z pøedpokladu
+\item $\bd(K)$ je $\mu-$nulová množina, nebo?se jedná o pláš?r-rozmìrné koule, a z teorie Lebesgueova integrálu tudíž platí, že $\int_{K} f(\x)~\dmu(\x)=\int_{\U_\ep(\c)} f(\x)~\dmu(\x)$, a navíc jsme $\c$ volili libovolnì. 
+\item pro dùkaz obr\'acen\'e implikace p\v redpokl\'adejme, \v ze  $f(\x)$ je lok\'aln\v e integrabiln\'i na $G$
+\item zvolme $K$ jako libovolnou kompaktn\'i množinu, která je podmno\v zinou oblasti $G$
+\item podle teorie míry jistì $K\in\Mmu$, nebo?$\Er\setminusK\in\SSS_r\subset\Mmu$, a $\Mmu$ je $\sigma$-algebra
+\item Borelova v\v eta ale øíká, že z ka\v zd\'eho otev\v ren\'eho pokryt\'i kompaktn\'i mno\v ziny lze vybrat pokryt\'i kone\v cn\'e, tj. existuje soustava oblast\'i $\{G_k: k\in \widehat{n}\}$ tak, \v ze $\cup_{k=1}^n G_k \supset K$ a $G_k=\U_{\ep}(\x_k)$ pro jist\'e body $\x_k\in K$
+\item v\v sechny integr\'aly $\int_{\U_\ep(\x_k)} f(\x)~\dmu(\x)$ ale existuj\'i z p\v redpokladu t\'eto implikace
+\item d\'ale tak\'e existuj\'i (jak v\'ime z teorie Lebesgueova integr\'alu v\v sechny integr\'aly) $\int_{\U_\ep(\x_k)\cap \U_\ep(\x_\ell)} f(\x)~\dmu(\x)$ pro $k,\ell\in \widehat{n}$
+\item existuj\'i rovn\v e\v z integr\'aly $\int_{\U_\ep(\x_k) \cap K} f(\x)~\dmu(\x),$ co\v z spole\v cn\v e garantuje existenci integrálu $\int_{K} f(\x)~\dmu(\x)$
+\item tímto je dùkaz dokonèen
+\end{itemize}
+
+\section{Prehilbertovsk\'e prostory funkc\'i}
+
+V této sekci se pokusíme rozhodnout jestli z vybraných vektorových prostorù funkcí lze vytvoøit prehilbertovské prostory funkcí, tj. vektorové prostory se skalárním souèinem. Pøipomeòme si definici skalárního souèinu.
+
+
+\subsection{Definice}
+
+Nech?$\V$ je libovoln\'y vektorov\'y prostor nad t\v elesem
+$\C.$ Zobrazen\'i $\la . | . \ra: \V\times \V\mapsto\C$ nazveme
+\emph{skal\'arn\'im sou\v cinem}\index{skal\'arn\'i sou\v cin},
+jestli\v ze spl\v nuje tzv. \emph{axiomy skal\'arn\'iho sou\v
+cinu}:\index{axiomy skal\'arn\'iho sou\v cinu}
+\begin{itemize}
+    \item \emph{lev\'a linearita:}\index{lev\'a linearita skal\'arn\'iho
+sou\v cinu} pro v\v sechna $f(\x) ,g(\x),h(\x)\in \V$ a ka\v zd\'e $\alpha
+\in \C$ plat\'i $\la\alpha f+g|h\ra=\alpha\la f |h\ra+\la g
+|h\ra$
+    \item \emph{hermiticita:}\index{hermiticita skal\'arn\'iho
+sou\v cinu} pro v\v sechna $f(\x) ,g(\x)\in \V$ plat\'i $\la f
+|g\ra=\la g|f \ra^\star$
+    \item \emph{pozitivn\'i definitnost:}\index{pozitivn\'i definitnost skal\'arn\'iho
+sou\v cinu} pro v\v sechna $f(\x) \in \V$ plat\'i $\la f|f \ra\geq
+0$ a nav\'ic $\la f|f \ra=0$ pr\'av\v e tehdy, kdy\v z $f(\x) =o(\x).$
+\end{itemize}
+%
+Dvojici $\bigl\{\V,\la . | . \ra\bigr\}$ naz\'yv\'ame
+\emph{prehilbertovsk\'ym prostorem.}\index{prehilbertovsk\'y
+prostor}
+
+
+
+\subsection{Definice}
+Nech\v t $\V$ je vektorov\'y prostor funkc\'i nad t\v elesem $\C.$
+Zobrazen\'i $\left\|~.~\right\|: \V\mapsto\R$ nazveme
+\emph{normou}\index{norma}, jestli\v ze spl\v nuje tzv.
+\emph{axiomy normy}:\index{axiomy normy}
+\begin{itemize}
+    \item \emph{nulovost:}\index{nulovost normy} $\left\|f \right\|=0$ pr\'av\v e tehdy, kdy\v z $f(\x) =o(\x)$
+    \item \emph{troj\'uheln\'ikov\'a nerovnost:}\index{troj\'uheln\'ikov\'a nerovnost normy} pro v\v sechna $f(\x) ,g(\x)\in \V$ plat\'i: $\left\|f +g\right\|\leq\left\|f \right\|+\left\|g\right\|$
+    \item \emph{homogenita:}\index{homogenita normy} pro v\v sechna $f(\x) \in \V$ a ka\v zd\'e $\lambda\in\C$ plat\'i: $\left\|\lambda ~ f \right\|= \left|\lambda\right| \left\|f \right\|.$
+\end{itemize}
+%
+Dvojici $\bigl\{\V,\left\|.\right\|\bigr\}$ naz\'yv\'ame
+\emph{normovan\'ym prostorem}.\index{normovan\'y prostor}
+
+
+\subsection{P\v r\'iklad}
+
+Uk\'a\v zeme, \v ze pro libovolnou funkci $f(\x)\in \V$ z
+normovan\'eho prostoru $\V$ s normou $\left\|~.~\right\|$ plat\'i
+nerovnost $\left\|f\right\|\geq 0.$ Nejprve snadno prok\'a\v
+zeme, \v ze norma opa\v cn\'eho vektoru je stejn\'a jako norma
+vektoru p\r uvodn\'iho. Polo\v zme $\lambda=-1.$ Pak z axiomu
+homogenity plyne $\left\|-f\right\|= \left|-1\right| \left\|f\right\|=\left\|f\right\|.$ D\'ale pak v troj\'uheln\'ikov\'e nerovnosti polo\v zme $g(\x):=-f(\x).$ Pak $$0=\|o(\x)\|=\left\|f(\x)+\bigl(-f(\x)\bigr)\right\| \leq \bigl\|\f(\x)\bigr\|+\bigl\|-f(\x)\bigr\|=2\bigl\|\f(\x)\bigr\|,$$ odkud je ji\v z patrno, \v ze $\|f\|\geq 0.$
+
+
+\subsection{V\v eta}
+Nech\v t $\la . | . \ra$ je skal\'arn\'i sou\v cin definovan\'y na
+vektorov\'em prostoru $\V$ nad t\v elesem $\C.$ Pak zobrazen\'i
+$\mathbbm{n}(f)$ definovan\'e p\v redpisem
+%
+\BE \mathbbm{n}(f):=\sqrt{\la f|f\ra} \label{ngss} \EE
+%
+je normou na $\V.$\\
+
+\Proof
+
+\begin{itemize}
+\item ov\v e\v r\'ime axiomy normy
+\item axiom nulovosti:
+
+\begin{itemize}
+\item je-li $f(\x)=0,$ pak $\mathbbm{n}^2(0):=\la o,o\ra=0$
+\item je-li $\mathbbm{n}(f)=0,$ pak tedy $\la f,f \ra=0,$ ale podle
+axiomu pozitivn\'i definitnosti skal\'arn\'iho sou\v cinu toto m\r
+u\v ze nastat pouze tehdy, je-li $f(\x)=o(\x)$
+\item t\'im je ekvivalence po\v zadovan\'a v axiomu nulovosti
+normy prok\'az\'ana
+\end{itemize}
+
+\item axiom troj\'uheln\'ikov\'e nerovnosti:
+
+\begin{itemize}
+\item provedeme n\'asleduj\'ic\'i s\'erii \'uprav
+$$\mathbbm{n}^2\bigl(f+g\bigr)=\la f+g|f+g\ra=\la f|f\ra+\la f|g \ra+\la g|f\ra+\la g|g \ra=$$
+%
+$$=2~\mathrm{Re}\bigl(\la f|g \ra\bigr)+\la f|f \ra+\la g|g \ra \leq 2\bigl|\la f|g \ra\bigr|+\mathbbm{n}^2(f)+\mathbbm{n}^2(g)$$
+
+\item u\v zijeme-li nyn\'i Schwarzovy-Cauchyovy-Bunjakovsk\'eho nerovnosti
+(viz \cite{Krbalek_MAB3}), dost\'av\'ame
+$$\mathbbm{n}^2\bigl(f+g\bigr) \leq
+2~\mathbbm{n}(f)\mathbbm{n}(g)+\mathbbm{n}^2(f)+\mathbbm{n}^2(g)=\bigl(\mathbbm{n}(f)+\mathbbm{n}(g)\bigr)^2$$
+
+\item t\'im je dok\'az\'ano, \v ze $\mathbbm{n}\bigl(f+g\bigr)\leq \mathbbm{n}(f)+\mathbbm{n}(g)$
+
+\end{itemize}
+
+
+\item axiom homogenity:
+
+\begin{itemize}
+\item nech\v t tedy $\lambda\in\C$ je zvoleno libovoln\v e
+\item pak snadno $\mathbbm{n}\bigl(\lambda f\bigr):=\sqrt{\la\lambda f|\lambda f\ra}=\sqrt{\lambda\lambda^\star}
+\sqrt{\la f|f \ra}=\sqrt{|\lambda|^2}~\mathbbm{n}(f)=|\lambda|~\mathbbm{n}(f)$
+
+\end{itemize}
+
+\item t\'im je prok\'az\'ano, \v ze zobrazen\'i $\mathbbm{n}(f)$ je normou na $\V$
+
+\end{itemize}
+
+
+\subsection{Definice}\label{jiste}
+
+Nech\v t $\la . | . \ra$ je skal\'arn\'i sou\v cin definovan\'y na
+vektorov\'em prostoru $\V$ nad t\v elesem $\C.$ Pak zobrazen\'i
+$\mathbbm{n}(f)$ definovan\'e vztahem (\ref{ngss}) naz\'yv\'ame
+\emph{normou generovanou skal\'arn\'im sou\v cinem.}\index{norma
+generovan\'a skal\'arn\'im sou\v cinem}
+
+
+\subsection{V\v eta}\label{love_so_beautiful}
+
+Nech\v t je d\'an vektorov\'y prostor $\V$ nad t\v elesem $\C$ a
+skal\'arn\'i sou\v cin $\la . | . \ra.$ Nech\v t $\|.\|$ je norma
+generovan\'a t\'imto skal\'arn\'im sou\v cinem. Nech\v t je d\'ana posloupnost funkc\'i $(f_n(\x))_{n=1}^\infty$ z prostoru $\V,$ pro n\'i\v z existuje funkce $f(\x)\in\V$ tak, \v ze plat\'i n\'asleduj\'ic\'i implikace:
+%
+$$(\forall \ep>0)(\exists n_0\in\N): \quad n>n_0 \quad \Longrightarrow  \quad \bigl\|f_n(\x)-f(\x)\bigr\|<\ep.$$
+%
+Nech\v t je funkce $g(\x)\in\V$ zvolena libovoln\v e. Pak plat\'i
+%
+$$\limn \la f_n|g \ra = \la f|g \ra, \quad \limn \la g|f_n \ra = \la g|f \ra.$$
+
+\Proof
+
+\begin{itemize}
+\item snadno nahl\'edneme, \v ze pro $g(\x)=o(\x)$ plat\'i citovan\'a rovnost trivi\'aln\v e
+\item uva\v zujme tedy nyn\'i pouze ty funkce, kter\'e nejsou nulov\'e, tedy ty, pro n\v e\v z $\|g(\x)\|\neq 0$
+\item chceme dok\'azat, \v ze \v c\'iseln\'a posloupnost $(\gamma_n)_{n=1}^\infty,$ kde $\gamma_n:= \la f_n|g \ra$ konverguje k \v c\'islu $\gamma:= \la f|g \ra$
+\item je tedy t\v reba prok\'azat, \v ze pro ka\v zd\'e $\ep>0$ existuje $m_0\in\N$ tak, \v ze pro v\v sechny indexy $m>m_0$ plat\'i nerovnost $|\gamma_m-\gamma|<\ep$
+\item z p\v redpokladu
+%
+$$(\forall \ep>0)(\exists n_0\in\N): \quad n>n_0 \quad \Longrightarrow  \quad \bigl\|f_n(\x)-f(\x)\bigr\|<\frac{\ep}{\|g\|},$$
+%
+z axiom\r u skal\'arn\'iho sou\v cinu a z Schwarzovy-Cauchyovy-Bunjakovsk\'eho nerovnosti ale vypl\'yv\'a, \v ze
+%
+$$ |\gamma_m-\gamma| = \bigl|\la f_m|g \ra-\la f|g \ra\bigr| = \bigl|\la f_m-f|g  \ra\bigr| \leq \|f_m-f\|\cdot \|g\| < \frac{\ep}{\|g\|}\|g\| =\ep$$
+\item posta\v c\'i tedy volit $m_0:=n_0$
+\item tvrzen\'i $\limn \la g|f_n \ra = \la g|f \ra$ lze dok\'azat zcela analogicky
+\end{itemize}
+
+
+
+
+\subsection{Lemma}
+
+Nech\v t $a\in\R$ a $b\in(a,\infty).$ Nech\v t $\CC(\langle a,b \rangle)$ je vektorov\'y prostor v\v sech
+funkc\'i $f(x):~\R\mapsto\C$ spojit\'ych na intervalu $\la a,b
+\ra$ zaveden\'y nad t\v elesem $\C.$ Nech\v t je d\'ana funkce $w(x)\in\CC(\langle a,b \rangle)$ kladná na $\la a,b \ra.$ Pak formule
+%
+%
+\BE \bla f(x)|g(x)\bra_{w}:=\int_a^b f(x)g^\star(x)w(x)~\dx 
+\label{skalarni_soucin}\EE
+%
+spl\v nuje axiomy skal\'arn\'iho sou\v cinu na $\CC(\langle a,b \rangle).$
+
+
+\subsection{Lemma}
+
+Nech\v t $a\in\R$ (nebo $a=-\infty$) a $b\in(a,\infty)$ (nebo $b=+\infty$). Nech\v t $\mathscr{V}$ je vektorov\'y prostor v\v sech omezených a spojitých
+funkc\'i na intervalu $\la a,b
+\ra.$ Nech?$w(x)$ je kladná funkce na $(a,b)$, pro kterou platí $w(x)\in\LLL(\langle a,b \rangle)$. Pak (\ref{skalarni_soucin})
+%\BE \bla f(x)|g(x)\bra_{w}:=\int_a^b f(x)g^\star(x)w(x)~\dx 
+%\EE
+spl\v nuje axiomy skal\'arn\'iho sou\v cinu na $\mathscr{V}.$
+
+
+\subsection{Definice}
+
+Spojitou a kladnou funkci $w(x)$ z p\v rede\v slých lemmat naz\'yv\'ame \emph{vahou skal\'arn\'iho sou\v cinu}\index{v\'aha skal\'arn\'iho sou\v cinu} a vybran\'e reprezentanty naz\'yv\'ame n\'asledovn\v e:
+%
+\begin{itemize}
+    \item \emph{standardn\'i (Legendreova) v\'aha:}\index{standardn\'i (Legendreova) v\'aha} pro libovolnou volbu $a,b\in\R$ a $w(x)=\Theta(a)\Theta(b-x),$
+    \item \emph{Laguerreova v\'aha:}\index{Laguerreova v\'aha} pro volbu $a=0,$ $b=\infty$ a $w(x)=\Theta(x)\e^{-x},$
+    \item \emph{Hermiteova v\'aha:}\index{Hermiteova v\'aha} pro volbu $a=-\infty,$ $b=\infty$ a $w(x)=\e^{-x^2},$
+    \item \emph{\v Ceby\v sevova v\'aha:}\index{\v Ceby\v sevova v\'aha} pro volbu $a=-1,$ $b=1$ a $w(x)=\frac{\Theta(1-|x|)}{\sqrt{1-x^2}}.$
+\end{itemize}
+
+
+\subsection{Definice}
+
+Nech\v t $p\geq 1$ je pevn\v e zvolen\'y parametr. Pak t\v r\'idu v\v sech mìøitelných funkc\'i $f(\x):G\mapsto\C,$ pro n\v e\v z
+%
+$$\int_G \bigl|f(\x)\bigr|^p~\dlambda(\x)\in\R,$$
+%
+ozna\v cujeme symbolem $\LLL_p\bigl(G).$ Neboli
+
+$$\LLL_p\bigl(G)=\left\lbrace f(\x):\Er\mapsto\C:\int_G \bigl|f(\x)\bigr|^p~\dmu(\x)\in\R\right\rbrace$$
+
+
+\subsection{Vìta}
+
+Nech?$f(\x), g(\x)\in \LLL_2(G).$ Potom $f(\x)g^\star(\x)\in\LLL_1(G).$\\
+
+\Proof
+
+\begin{itemize}
+\item staèí si uvìdomit, že $|f(\x)g^\star(\x)| \leq \frac{1}{2}|f(\x)|^2 + \frac{1}{2}|g(\x)|^2$
+\item jelikož oba èleny souètu patøí do $\LLL(G)$, tak ze srovnávacího kritéria plyne, že také $|f(\x)g^\star(\x)|\in\LLL(G)$
+\item je vhodné si zopakovat poznámku 2.1.5 a uvìdomit si, že pro mìøitelné funkce platí $f(\x)\in\LLL(G)\Leftrightarrow|f(\x)|\in\LLL(G)$
+\end{itemize}
+
+
+\subsection{Pozn\'amka}
+
+Vztahy $\int_G f(x)g^\star(x)w(x)~\dx,$ resp. $\int_G f(\x)g^\star(\x)w(\x)~\dxx$ v\v sak na n\v ekter\'ych vektorov\'ych prostorech skal\'arn\'i sou\v cin nedefinuj\'i. Jedn\'im z takov\'ych prostor\r u je nap\v r. prostor $\LLL_1(0,1).$ Funkce $f(x)=\frac{1}{\sqrt{x}}$ do prostoru $\LLL_1(0,1)$ pat\v r\'i, nebo?
+$$\int_0^1\frac{1}{\sqrt{x}}~\dx=2,$$
+ale integr\'al
+%
+$$\int_0^1 \frac{1}{\sqrt{x}}\frac{1}{\sqrt{x}}~\dx=\int_0^1 \frac{1}{x}~\dx$$
+%
+nekonverguje. Podobn\v e tak\'e prostory $\LLL(G)$ nebo $\LLL_1(G)$ pro $G=(0,\infty)$ negeneruj\'i spolu s operac\'i  $\int_0^\infty f(x)g^\star(x)~\dx$ prehilbertovsk\'y prostor.
+
+$\LLL_2(G)$ také není prehilbertovský, protože není splnìn axiom pozitivní definitnosti skalárního souèinu, tedy neplatí, že 
+
+$$ \bla f(x)|f(x)\bra=0 \quad \Leftrightarrow \quad f(x)=0$$
+
+Mùže totiž existovat $f(x)\not=0$ taková, že bude $\int_a^b f(x)f^\star(x)\dx=0$. Napøíklad tak, že má nenulovou hodnotu na množinì míry nula.
+
+
+\subsection{Definice}
+
+\emph{Dirichletovou funkc\'i} budeme rozum\v et funkci
+%
+\BE \Dirichlet(\x):=\left\{\begin{array}{ccl} 1 & \dots & \x\in\Q^r \\ 0 & \dots & \x\in \R^r \setminus \Q^r.
+\end{array}\right. \EE
+
+
+\subsection{Pozn\'amka}
+
+Zavedeme-li na prostoru $\LLL_2(G)$ zobrazen\'i $\la f|g \ra: \LLL_2(G) \times \LLL_2(G) \mapsto\C$ p\v redpisem
+%
+$$\bla f|g \bra=\int_{G} f(\x)~g^\star(\x)~\dmu(\x),$$
+%
+pak toto zobrazen\'i nen\'i skal\'arn\'im sou\v cinem, nebo\v t nen\'i spln\v en axiom pozitivn\'i definitnosti z definice skal\'arn\'iho sou\v cinu. Rovnost $\la f|f \ra=0$ by podle n\v eho m\v ela b\'yt spln\v ena tehdy a jen tehdy, pokud $f(
+\x)=o(\x),$ tedy pokud $f(\x)$ je ryze nulov\'a funkce. Snadno ale nahl\'edneme, \v ze pro Dirichletovu funkci plat\'i rovnost $\Dirichlet^2(\x)=\Dirichlet(\x),$ a tud\'i\v z (podle teorie Lebesgueova integr\'alu)
+%
+$$\bla \Dirichlet|\Dirichlet \bra=\int_{G} \Dirichlet(\x)~\Dirichlet^\star(\x)~\dmu(\x)=\int_{G} \Dirichlet(\x)~\dmu(\x)=0.$$
+%
+Abychom se tedy koneènì dostali k nìjakému prehilbertovu, a následnì Hilbertovu, prostoru budeme potøebovat zobecnìní a úvahy, které probereme v následující sekci.
+
+\section{Faktorové prostory funkc\'i, Hilbertovy prostory}
+
+Od termínu funkce nyní pøejdìme k faktorové funkci, resp. faktorovému prostoru funkcí. Tøídu všech funkcí, jež jsou mìøitelné a zároveò jsou mezi sebou vzájemnì $\mu$-ekvivalentní, tj. liší se pouze na množinì míry nula, nazveme \emph{faktorová skupina funkcí}. Tøídu všech funkcí, které jsou mìøitelné a zároveò ekvivalentní s nulovou funkcí ($f(\x)=0(\x)$) oznaèíme symbolem $\digamma_0$. Do tøídy $\digamma_0$ tedy patøí i Dirichletova funkce $\Dirichlet(\x).$ Libovolného zástupce z vybrané faktorové skupiny funkci nazveme \emph{faktorovou funkcí}. Pro jednoduchost budeme nadále používat termín funkce, ale mìjme poøád na pamìti, že jde jen o jednoho vybraného zástupce celé skupiny funkcí.
+
+\subsection{Definice}
+\emph{Faktorovou funkc\'i} $\hat{f}(\x)$ nazveme mno\v zinu v\v sech
+funkc\'i, je\v z jsou vz\'ajemn\v e $\mu-$ekvivalentn\'i s vybranou m\v e\v
+ritelnou funkc\'i $f(\x)\in \Lambda(G),$ tj.
+%
+$$\hat{f}(\x):=\bigl\{g(\x)\in\Lambda(G):~ g \sim f \bigr\}.$$
+%
+Mno\v zinu v\v sech faktorov\'ych funkc\'i nazveme
+\emph{faktorov\'ym prostorem} nad $G$ a ozna\v c\'ime $\digamma(G).$
+
+
+\subsection{Pozn\'amka}
+
+Tedy funkce $f(\x)$ a $g(\x)$ z p\v rede\v sl\'e definice se li\v
+s\'i pouze na mno\v zin\v e nulov\'e m\'iry. D\'ale si uv\v edomme,
+\v ze integr\'al v\v sech prvk\r u faktorov\'e funkce na dan\'e
+oblasti $G$ m\'a stejnou hodnotu. M\'a tedy smysl definovat
+%
+$$\int_G \hat{f}(\x)~\dmu(\x):=\int_G f(\x)~\dmu(\x),$$
+%
+kde $f(\x)$ je libovoln\'y z\'astupce faktorov\'e funkce
+$\hat{f}(\x).$
+
+
+\subsection{Definice}
+
+Nech\v t $p\geq 1.$ Symbolem $\LL_p(G)$ ozna\v c\'ime mno\v zinu v\v
+sech (faktorov\'ych) funkc\'i $f(\x):~G\mapsto \C,$ pro n\v e\v z
+$|f(\x)|^p\in\LLL(G),$ tedy
+%
+$$\int_G |f(\x)|^p~\dmu(\x)<+\infty.$$
+
+
+\subsection{Vìta}
+
+Zobrazen\'i $\la f|g \ra: \LL_2(G) \times \LL_2(G) \mapsto\C$ zaveden\'e na $\LL_2(G)$ p\v redpisem
+%
+\BE \bla f|g \bra=\int_{G} f(\x)~g^\star(\x)~\dmu(\x) \label{skalarnisoucin} \EE
+%
+reprezentuje skal\'arn\'i sou\v cin. Prostor $\LL_2(G)$ je tud\'i\v z prehilbertovsk\'ym prostorem.\\
+
+\Proof
+
+\begin{itemize}
+\item axiom lev\'e linearity je spln\v en trivi\'aln\v e, podobn\v e jako hermiticita
+\item pro libovolnou funkci  $f(\x)\in \LL_2(G)$ pak plat\'i, \v ze
+%
+$$\bla f|f \bra=\int_{G} f(\x)~f^\star(\x)~\dmu(\x)=\int_{G} |f(\x)|^2~\dmu(\x) \geq 0$$
+%
+a nav\'ic rovnost
+%
+$$\bla f|f \bra=\int_{G} f(\x)~f^\star(\x)~\dmu(\x)=\int_{G} |f(\x)|^2~\dmu(\x) = 0$$
+%
+nast\'av\'a pouze pro nulovou faktorou funkci
+\item t\'im je napln\v en axiom pozitivn\'i definitnosti
+\item zb\'yv\'a dok\'azat, \v ze pro libovoln\'e dv\v e funkce  $f(\x),g(\x)\in \LL_2(G)$ je v\'yraz $\bla f|g \bra=\int_{G} f(\x)~g^\star(\x)~\dmu(\x)$ dob\v re definov\'an
+\item jeliko\v z je na $G$ spln\v ena nerovnost $$2\bigl|f(\x)g^\star(\x)\bigr|\leq \bigl|f(\x)\bigr|^2+\bigl|g^\star(\x)\bigr|^2=\bigl|f(\x)\bigr|^2+\bigl|g(\x)\bigr|^2$$ a oba integr\'aly $\int_{G} \bigl|f(\x)\bigr|^2~\dlambda(\x)$ a $\int_{G} \bigl|g(\x)\bigr|^2~\dlambda(\x)$ existuj\'i z definice prostoru $\LL_2(G)$ a z v\v ety o absolutn\'i hodnot\v e Lebesgueova integr\'alu, existuje podle srovn\'avac\'iho krit\'eria tak\'e integr\'al $\int_{G} f(\x)g^\star(\x)~\dmu(\x)$
+
+\end{itemize}
+
+
+\subsection{Pozn\'amka}
+
+Je-li vztah (\ref{skalarnisoucin}) skal\'arn\'im sou\v cinem na $\LL_2(G),$ pak je zobrazen\'i
+%
+$$\bigl\|f(\x)\bigr\|=\sqrt{\int_G \bigl|f(\x)\bigr|^2~\dlambda(\x)}$$
+%
+normou na $\LL_2(G).$  Zobrazen\'i 
+%
+$$\rho(f,g):=\sqrt{\int_G \bigl|f(\x)-g(\x)\bigr|^2 ~\dlambda(\x)}$$
+%
+ je metrikou na $\LL_2(G).$
+
+\subsection{Definice}
+
+\v Rekneme, \v ze posloupnost funkc\'i $\bigl(f_n(\x)\bigr)_{n=1}^\infty$ z prostoru $\LL_2(G)$ \emph{konverguje podle normy}\index{konvergence podle normy} k funkci $f(\x)\in\LL_2(G),$ pokud pro ka\v zd\'e $\ep>0$ existuje $n_0\in\N$ tak, \v ze pro v\v sechna $n\geq n_0$ plat\'i
+%
+$$\bigl\|f_n(\x)-f(\x)\bigr\|<\ep,$$
+%
+to jest
+%
+$$\sqrt{\int_G \bigl|f_n(\x)-f(\x)\bigr|^2 ~\dmu(\x)}<\ep.$$
+%
+Konvergenci podle normy zapisujeme symbolem $f_n(\x) \nkonv f(\x).$
+
+
+\subsection{P\v r\'iklad}
+
+Rozhodn\v eme podle definice, zda posloupnost funkc\'i $\bigl(\e^{-nx^2}\bigr)_{n=1}^\infty$ z prostoru $\LL_2(\R)$ konverguje podle normy k nulov\'e funkci. Nech\v t $\ep>0$ je zvoleno libovoln\v e. Limitn\'i faktorovou funkc\'i pro zkoumanou posloupnost je nulov\'a funkce. Zkoumejme tedy nerovnost $$\bigl\|\e^{-nx^2}\bigr\|=\sqrt{\int_G \e^{-2nx^2} ~\dmu(\x)}=\left(\frac{\pi}{2n}\right)^{1/4}<\ep.$$ Za hledan\'e $n_0\in\N$ z definice konvergence podle normy tedy sta\v c\'i volit $$n_0:=\left\lfloor\frac{\pi}{2\ep^4}\right\rfloor+1.$$ Pov\v simn\v eme si ale paradoxu, \v ze posloupnost $\bigl(\e^{-nx^2}\bigr)_{n=1}^\infty$ nekonverguje (uva\v zujeme-li konvergenci klasickou) k nulov\'e funkci ani stejnom\v ern\v e ani bodov\v e. Vztah mezi klasickou konvergenc\'i a konvergenc\'i podle normy lze shrnout v n\'asleduj\'ic\'i v\v et\v e.
+
+\subsection{V\v eta}
+
+Nech\v t je d\'ana posloupnost funkc\'i $\bigl(f_n(\x)\bigr)_{n=1}^\infty$ z prostoru $\LL_2(G)$ takov\'a, \v ze $f_n(\x) \stackrel{G}{\rightrightarrows} f(\x) \in \LL_2(G).$ Nech\v t d\'ale $0<\mu(G)<\infty.$ Pak $f_n(\x) \nkonv f(\x).$\\
+
+\Proof
+
+\begin{itemize}
+\item z p\v redpoklad\r u plyne, \v ze  pro v\v sechna $\widetilde{\ep} >0$ existuje $n_0$ tak, \v ze pro
+v\v sechna $n \geq n_0$ a pro v\v sechna $\x\in G$ plat\'i nerovnost $$\bigl| f_n(\x)-f(\x) \bigr| < \widetilde{\ep} = \frac{\ep}{\sqrt{4\mu(G)}}$$
+\item jeliko\v z zjevn\v e $$\bigl\|f_n(\x)-f(\x)\bigr\|^2 = \bla f_n-f|f_n-f \bra = \int_G \bigl| f_n(\x)-f(\x) \bigr|^2~\dmu(\x) \leq \frac{\ep^2}{4\mu(G)} \mu(G) = \frac{\ep^2}{4},$$ zji\v s\v tujeme, \v ze pro indexy $n\geq n_0$ plat\'i nerovnost $\bigl\|f_n(\x)-f(\x)\bigr\| \leq \frac{\ep}{2} < \ep$
+\item to dokazuje skute\v cnost, \v ze posloupnost funkc\'i $\bigl(f_n(\x)\bigr)_{n=1}^\infty$  konverguje podle normy k funkci $f(\x)$
+\end{itemize}
+
+\subsection{V\v eta}
+
+Nech\v t $f_n(\x) \nkonv f(\x).$ Pak existuje podposloupnost $\bigl(f_{k_n}(\x)\bigr)_{n=1}^\infty$ vybran\'a z posloupnosti $\bigl(f_n(\x)\bigr)_{n=1}^\infty$ takov\'a, \v ze plat\'i $f_{k_n}(\x) \rightarrow f(\x)$ skoro v\v sude v $M.$\\
+
+\Proof
+
+\begin{itemize}
+\item viz \textcolor{red}{odkázat se na zdroj}, str. 42, p\v r\'iklad 2.2.2
+\end{itemize}
+
+
+\subsection{Definice}
+
+Nech\v t je d\'an vektorov\'y prostor $\V$ se skal\'arn\'im sou\v
+cinem $\la.|.\ra.$ Nech\v t $\|.\|$ je norma generovan\'a
+zadan\'ym skal\'arn\'im sou\v cinem a $\rho(x,y)$ metrika
+generovan\'a v\'y\v se uvedenou normou. Nech\v t nav\'ic
+$\{\V,\rho\}$ je \'upln\'ym metrick\'ym prostorem. Pak takov\'y
+prostor $\H:=\bigl\{\V,\la.|.\ra,\|.\|,\rho\bigr\}$ naz\'yv\'ame
+\emph{Hilbertov\'ym}\index{Hilbert\r uv prostor} prostorem.
+
+\subsection{Pozn\'amka}
+
+Metrick\'y prostor $\{M,\rho\}$ s libovolnou metrikou $\rho(f,g)$
+nazveme \emph{\'upln\'ym,}\index{\'upln\'y metrick\'y prostor}
+jestli\v ze ka\v zd\'a cauchyovsk\'a posloupnost je v~~n\v em
+konvergentn\'i.
+
+
+\subsection{V\v eta -- \emph{o spojitosti skal\'arn\'iho sou\v cinu}}\index{v\v eta o spojitosti skal\'arn\'iho sou\v cinu}\label{Hilbert_so_beautiful}
+
+Nech\v t je d\'an Hilbert\r uv prostor $\H$ nad t\v elesem $\C.$  Nech\v t je d\'ana posloupnost funkc\'i $(f_n(\x))_{n=1}^\infty$ z prostoru $\H,$ kter\'a konverguje podle normy k funkci $f(\x)\in\H,$ a funkce $g(\x)\in\H.$ Pak plat\'i
+%
+$$\limn \la f_n|g \ra = \la f|g \ra, \quad \limn \la g|f_n \ra = \la g|f \ra.$$
+
+\Proof
+
+\begin{itemize}
+\item jedn\'a se o bezprost\v redn\'i d\r usledek v\v ety \ref{love_so_beautiful}
+\end{itemize}
+
+\subsection{Definice}\label{kosta}
+
+\v Rekneme, \v rada funkc\'i $\sum_{n=1}^\infty f_n(\x)$ z Hilbertova prostoru $\H$ \emph{konverguje podle normy}\index{konvergence \v rady podle normy} ke sv\'emu sou\v ctu $s(\x)\in\H,$ pokud posloupnost  $\bigl(s_n(\x)\bigr)_{n=1}^\infty$ jej\'ich \v c\'aste\v cn\'ych sou\v ct\r u
+%
+$$s_n(\x):=\sum_{k=1}^n f_k(\x)$$
+%
+konverguje podle normy k funkci $s(\x),$ tj. $\limnorm_{n\rightarrow \infty} s_n(\x)=s(\x).$ Konvergenci podle normy zapisujeme symbolem $_{n=1}^\infty f_n(\x) = s(\x).$ \textcolor{red}{sem dát podtrženou sumu - Krbálek dodá}
+
+
+
+\subsection{V\v eta}
+
+Faktorov\'y prostor $\LL_2(G)$ spole\v cn\v e se skal\'arn\'im
+sou\v cinem zaveden\'ym vztahem (\ref{skalarnisoucin}) je \'upln\'y, tj. jedn\'a se o Hilbert\r uv prostor.\\
+
+\Proof\\
+
+Jeliko\v z ji\v z bylo prok\'az\'ano, \v ze $\LL_2(G)$ je
+vektorov\'y prostor nad $\C,$ zb\'yv\'a dok\'azat \'uplnost.
+Vyberme tedy z~~libovoln\'e cauchyovsk\'e posloupnosti
+$\bigl(f_k(\x)\bigr)_{k=1}^\infty$ podposloupnost
+$\bigl(f_{k_\ell}(\x)\bigr)_{\ell=1}^\infty,$ je\v z konverguje
+skoro v\v sude na $G.$ To je d\'iky cauchyovskosti mo\v zn\'e.
+C\'ilem d\r ukazu je de facto prok\'azat, \v ze
+$\bigl(f_k(\x)\bigr)_{k=1}^\infty$ je konvergentn\'i v
+$\LL_2(G).$ Prvn\'i \v clen podposloupnosti
+$\bigl(f_{k_\ell}(\x)\bigr)_{\ell=1}^\infty$ vyberme tak, aby pro
+v\v sechna $m>k_1$ platilo
+%
+$$\|f_{k_1}(\x)-f_m(\x)\| < \frac{1}{2}.$$
+%
+To je op\v et d\'iky cauchyovskosti mo\v zn\'e. Druh\'y \v clen podposloupnosti vyberme tak,
+aby pro v\v sechna $m>k_2$ platilo
+%
+$$\|f_{k_2}(\x)-f_m(\x)\| < \frac{1}{2^2}.$$
+%
+Analogicky vyberme $\ell-$t\'y \v clen podposloupnosti tak, aby
+pro v\v sechna $m>k_\ell$ platilo
+%
+$$\|f_{k_\ell}(\x)-f_m(\x)\| < \frac{1}{2^\ell}.$$
+%
+Ozna\v c\'ime-li nyn\'i
+%
+$$g_k(\x)=\sum_{s=1}^k \bigl|f_{k_s+1}(\x)-f_{k_s}(\x)\bigr|,$$
+
+$$g(\x)=\sum_{s=1}^\infty \bigl|f_{k_s+1}(\x)-f_{k_s}(\x)\bigr|,$$
+%
+bude
+%
+$$\|g_k(\x)\|\leq \sum_{s=1}^k
+\bigl\|f_{k_s+1}(\x)-f_{k_s}(\x)\bigr\| < \sum_{s=1}^k
+\frac{1}{2^s} <1.$$
+%
+Je proto $\int_M |g_n(\x)|^2~\dmu(\x)<1$ a podle Leviho v\v ety
+tak\'e
+%
+$$\int_M |g(\x)|^2~\dmu(\x)=\limk \int_M |g_k(\x)|^2~\dmu(\x) \leq
+1$$
+%
+a $g(\x)$ je kone\v cn\'a skoro v\v sude na $M.$ Nav\'ic \v rada
+$\sum_{s=1}^k \bigl|f_{k_s+1}(\x)-f_{k_s}(\x)\bigr|$ m\'a pro
+skoro v\v sechna $\x\in M$ kone\v cn\'y sou\v cet  a tud\'i\v z i
+\v rada $\sum_{s=1}^k \bigl(f_{k_s+1}(\x)-f_{k_s}(\x)\bigr)$ je
+konvergentn\'i, a tedy tak\'e posloupnost
+%
+$$f_{k}(\x)=\sum_{s=1}^{k-1}
+\bigl(f_{k_s+1}(\x)-f_{k_s}(\x)\bigr)+f_{k_1}(\x).$$
+%
+Ozna\v cme $f(\x)$ jej\'i limitu. Ta je samoz\v rejm\v e m\v e\v
+riteln\'a jako limita posloupnosti m\v e\v riteln\'ych funkc\'i.\\
+
+Ve druh\'e \v c\'asti d\r ukazu uk\'a\v zeme, \v ze posloupnost
+$\bigl(f_{k_\ell}(\x)\bigr)_{k=1}^\infty$  konverguje pr\'av\v e k
+t\'eto funkci $f(\x)$ v $\LL_2(G).$ P\v redn\v e z cauchyovskosti
+posloupnosti $\bigl(f_{k_\ell}(\x)\bigr)_{\ell=1}^\infty$  plyne
+cauchyovskost podposloupnosti
+$\bigl(f_{k_\ell}(\x)\bigr)_{k=1}^\infty,$ a tedy pro $\epsilon=1$
+existuje $k_0\in\N$ takov\'e, \v ze pro $\ell>k_0$ a $m>k_0$ je
+%
+$$\int_M \bigl|f_{k_\ell}(\x)-f_{k_m}(\x)\bigr|^2~\dmu(\x)<1.$$
+%
+Podle Fatouovy v\v ety (viz v\v eta 2.1.7, str. 26 v (nìkde - \textcolor{red}{DOPLNIT}) je
+%
+$$\int_M \bigl|f_{k_\ell}(\x)-f(\x)\bigr|^2~\dmu(\x)<1,$$
+%
+odkud plyne, \v ze funkce $f(\x)$ rozepsan\'a jako
+$\bigl(f(\x)-f_{k_\ell}(\x)\bigr)+f_{k_\ell}(\x)$ pat\v r\'i do
+$\LL_2(G).$ Provedeme-li stejnou \'uvahu s libovoln\v e mal\'ym
+$\epsilon,$ z\'isk\'ame
+%
+$$\int_M \bigl|f_{k_\ell}(\x)-f(\x)\bigr|^2~\dmu(\x)<\epsilon^2,$$
+%
+co\v z neznamen\'a nic jin\'eho, ne\v z \v ze
+%
+$$\lim_{\ell \rightarrow \infty} f_{k_\ell}(\x)=f(\x).$$
+
+V posledn\'i \v c\'asti d\r ukazu uk\'a\v zeme, \v ze k funkci
+$f(\x)$ konverguje cel\'a posloupnost
+$\bigl(f_k(\x)\bigr)_{k=1}^\infty.$ To ov\v sem plyne ihned z
+nerovnost\'i
+%
+$$\bigl\|f(\x)-f_k(\x)\bigr\| \leq
+\bigl\|f(\x)-f_{k_\ell}(\x)\bigr\| +
+\bigl\|f_{k_\ell}(\x)-f_k(\x)\bigr\|,$$
+%
+nebo\v t prvn\'i \v clen napravo m\r u\v zeme ud\v elat libovoln\v
+e mal\'ym (pro velk\'a $k_\ell$) d\'iky dok\'azan\'e konvergenci
+zmi\v novan\'e podposloupnosti a druh\'y d\'iky cauchyovskosti
+posloupnosti $\bigl(f_k(x)\bigr)_{k=1}^\infty.$
+
+\subsection{D\r usledek}
+
+Nech\v t $w(\x)\in\CC(G)$ je kladná funkce. Faktorov\'y prostor
+%
+$$\LL_2^{(w)}(G)=\bigl\{f(\x)\in\digamma(G):~\int_G |f(\x)|^2 w(\x)~\dmu(\x)<+\infty\bigr\},$$
+%
+spole\v cn\v e se skal\'arn\'im sou\v cinem zaveden\'ym vztahem  $\int_G f(\x)g^\star(\x)w(\x)~\dxx$ je Hilbertov\'ym prostorem.\\
+
+
+\subsection{Vìta}
+
+$f \in \LLL_2(G) \wedge H \in G \wedge \mu(H)<\infty \quad \Rightarrow \quad f\in \LLL_1(H)$
+\textcolor{red}{okomentovat, pøípadnì dokázat}
+
+\subsection{Dùsledek}
+
+$\mu(H) < \infty \quad \Rightarrow \quad \LLL_2(H)\subset\LLL_1(H)$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Zde jsem zacal ja - Petr
+
+\subsection{V\v eta} \label{Konvoluce_hustot}
+
+$f(\x), g(\x):\Er\mapsto\R$ jsou hustoty, pak $\(f\ast g\)(\x)$ je rovn\v e\v z hustotou a v\v zdy existuje.\\
+
+\Proof
+
+\begin{itemize}
+\item $f(\x), g(\x)\in \LLL_\onecircled(\Er) \Rightarrow \(f\ast g\)(\x)\in \LLL_1(\Er)$
+
+\item nez\'apornost:\[\(f\ast g\)(\x)=\int_\Er f(\s)g(\x - \s)~\dss \geq 0 \quad\forall x \in \Er,\]
+nebo\v t z definice hustot je integr\' al v\v et\v s\' i nebo roven $0$ a existuje
+
+\item \[
+\int_\Er \(f\ast g\)(\x)~\dxx = \int_\Er\int_\Er f(\s)g(\x - \s)~\dss~\dxx = \int_\Er f(\s)\int_\Er g(\x - \s)~\dxx~\dss = 
+\]
+\[
+=\Bigg|\begin{array}{l}\y=\x -\s\\\dyy=\dxx\end{array}\Bigg|=\int_\Er f(\s)\int_\Er g(\y)~\dyy~\dss =1\int_\Er f(\s)~\dss = 1
+\]
+\end{itemize}
+
+\subsection{Pozn\'amka}
+St\v redn\' i hodnota z $r, f(r)$ je $\la r\ra =\int_\R rf(r)~\dr$.
+
+\subsection{V\v eta} \label{Konvoluce_hustot_a_stredni hodnoty}
+Nech\v t $f(x), g(x):\R\mapsto\R$ jsou hustoty. Nech\v t $\int_\R xf(x)~\dx = \mu_1$ a $\int_\R xg(x)~\dx = \mu_2$. Pak $\int_\R \(f\ast g\)(x)~\dx = \mu_1 + \mu_2$.\\
+
+\Proof
+
+\begin{itemize}
+\item teoretick\' e po\v zadavky ji\v z byly dok\' az\' any v p\v redchoz\' i v\v et\v e
+ 
+\item \[
+\int_\R x\(f\ast g\)(x)~\dx = \int_\R x\int_\R f(s)g(x - s)~\ds~\dx = \int_\R f(s)\int_\R xg(x - s)~\dx~\ds = 
+\]
+\[
+=\Bigg|\begin{array}{l}y=x -s\\\dy=\dx\end{array}\Bigg|=\int_\R f(s)\int_\R (y+s)g(y)~\dy~\ds = \int_\R^2 f(s)yg(y)~\ds~\dy + \int_\R^2 f(s)sg(y)~\dy~\ds =
+\]
+\[
+=\Big|\text{V\v eta o separabilit\v e}\Big|=\int_\R f(s)~\ds \int_\R yg(y)~\dy + \int_\R sf(s)~\ds \int_\R g(y)~\dy = \mu_1 + \mu_2
+\]
+\end{itemize}
+
+
+\subsection{V\v eta -- \emph{o posunut\' i v konvoluci}}\index{v\v eta o posunut\' i v konvoluci}\label{posunuti_v_konvoluci}
+
+$f(\x), g(\x)\in \LLL_1(\Er), \mumu \in \Er$. Pak plat\' i: $(f\star g)(\x - \mumu)= f(\x)\star g(\x- \mumu) =f(\x - \mumu)\star g(\x)$\\
+
+\subsection{Pozn\'amka}
+Zde pou\v z\' iva\' ame afinn\' i transformaci, tud\' i\v z za ka\v zd\' e $\x$ dosad\' ime $\x - \mumu$. Souvislost s p\v redchoz\' i v\v etou je takov\'a, \v ze lze posunout st\v redn\' i hodnotu v p\v r\' ipad\v e, \v ze za $f,g$ zvol\' ime hustoty.
+
+
+\subsection{V\v eta -- \emph{o derivaci konvoluce}}\index{v\v eta o derivaci konvoluce}\label{derivace_konvoluce}
+
+$f(\x)\in \LLL_1(\Er), g(\x)\in \LLL_1(\Er) \cap \CC_0^1$. Pak plat\' i $\dfrac{\partial}{\partial x_k}(f\star g)= f(\x)\star \dfrac{g}{x_k}(\x)$.\\
+
+\Proof
+\begin{itemize}
+\item $\dfrac{\partial}{\partial x_k}(f\star g)= \dfrac{\partial}{\partial x_k}\int_\Er f(\s)g(\x - \s)~\dss$
+ 
+\item pou\v zijeme v\v etu o derivaci integr\' alu s parametrem
+
+\item $\dfrac{\mathtt{d}}{\mathtt{d}\alpha}\int_\Er f(\x |\alpha)~\dxx \rightarrow \dfrac{\mathtt{d}}{\mathtt{d}\alpha_k}\int_\Er f(\x |\alpha_1,\alpha_2,\dots,\alpha_n)~\dxx$
+
+\item ov\v e\v rme p\v redpoklady v\v ety:
+		\begin{itemize}
+		\item v\'yraz v integr\'alu mus\' i konvergovat, co\v z je spln\v eno
+		\item m\v e\v ritelnost je spln\v ena, jeliko\v z v\'yraz je z $\LLL_1$
+		\item diferencovatelnost, v\'yraz nahrad\'ime integrabiln\'i majorantou: $\Bigg|f(\s)\dfrac{\partial g}{\partial x_k}(\x -\s)\Bigg| \leq K\Big|f(\s)\Big| \in \LLL(\E)$,\\ a vyu\v zijeme vlastnost, \v ze funkce na kompaktu nab\'yv\'a maxima
+		\end{itemize}
+
+\item $\int_\Er f(\s)\dfrac{\partial g}{\partial x_k}(\x - \s)~\dss= \Biggl(f\star \dfrac{\partial g}{\partial x_k}\Biggr)(\x)$
+\end{itemize}
+
+\subsection{Pozn\'amka}
+Pov\v simn\v eme si, \v ze se v\v eta jev\' i na prvn\' i pohled nevyv\'a\v zen\'a, je to z d\o uvodu po\v zadavku na diferencovatelnost pouze pro $g$. Z\'arove\v n si pov\v simn\v eme absence dodatku "pokud lev\'a (prav\'a) strana existuje". U konvoluce pozorujeme tzv. vyhlazovac\'i efekt, kdy pokud je $g(x)$ hladk\'a, pak existuje konvoluce i jej\'i derivace bez ohledu na to, jak nespojit\'a je funkce $f(x)$.
+
+\subsection{P\v r\'iklad}
+Spo\v c\'itejme konvoluci dvou Gaussov\'zch funkc\'i. Polo\v zme $f(x)= \dfrac{1}{\sqrt{2\pi}\sigma_1}e^{-\dfrac{(x-\mu_1)^2}{2\sigma_1^2}}$ a $g(x)= \dfrac{1}{\sqrt{2\pi}\sigma_2}e^{-\dfrac{(x-\mu_2)^2}{2\sigma_2^2}}$.
+Pak \textcolor{red}{ dopo\v c\'it\'am pozd\v eji.}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

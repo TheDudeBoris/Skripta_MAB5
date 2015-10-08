@@ -1,0 +1,384 @@
+\chapter{Posloupnosti a \v rady funkc\'i v\'ice prom\v enn\'ych}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Co zpracovat:}
+
+
+\begin{enumerate}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\item Heavisideova funkce
+%\item Prostor s úplnou mírou $\{\E^r,\lambda(X),\Mla\}$
+%\item $G$ bude vždy znaèit oblast a $J$ bude znamenat kompakt
+%\item funkce: $f(\x):\R\mapsto\C$
+%\item Pøipomenout $\CC=\CC^0(M),$ $\CC^n(M),$ $\CC_0(M)$ a $\CC^n_0(M)$
+%\item $\LLL(G),$ $\LLL^\star(G),$ $\LOC(G)$
+%\item pøipomenout, že: $$f(x)\in\LLL(E,\mu) \quad \Leftrightarrow \quad|f(x)|\in\LLL(E,\mu)~\wedge f(x)\in \LA_\mu(E).$$
+%\item Vìta o ekvivalentní definici tøídy $\LOC(G)$
+%\item snaha o prehilbertovský prostor $\CC(\langle a,b\rangle)$
+%\item snaha o prehilbertovský prostor $\LLL(G)$ a protipøíklad $\frac{1}{\sqrt{x}}\in\LLL(0,1),$ ale $\frac{1}{\sqrt{x}}\cdot\frac{1}{\sqrt{x}}=\frac{1}{x}\in\LLL(0,1)$
+\item je ale $\CC(\langle a,b\rangle)$ úplný? (není) - \textcolor{red}{zmínit, okomentovat a vložit asi jako poznámku za poznámku 2.2.12, možná na vhodném místì zmínit definici úplnosti (možná už to nìkde je, teï si nejsem jistej)}
+%\item $\LLL_p(G)$
+%\item snaha o prehilbertovský prostor $\LLL_1(G)$ a protipøíklad $\frac{1}{\sqrt{x}}\in\LLL_1(0,1),$ ale $\frac{1}{\sqrt{x}}\cdot\frac{1}{\sqrt{x}}=\frac{1}{x}\in\LLL_1(0,1)$
+%\item Vìta $f,g\in\LLL_2(G) \quad \Rightarrow \quad fg^\star\in\LLL_1(G)$
+%\item ale ani $\LLL_2(G)$ není prehilbertovský
+%\item Co jsou faktorové funkce
+%\item znaèení $\LL_2(G)$  a $\LL_2^{(w)}(G):$ váha musí být spojitá a kladná na $G$
+\end{enumerate}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Definice}\label{posloupnost}
+Nech\v t $\emptyset \neq M\subset\E^r.$ Potom ka\v zd\'e zobrazen\'i
+mno\v ziny $\N$ do mno\v ziny v\v sech funkc\'i definovan\'ych na
+$M$ naz\'yv\'ame \emph{posloupnost\'i funkc\'i}\index{posloupnost
+funkcí} na $M$. Je-li \v c\'islu $n\in\N$ t\'imto zp\r usobem
+p\v ri\v razena funkce $f_{n}(\x)$, zapisujeme funk\v cn\'i
+posloupnost
+%
+\begin{equation}
+\label{1.1}
+f_{1}(\x),f_{2}(\x), \ldots \hspace{0.5cm} \mathrm{nebo}
+\hspace{0.5cm} \(f_n(\x)\)_{n=1}^\infty. 
+\label{1.1}
+\end{equation} 
+%
+P\v rirozen\'e \v c\'islo $n$ p\v ritom naz\'yv\'ame
+\emph{indexem}\index{index posloupnosti funkc\'i} a funkci
+$f_n(\x)$ $n-$t\'ym \v clenem posloupnosti (\ref{1.1}).
+
+\subsection{Definice}\label{defka_posloupnostxml}
+Nech\v t je d\'ana posloupnost funkc\'i (\ref{1.1}) definovan\'a
+na nepr\'azdn\'e mno\v zin\v e $M\subset\E^r.$ \v Rekneme, \v ze
+posloupnost funkc\'i (\ref{1.1}) \emph{konverguje v bod\v e} $\c\in
+M$, jestli\v ze konverguje \v c\'iseln\'a posloupnost
+$\(f_n(\c)\)^{\infty}_{n=1},$ tj. existuje-li $\gamma\in\R$
+takov\'e, \v ze pro ka\v zd\'e $\ep>0$ existuje p\v rirozen\'e
+$n_0$ tak, \v ze pro v\v sechna $n\geq n_0$ plat\'i nerovnost
+$\bigl|f_n(\c)-\gamma\bigr|<\ep.$ \v Rekneme, \v ze posloupnost funkc\'i (\ref{1.1})
+\emph{konverguje (bodov\v e) na mno\v zin\v e}\index{bodov\'a
+konvergence posloupnosti funkc\'i} $N\subset M$, jestli\v ze
+konverguje v ka\v zd\'em bod\v e mno\v ziny $N.$
+
+
+\subsection{Definice}
+
+Nech\v t je d\'ana posloupnost funkc\'i (\ref{1.1}) definovan\'a
+na nepr\'azdn\'e mno\v zin\v e $M\subset\E^r.$ Nech\v t pro ka\v
+zd\'e $\c\in N,$ kde $N\subset M,$ posloupnost
+$\(f_n(\c)\)^{\infty}_{n=1}$ konverguje. Ozna\v cme $f(\c)$ hodnotu
+limity posloupnosti $\(f_n(\c)\)^{\infty}_{n=1}.$ T\'imto zp\r
+usobem je na mno\v zin\v e $N$ definov\'ana funkce $\x \mapsto
+f(\x)$, kterou naz\'yv\'ame \emph{limitou posloupnosti
+funkc\'i}\index{limita posloupnosti funkc\'i} (\ref{1.1}) (nebo zkr\'acen\v e \emph{limitn\'i funkc\'i}\index{limitn\'i funkce}) a zna\v
+c\'ime $$f(\x)=\limn f_n(\x).$$ \emph{Oborem konvergence} $\OK$
+\index{obor konvergence posloupnosti funkc\'i} posloupnosti
+(\ref{1.1}) naz\'yv\'ame mno\v zinu v\v sech bod\r u $\c\in M$, ve
+kter\'ych tato posloupnost konverguje.
+
+\subsection{Definice}\label{1.8}
+Nech\v t (\ref{1.1}) je posloupnost funkc\'i definovan\'ych na
+mno\v zin\v e $M\subset\E^r$. \v Rekneme, \v ze tato posloupnost
+\emph{stejno\-m\v er\-n\v e konverguje na $M$}\index{stejnom\v
+ern\'a konvergence posloupnosti funkc\'i} k funkci $f(\x)$,
+jestli\v ze pro v\v sechna $\ep >0$ existuje $n_0$ tak, \v ze pro
+v\v sechna $n \geq n_0$ a pro v\v sechna $\x\in M$ plat\'i
+nerovnost $\bigl| f_n(\x)-f(\x) \bigr| < \ep.$
+
+
+\subsection{Pozn\'amka}
+Bodovou konvergenci zna\v c\'ime oby\v cejn\v e symbolem $f_n(\x) \rightarrow
+f(\x),$ stejnom\v ernou pak  ${f_n}(\x)\rightrightarrows f(\x)$.
+Rozd\'il mezi bodovou a stejnom\v ernou konvergenc\'i je dob\v re
+patrn\'y z kvantifik\'atorov\'eho z\'apisu definic obou pojm\r u:
+%
+\begin{itemize}
+\item bodov\'a konvergence
+\BE(\forall\ep > 0)~(\forall \x\in M)~(\exists n_0\in\N):
+~\hspace{1cm}  n\in\N~\wedge~ n \geq n_0 \Rightarrow  \bigl|
+f_n(\x)-f(\x) \bigr| < \ep. \EE
+
+\item stejnom\v ern\'a konvergence
+\BE(\forall\ep > 0)~(\exists n_0\in\N): ~\hspace{1cm}
+n\in\N~\wedge~ n \geq n_0~\wedge~\x\in M \Rightarrow \bigl|
+f_n(\x)-f(\x) \bigr| < \ep. \label{1.2} \EE
+
+\end{itemize}
+%
+Stejnom\v ern\'a konvergence tedy po\v zaduje existenci
+"univerz\'aln\'iho" $n_0,$ kter\'e pln\'i svoji roli pro v\v
+sechna $\x\in M.$
+
+\subsection{V\v eta -- \emph{Bolzanova-Cauchyova podm\'inka}} \label{Cauchyovo kritérium
+pro stejnomìrnou konvergenci posloupnosti funkcí}
+
+Posloupnost funkcí (\ref{1.1}) je stejnom\v ern\v e
+konvergentn\'i na $M\subset\Er$ pr\'av\v e tehdy, kdy\v z spl\v nuje tzv.
+\emph{Bolzanovu-Cauchyovu podm\'inku}\index{Bolzanova-Cauchyova
+podm\'inka pro stejnom\v ernou konvergenci posloupnosti funkc\'i}
+tvaru \label{1.13}
+%
+\BE (\forall\ep > 0)~ (\exists n_0\in\N): \hspace{1cm} ~ m,n \geq
+n_0~\wedge~ \x\in M \Rightarrow \bigl| f_n(\x)-f_m(\x) \bigr| < \ep.
+\label{svetlo} \EE
+
+\Proof
+
+\begin{itemize}
+\item Prvn\'i implikace:
+
+\begin{itemize}
+\item nech\v t $\(f_n(\x)\)^{\infty}_{n=1}$ stejnom\v ern\v e
+konverguje na $M$ k jist\'e funkci $f(x)$
+
+\item pak pro ka\v zd\'e $\ep > 0$ existuje $n_0\in\N$ takov\'e, \v ze pro libovoln\'a $m,n\in\N$ takov\'a, \v ze $m,n \geq
+n_0,$ a pro v\v sechna $\x\in M$  plat\'i $$\bigl| f_n(\x)-f(\x)
+\bigr|< \frac{\ep}{2}\hspace{0.3cm} \wedge \hspace{0.3cm} \left|
+f_m(\x)-f(\x) \right|  < \frac{\ep}{2}$$
+
+\item a tedy $$\bigl|f_n(\x)-f_m(\x)\bigr| \leq \bigl|f_n(\x)-f(\x)\bigr| + \bigl|f_m(\x)-f(\x)\bigr| < \ep$$
+
+\end{itemize}
+
+\item Druh\'a implikace:
+
+
+\begin{itemize}
+\item nech\v t posloupnost funkc\'i spl\v nuje vztah (\ref{svetlo})
+
+\item podle Bolzanovy-Cauchyovy podm\'inky pro \v c\'iseln\'e posloupnosti pos\-loup\-nost (\ref{1.1}) konverguje bodov\v e k jist\'e funkci na mno\v zin\v e $M$
+(ozna\v cme ji $f(\x)$)
+
+\item chceme dok\'azat $f_n(\x) \rightrightarrows f(\x)$ na $M$
+
+\item zvolme $\ep>0$ a k \v c\'islu $\frac{\ep}{2}$ vyberme
+podle (\ref{svetlo}) $n_0$ tak, aby pro v\v sechna $m,n \geq n_0$
+platilo $$\bigl|f_{n}(\x)-f_m(\x)\bigr| < \frac{\ep}{2}$$
+
+\item pro libovoln\'e pevn\v e zvolen\'e  $n \geq  n_0$
+a pro $m$ rostouc\'i nade v\v sechny meze pak odsud dostaneme
+nerovnost $\bigl|f_{n}(\x)-f(\x)\bigr| \leq \ep/2 < \ep$ platnou pro ka\v zd\'e $\x\in M$
+
+\end{itemize}
+
+\item t\'im je d\r ukaz zkompletov\'an
+
+\end{itemize}
+
+
+\subsection{V\v eta \emph{-- suprem\'aln\'i krit\'erium}}\index{suprem\'aln\'i krit\'erium}   \label{Seiby}
+Nech\v t $f(\x)$ a $f_n(\x)$ pro v\v sechna $n$ jsou funkce
+definovan\'e na mno\v zin\v e $M\subset\Er.$ Ozna\v cme
+%
+$$\sigma_n:=\sup_{\x\in M} \bigl|f_n(\x)-f(\x)\bigr|$$
+%
+pro ka\v zd\'e $n.$ Pak posloupnost funkc\'i
+$\(f_n(\x)\)^{\infty}_{n=1}$ konverguje na mno\v zin\v e $M$
+stejnom\v ern\v e k funkci $f(\x)$ pr\'av\v e tehdy, kdy\v z $\lim_{n \rightarrow \infty} \sigma_n =0.$\\
+
+\Proof
+
+\begin{itemize}
+\item pro v\v sechna $\x\in M$ a v\v sechna $n\in\N$  z\v rejm\v e plat\'i nerovnost $\bigl|f_n(\x)-f(\x)\bigr|
+\leq \sigma_n$
+\item Prvn\'i implikace:
+\begin{itemize}
+\item p\v redpokl\'adejme, \v ze $\lim_{n \rightarrow \infty} \sigma_n =0$
+\item z definice limity \v c\'iseln\'e posloupnosti $\(\sigma_n\)_{n=1}^\infty$ plyne, \v ze pro libovoln\'e $\ep>0$ existuje $n_0$ takov\'e, \v ze $|\sigma_n|=\sigma_n <\ep$ pro v\v sechna $n\geq n_0$
+\item to zna\v c\'i (jak vypl\'yv\'a z definice suprema), \v ze pro v\v sechna $n \geq n_0$ a v\v sechna $\x\in
+M$ plat\'i tak\'e $\bigl|f_n(\x)-f(\x)\bigr| < \ep,$ a tedy $ f_n(\x) \rightrightarrows f(\x)$ na $M$
+\end{itemize}
+\item Druh\'a implikace:
+\begin{itemize}
+\item p\v redpokl\'adejme, \v ze $f_n(\x) \rightrightarrows f(\x)$ na $M$
+\item zvolme libovoln\'e $\ep>0,$ k n\v emu\v z jist\v e existuje $n_0$ takov\'e, \v ze pro v\v sechna $n\geq
+n_0$ a v\v sechna $\x \in M$ plat\'i nerovnost $\bigl|f_n(\x)-f(\x)\bigr| < \ep/2$
+\item odtud a z vlastnost\'i suprema plyne, \v ze pro $n\geq
+n_0$ plat\'i $\sigma_n \leq \ep/2 < \ep,$ a tedy $\limn \sigma_n =0$
+\end{itemize}
+\end{itemize}
+
+
+\subsection{Definice}
+Nech\v t je d\'ana posloupnost funkc\'i (\ref{1.1}) definovan\'a
+na nepr\'azdn\'e mno\v zin\v e $M\subset\E^r$. Potom nekone\v cn\'y
+sou\v cet $$f_1(\x)+f_2(\x)+\ldots+f_n(\x)+\ldots$$
+%
+naz\'yv\'ame \emph{\v radou funkc\'i}\index{\v rada funkc\'i} na
+$M$ a zna\v c\'ime symbolem \BE \sum^{\infty}_{n=1}f_n(\x).
+\label{Tyky} \EE
+
+
+\subsection{Definice}
+Nech\v t je d\'ana funk\v cn\'i \v rada (\ref{Tyky}) definovan\'a
+na mno\v zin\v e $M.$ Funkci $s_n(\x)=\sum^{n}_{k=1}f_k(\x)$ pro
+$n\in\N$ a $\x\in M$ budeme naz\'yvat \emph{$n-$t\'ym \v c\'aste\v
+cn\'ym sou\v ctem}\index{\v c\'aste\v cn\'y sou\v cet \v rady
+funkc\'i} \v rady (\ref{Tyky}) a posloupnost
+$\bigl(s_n(\x)\bigr)_{n=1}^\infty$ pak \emph{posloupnost\'i \v
+c\'aste\v cn\'ych sou\v ct\r u}\index{posloupnost \v c\'aste\v
+cn\'ych sou\v ct\r u} dan\'e \v rady.
+
+\subsection{Definice}
+
+Nech\v t je d\'ana funk\v cn\'i \v rada (\ref{Tyky}) definovan\'a
+na mno\v zin\v e $M.$ Nech\v t $\bigl(s_n(\x)\bigr)_{n=1}^\infty$
+je p\v r\'islu\v sn\'a posloupnost \v c\'aste\v cn\'ych sou\v ct\r
+u. \v Rekneme, \v ze \v rada (\ref{Tyky}) \emph{konverguje
+v~~bod\v e} $\c\in M$, jestli\v ze konverguje \v c\'iseln\'a
+posloupnost $\(s_n(\c)\)^{\infty}_{n=1}.$ \v Rekneme, \v ze \v rada
+(\ref{Tyky}) \emph{konverguje (bodov\v e)}\index{bodov\'a
+konvergence \v rady funkc\'i} na mno\v zin\v e $N\subset M$,
+jestli\v ze konverguje v ka\v zd\'em bod\v e mno\v ziny $N.$
+Vlastn\'i limitu $$s(\x):=\limn s_n(\x)$$ posloupnosti \v c\'aste\v
+cn\'ych sou\v ct\r u pak naz\'yv\'ame \emph{sou\v ctem \v
+rady}\index{sou\v cet \v rady funkc\'i} (\ref{Tyky}) a zapisujeme
+%
+\BE s(\x)=\sum^{\infty}_{n=1}f_n(\x). \label{2.1} \EE
+%
+Defini\v cn\'i obor $\Dom(s),$ tj. mno\v zinu v\v sech $\c\in M,$
+pro n\v e\v z posloupnost $\(s_n(\c)\)^{\infty}_{n=1}$ konverguje,
+budeme d\'ale naz\'yvat \emph{oborem konvergence \v
+rady}\index{obor konvergence \v rady funkc\'i} (\ref{Tyky}) a zna\v
+cit symbolem $\OK$.
+
+
+\subsection{Definice}
+\v Rekneme, \v ze \v rada funkc\'i $\sum_{n=1}^\infty f_n(\x)$ konverguje na mno\v zin\v e
+$M\subset\E^r$ \emph{stejnom\v ern\v e}\index{stejnom\v ern\'a
+konvergence \v rady funkc\'i} ke sv\'emu sou\v ctu $s(\x)$ a ozna\v
+c\'ime $\sum^{\infty}_{n=1}f_n(\x) \stackrel{M}{\equiv} s(\x),$ jestli\v ze
+posloupnost jej\'ich \v c\'aste\v cn\'ych sou\v ct\r u konverguje
+na $M$ stejnom\v ern\v e k funkci $s(\x).$
+
+\subsection{V\v eta \emph{-- Bolzanova-Cauchyova podm\'inka}}\label{2.7}
+\index{Bolzanova-Cauchyova podm\'inka pro stejnom\v ernou
+konvergenci \v rady funkc\'i}
+
+\v Rada funkc\'i (\ref{Tyky}) konverguje na mno\v zin\v e
+$M\subset\Er$ stejnom\v ern\v e pr\'av\v e tehdy, kdy\v z pro ka\v
+zd\'e $\ep>0$ existuje index $n_0\in\N$ takov\'y, \v ze pro
+jak\'ekoli dva indexy $m,n\in\N$ takov\'e, \v ze $m \geq n \geq
+n_0$ a pro jak\'ekoliv $\x\in M$ je spln\v ena nerovnost
+$$\bigl| f_n(\x)+f_{n+1}(\x)+\ldots+f_m(\x) \bigr| < \ep.$$
+
+\Proof
+
+\begin{itemize}
+
+\item tvrzen\'i t\'eto v\v ety bezprost\v redn\v e plyne z v\v ety \ref{1.13}
+\item ozna\v c\'ime-li toti\v z $\bigl(s_n(\x)\bigr)_{n=1}^\infty$
+p\v r\'islu\v snou posloupnost \v c\'aste\v cn\'ych sou\v ct\r u,
+z\'isk\'av\'ame rovnosti $$s_{n-1}(\x)=\sum_{k=1}^{n-1} f_k(\x),
+\hspace{1cm} s_m(\x)=\sum_{k=1}^m f_k(\x)$$
+\item podle v\v ety \ref{1.13} (v nepatrn\'e obm\v en\v e) konverguje posloupnost
+$\bigl(s_n(\x)\bigr)_{n=1}^\infty$ na $M$ stejnom\v ern\v e
+pr\'av\v e tehdy, kdy\v z pro ka\v zd\'e $\ep>0$ existuje index
+$n_0\in\N$ takov\'y, \v ze pro jak\'ekoli dva indexy $m,n\in\N$
+takov\'e, \v ze $m \geq n \geq n_0$ a pro jak\'ekoliv $\x\in M$ je
+spln\v ena nerovnost $\bigl| s_m(\x)-s_{n-1}(\x) \bigr| < \ep$
+
+\item z t\'eto nerovnosti ov\v sem vypl\'yv\'a, \v ze $$\left| \sum_{k=1}^m f_k(\x)-\sum_{k=1}^{n-1} f_k(\x) \right| = \bigl| f_n(\x)+f_{n+1}(\x)+\ldots+f_m(\x) \bigr| < \ep$$
+
+\end{itemize}
+
+\subsection{Definice}
+\v Rekneme, \v ze \v rada funkc\'i $\sum^{\infty}_{n=1}f_n(\x)$
+konverguje na mno\v zin\v e $M\subset\Er$ \emph{regul\'arn\v
+e}\index{regul\'arn\'i konvergence \v rady funkc\'i}, jestli\v ze
+\v rada $\sum^{\infty}_{n=1} \bigl|f_n(\x)\bigr|$ konverguje na $M$
+stejnom\v ern\v e.
+
+\subsection{V\v eta \emph{-- nutn\'a podm\'inka stejnom\v ern\'e
+konvergence}}\index{nutn\'a podm\'inka stejnom\v ern\'e
+konvergence}
+
+Jestli\v ze \v rada funkc\'i $\sum^{\infty}_{n=1}f_n(\x)$
+konverguje na mno\v zin\v e $M\subset\Er$ stejnom\v ern\v e, potom
+posloupnost funkc\'i $\bigl(f_n(\x)\bigr)_{n=1}^\infty$ konverguje
+na t\'eto mno\v zin\v e stej\-no\-m\v er\-n\v e k nulov\'e
+funkci.\\
+
+\Proof
+
+\begin{itemize}
+
+\item z p\v redpoklad\r u v\v ety plyne, \v ze $$(\forall\ep > 0)(\exists n_0\in \N)(\forall m,n\in\N)\bigl(m \geq n
+\geq n_0\bigr)(\forall \x\in M ):~\hspace{0.3cm}\bigl|
+f_n(\x)+f_{n+1}(\x)+\ldots+f_m(\x) \bigr| < \ep$$
+
+\item jeliko\v z toto tvrzen\'i plat\'i pro jak\'akoli $m,n\in\N$ takov\'a, \v ze $m \geq n
+\geq n_0,$ plat\'i tak\'e p\v ri speci\'aln\'i volb\v e $m=n$
+
+\item pak ale $$(\forall\ep > 0)(\exists n_0\in \N)(\forall n\in\N)\bigl(n
+\geq n_0\bigr)(\forall \x\in M ):~\hspace{0.3cm}\bigl| f_n(\x)
+\bigr|=\bigl| f_n(\x)-o(\x) \bigr| < \ep$$
+
+\item tento v\'yrok je ale ekvivalentn\'i tvrzen\'i, \v ze
+posloupnost funkc\'i $\bigl(f_n(\x)\bigr)_{n=1}^\infty$ konverguje
+na mno\v zin\v e $M$ stej\-no\-m\v er\-n\v e k nulov\'e funkci
+
+\end{itemize}
+
+\subsection{Definice}
+Nech\v t jsou d\'any funk\v cn\'i \v rady $\sum_{n=1}^\infty
+f_n(\x)$ a $\sum_{n=1}^\infty g_n(\x)$ definovan\'e na mno\v zin\v e
+$M.$ Nech\v t existuje $n_0\in\N$ tak, \v ze pro v\v sechna $n\geq
+n_0$ a v\v sechna $\x\in M$ plat\'i $\bigl|f_n(\x)\bigr| \leq
+g_n(\x).$ Pak \v radu $\sum_{n=1}^\infty g_n(\x)$ naz\'yv\'ame \v
+radou  \emph{majorantn\'i}\index{majorantn\'i \v rada funkc\'i} k
+\v rad\v e $\sum_{n=1}^\infty f_n(\x).$
+
+\subsection{V\v eta \emph{-- srovn\'avac\'i krit\'erium}}\index{srovn\'avac\'i krit\'erium pro stejnom\v ernou konvergenci}
+
+Nech\v t \v rada $\sum^{\infty}_{n=1}g_n(\x)$ je na mno\v zin\v e
+$M\subset\Er$ majorantn\'i k~\v rad\v e $\sum^{\infty}_{n=1}f_n(\x)$ a nech\v
+t \v rada $\sum^{\infty}_{n=1}g_n(\x)$ je stejno\-m\v er\-n\v e
+konvergentn\'i na $M$. Pak jsou \v rady $\sum^{\infty}_{n=1}f_n(\x)$ a
+$\sum^{\infty}_{n=1}\left|f_n(\x)\right|$ stejnom\v ern\v e
+konvergentn\'i na $M,$ tj. \v rada $\sum^{\infty}_{n=1}f_n(\x)$
+konverguje na $M$ regul\'arn\v e.\\
+
+\Proof
+
+\begin{itemize}
+
+\item u\v zijeme Bolzanovu-Cauchyovu podm\'inku \ref{2.7}
+
+\item z p\v redpokladu v\'ime, \v ze \v rada $\sum_{n=1}^\infty g_n(\x)$ stejnom\v ern\v e konverguje na $M,$ tedy pro jak\'ekoli $\ep>0$ existuje $n_0$ takov\'e, \v ze pro v\v sechna p\v rirozen\'a $m \geq n \geq n_0$ a pro v\v sechna $\x \in M$ plat\'i
+%
+$$0 \leq g_n(\x)+g_{n+1}(\x)+\ldots+g_m(\x)<\ep$$
+
+\item d\'ale v\'ime, \v ze existuje $m_0$ tak, \v ze pro v\v sechna $x\in M$ a v\v sechny indexy $n \geq m_0$ plat\'i $|f_n(\x)| \leq g_n(\x)$
+
+\item pro zvolen\'e $\ep$ a v\v sechna $n\geq \max \{n_0,m_0\}$ pak plat\'i $$
+|f_n(\x)+f_{n+1}(\x)+\ldots+f_m(\x)|\leq|f_n(\x)|+|f_{n+1}(\x)|+\ldots+|f_m(\x)|\leq g_n(\x)+g_{n+1}(\x)+\ldots+g_m(\x)<\ep$$
+
+\item to dokazuje ob\v e tvrzen\'i v\v ety
+
+\end{itemize}
+
+\subsection{D\r usledek}
+Konverguje-li \v rada na mno\v zin\v e $M$ regul\'arn\v e,
+konverguje na $M$ tak\'e stejnom\v ern\v e.
+
+
+\subsection{V\v eta -- \emph{Weierstrassovo krit\'erium}} \label{W-krit}
+\index{Weierstrassovo krit\'erium} Nech\v t
+$\sum^{\infty}_{n=1}a_n$ je konvergentn\'i \v c\'iseln\'a \v rada,
+$f_n(\x)$ jsou funkce a pro v\v sechna $\x\in M\subset\Er$ a v\v sechna $n\in
+\N\setminus \widehat{n_0}$ je $\left|f_n(\x)\right|\leq a_n.$ Pak \v rady
+$\sum^{\infty}_{n=1}f_n(\x)$ a
+$\sum^{\infty}_{n=1}\left|f_n(\x)\right|$ stejnom\v ern\v e
+konverguj\'i na $M,$ tj. \v rada $\sum^{\infty}_{n=1}f_n(\x)$
+konverguje na $M$ regul\'arn\v e.\\
+
+\Proof
+
+\begin{itemize}
+
+\item v p\v redchoz\'i v\v et\v e polo\v z\'ime $g_n(\x):=a_n$ pro
+v\v sechna $\x\in M$ a uv\v edom\'ime si, \v ze pojmy bodov\'e a
+stejnom\v ern\'e konvergence u \v rady konstantn\'ich funkc\'i
+spl\'yvaj\'i
+
+\end{itemize}
+

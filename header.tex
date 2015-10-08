@@ -1,0 +1,359 @@
+\documentclass[10pt,a4paper,twoside]{book}
+%\documentclass[11pt]{book}
+\usepackage[T1]{fontenc}
+\usepackage[final]{epsfig}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{pifont} % pro cisla v kolecku
+\usepackage{stmaryrd}
+\usepackage{dsfont}
+\usepackage{graphics}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage[czech]{babel}
+\usepackage{mathrsfs}
+\usepackage{a4}
+\usepackage{ntimes}
+\usepackage[cp1250]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{comment}
+
+%\leftskip -1.5 cm \rightskip -2 cm
+%\leftskip -0.5 cm
+
+\hoffset -2 cm
+
+\textheight 25 cm \topmargin -1.5 cm \textwidth 17.5 cm
+
+\pagestyle{fancy} \fancyhead{} \fancyhead[LE]{\leftmark}
+
+\fancyhead[RO]{\rightmark}
+
+%\head 1cm
+%\fancyfoot[C]{\thepage}
+%\addtolength{\headheight}{\baselineskip}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\frenchspacing
+
+\evensidemargin 1.3cm
+
+\makeatletter \makeindex
+
+\renewcommand{~}{\,}
+\renewcommand{\(}{\bigl(}
+\renewcommand{\)}{\bigr)}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\bla}{\bigl\langle}
+\newcommand{\bra}{\bigr\rangle}
+\newcommand{\Bla}{\Bigl\langle}
+\newcommand{\Bra}{\Bigr\rangle}
+\newcommand{\lla}{\left\langle}
+\newcommand{\rra}{\right\rangle}
+
+\renewcommand{\d}{\mathtt{d}}
+\newcommand{\norm}{\vec{\mathit{n}}}
+\newcommand{\e}{\mathtt{e}}
+\renewcommand{\exp}{\mathtt{exp}}
+\renewcommand{\i}{{\mathtt i}}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\lam}{\lambda}
+\newcommand{\radius}{\mathtt{R}}
+\newcommand{\aadius}{\mathtt{A}}
+\newcommand{\determinant}{\donst}
+
+\newcommand{\Dirichlet}{\mathfrak{D}}
+\newcommand{\Erf}{\mathrm{Erf}}
+\newcommand{\Ser}{\S(\Er)}
+\newcommand{\SSer}{\S'(\Er)}
+
+\newcommand{\test}{\varphi(\x)}
+\newcommand{\testdva}{\psi(\x)}
+\newcommand{\testk}{\varphi_k(\x)}
+\newcommand{\TEST}{\varphi(x)}
+\newcommand{\TESTdva}{\psi(x)}
+\newcommand{\TESTk}{\varphi_k(x)}
+
+\newcommand{\Zak}{{\mathcal Z}}
+
+\newcommand{\x}{{\vec{x}}}
+\newcommand{\s}{{\vec{s}}}
+\newcommand{\y}{{\vec{y}}}
+\newcommand{\z}{{\vec{z}}}
+\newcommand{\f}{{\vec{f}}}
+\newcommand{\F}{{\overrightarrow{f}}}
+\renewcommand{\o}{{\vec{0}}}
+\renewcommand{\a}{{\vec{a}}}
+\newcommand{\aaa}{{\vec{a}}}
+\newcommand{\bbb}{{\vec{b}}}
+\renewcommand{\b}{{\vec{b}}}
+\renewcommand{\c}{\vec{c}}
+\newcommand{\ccc}{{\vec{c}}}
+\newcommand{\hhh}{{\vec{h}}}
+\newcommand{\h}{{\vec{h}}}
+\newcommand{\ppp}{{\vec{p}}}
+\newcommand{\rrr}{{\vec{r}}}
+\newcommand{\sss}{{\vec{s}}}
+\newcommand{\ttt}{{\vec{t}}}
+\renewcommand{\t}{{\vec{t}}}
+\newcommand{\uuu}{{\vec{u}}}
+\newcommand{\vvv}{{\vec{v}}}
+\newcommand{\www}{{\vec{w}}}
+\newcommand{\alal}{\vec{\alpha}}
+\newcommand{\bebe}{\vec{\beta}}
+\newcommand{\xixi}{{\vec{\xi}}}
+\newcommand{\etet}{{\vec{\eta}}}
+\newcommand{\mumu}{{\vec{\mu}}}
+\newcommand{\nunu}{{\vec{\nu}}}
+\newcommand{\gaga}{{\vec{\gamma}}}
+
+\newcommand{\aosnt}{\mathtt{A}}
+\newcommand{\aonst}{\mathtt{A}}
+\newcommand{\bonst}{\mathtt{B}}
+\newcommand{\bosnt}{\mathtt{B}}
+\newcommand{\const}{\mathtt{C}}
+\newcommand{\cosnt}{\mathtt{C}}
+\newcommand{\eosnt}{\mathtt{E}}
+\newcommand{\eonst}{\mathtt{E}}
+\newcommand{\konst}{\mathtt{K}}
+\newcommand{\kosnt}{\mathtt{K}}
+\newcommand{\lonst}{\mathtt{L}}
+\newcommand{\losnt}{\mathtt{L}}
+\newcommand{\donst}{\mathtt{D}}
+\newcommand{\dosnt}{\mathtt{D}}
+\newcommand{\honst}{\mathtt{H}}
+\newcommand{\hosnt}{\mathtt{H}}
+\newcommand{\monst}{\mathtt{M}}
+\newcommand{\mosnt}{\mathtt{M}}
+
+\newcommand{\M}{\mathtt{M}}
+\newcommand{\VV}{\mathtt{V}}
+
+\newcommand{\dx}{\mathtt{d}x}
+\newcommand{\dxi}{\mathtt{d}\xi}
+\newcommand{\dtau}{\mathtt{d}\tau}
+\newcommand{\dxixi}{\mathtt{d}\vec{\xi}}
+\newcommand{\dr}{\mathtt{d}r}
+\newcommand{\dxy}{\mathtt{d}x\mathtt{d}y}
+\newcommand{\dt}{\mathtt{d}t}
+\newcommand{\du}{\mathtt{d}u}
+\newcommand{\ds}{\mathtt{d}s}
+\newcommand{\dpp}{\mathtt{d}p}
+\newcommand{\dy}{\mathtt{d}y}
+\newcommand{\dz}{\mathtt{d}z}
+\newcommand{\dxx}{\mathtt{d}\x}
+\newcommand{\dtt}{\mathtt{d}\ttt}
+\newcommand{\dss}{\mathtt{d}\sss}
+\newcommand{\drr}{\mathtt{d}\rrr}
+\newcommand{\dyy}{\mathtt{d}\y}
+\newcommand{\dzz}{\mathtt{d}\z}
+\newcommand{\dmu}{\mathtt{d}\mu}
+\newcommand{\dlambda}{\mathtt{d}\lambda}
+\newcommand{\dro}{\mathtt{d}\rho}
+\newcommand{\dtheta}{\mathtt{d}\theta}
+\newcommand{\dphi}{\mathtt{d}\phi}
+\newcommand{\dpsi}{\mathtt{d}\psi}
+\renewcommand{\rho}{\varrho}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\kappa}{\varkappa}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\ecko}{\epsilon}
+\newcommand{\vececko}{\vec{\epsilon}}
+
+\newcommand{\skorovsude}{\mathrm{s.v.}}
+
+\newcommand{\OK}{{\mathcal O}}
+
+\renewcommand{\Re}{\mathrm{Re}}
+\renewcommand{\Im}{\mathrm{Im}}
+\newcommand{\bd}{\mathrm{bd}}
+\newcommand{\card}{\mathrm{card}}
+
+\newcommand{\idx}{\mathrm{ind}}
+
+\newcommand{\C}{{\mathbf C}}
+\newcommand{\N}{{\mathbf N}}
+\newcommand{\R}{{\mathbf R}}
+\newcommand{\Q}{{\mathbf Q}}
+\newcommand{\Z}{{\mathbf Z}}
+\newcommand{\E}{{\mathbf E}}
+\newcommand{\Er}{{{\mathbf E}^r}}
+\newcommand{\ER}{{{\mathbf E}^r}}
+\newcommand{\Es}{{{\mathbf E}^s}}
+\newcommand{\X}{{\mathcal X}}
+\newcommand{\Y}{{\mathcal Y}}
+\newcommand{\ZZZ}{{\mathcal{Z}}}
+\newcommand{\XX}{\vec{\mathcal X}}
+\newcommand{\YY}{\vec{\mathcal Y}}
+\newcommand{\ZZZZ}{\vec{\mathcal{Z}}}
+
+\newcommand{\Der}{\mathcal{D}}
+\newcommand{\Vp}{\mathrm{Vp}}
+\renewcommand{\P}{\mathcal{P}}
+
+\newcommand{\A}{{\mathscr A}}
+\newcommand{\CC}{\mathscr{C}}
+\newcommand{\Banach}{{\mathfrak B}}
+\renewcommand{\O}{{\mathscr O}}
+\newcommand{\V}{{\mathcal V}}
+\renewcommand{\H}{{\mathcal H}}
+\newcommand{\U}{{\mathcal U}}
+\newcommand{\Uniq}{{\mathfrak R}}
+\newcommand{\Normal}{{\mathfrak N}}
+\renewcommand{\S}{{\mathscr S}}
+\newcommand{\LAP}{{\mathscr P}}
+\newcommand{\matA}{{\mathbb A}}
+\newcommand{\matE}{{\mathbb E}}
+\newcommand{\matI}{{\mathbb I}}
+\newcommand{\matR}{{\mathbb R}}
+\newcommand{\matP}{{\mathbb P}}
+\newcommand{\matB}{{\mathbb B}}
+\newcommand{\matS}{{\mathbb S}}
+\newcommand{\matC}{{\mathbb C}}
+\newcommand{\matM}{{\mathbb M}}
+\newcommand{\matF}{{\mathbb F}}
+\newcommand{\SSS}{{\mathscr S}}
+\newcommand{\LLL}{{\mathscr L}}
+\newcommand{\LOC}{\mathscr{L}_{\mathrm{loc}}}
+\newcommand{\LLOC}{\mathds{L}_{\mathrm{loc}}}
+\newcommand{\LL}{\mathds{L}}
+\newcommand{\Lim}{\mathds{L}\mathrm{im}}
+\newcommand{\jadroK}{{\mathscr K}}
+\newcommand{\jadroH}{{\mathscr H}}
+\newcommand{\rez}{{\mathscr R}}
+%\newcommand{\M}{\mathscr{M}}
+\newcommand{\Mmu}{\mathscr{M}_\mu}
+\newcommand{\Mlambda}{\mathscr{M}_\lambda}
+
+\newcommand{\polB}{{B_P}}
+\newcommand{\sgn}{\mathrm{sgn}}
+\newcommand{\tg}{{\mathrm{tg}}}
+\newcommand{\cotg}{{\mathrm{cotg}}}
+\newcommand{\arctg}{{\mathrm{arctg}}}
+\newcommand{\Dom}{{\mathrm{Dom}}}
+\newcommand{\Ran}{{\mathrm{Ran}}}
+\newcommand{\supp}{{\mathrm{supp}}}
+
+\newcommand{\operL}{\widehat{L}}
+\newcommand{\operK}{\widehat{K}}
+\newcommand{\operM}{\widehat{M}}
+\newcommand{\operA}{\widehat{A}}
+\newcommand{\operS}{\widehat{S}}
+\newcommand{\operB}{\widehat{B}}
+\newcommand{\operLL}{\widehat{L^2}}
+\newcommand{\operH}{\widehat{H}}
+\newcommand{\operO}{\widehat{O}}
+\newcommand{\DomL}{\Dom(\operL)}
+
+\newcommand{\Green}{{\mathcal{G}}}
+
+\newcommand{\grad}{\mathrm{grad}}
+\newcommand{\rot}{\mathrm{rot}}
+\renewcommand{\div}{\mathrm{div}}
+\newcommand{\dist}{\mathrm{dist}}
+\newcommand{\diam}{\mathrm{diam}}
+\newcommand{\PP}{\vec{\wp}}
+\newcommand{\PPP}{\left\langle \vec{\wp} \right\rangle}
+\newcommand{\RR}{\vec{\mathscr{R}}}
+\newcommand{\trans}{\intercal}
+\newcommand{\der}{\mathrm{der}}
+\newcommand{\overphi}{\vec{\varphi}}
+\newcommand{\doverphi}{\dot{\vec{\varphi}}}
+\newcommand{\overpsi}{\vec{\psi}}
+\newcommand{\doverpsi}{\dot{\vec{\psi}}}
+
+\newcommand{\limn}{\lim_{n \rightarrow \infty}}
+\newcommand{\limk}{\lim_{k \rightarrow \infty}}
+\newcommand{\limi}{\lim_{i \rightarrow \infty}}
+\newcommand{\liml}{\lim_{\ell \rightarrow \infty}}
+\newcommand{\limh}{\lim_{h \rightarrow 0}}
+\newcommand{\D}{{\mathscr{D}}}
+\newcommand{\Dreg}{{\D'_{\mathrm{reg}}}}
+\newcommand{\Sreg}{{\S'_{\mathrm{reg}}}}
+
+\newcommand{\prob}{\mbox{\sf P}}
+\newcommand{\EV}{\mathtt{E}}
+\newcommand{\VAR}{\mathtt{VAR}}
+\newcommand{\SD}{\mathtt{SD}}
+\newcommand{\COV}{\mathtt{COV}}
+
+\newcommand{\p}{\partial}
+\newcommand{\pp}{\partial^2}
+\newcommand{\uxy}{\frac{\pp u}{\p x\p y}}
+\newcommand{\uxx}{\frac{\pp u}{\p x^2}}
+\newcommand{\uyy}{\frac{\pp u}{\p y^2}}
+\newcommand{\ux}{\frac{\p u}{\p x}}
+\newcommand{\uy}{\frac{\p u}{\p y}}
+
+\newcommand{\FT}{\mathfrak{F}}
+\newcommand{\LT}{\mathfrak{L}}
+\newcommand{\FR}{\mathscr{E}}
+
+\newcommand{\Mla}{\mathscr{M}_\lambda}
+\newcommand{\LA}{{\mathit \Lambda}}
+
+\newcommand{\bkonv}{\rightarrow}
+\newcommand{\skonv}{\rightrightarrows}
+\newcommand{\sskonv}{\Rrightarrow}
+\newcommand{\nkonv}{\rightarrowtriangle}
+
+\newcommand{\limnorm}{\mathop{\mathrm{limnorm}}}
+\newcommand{\limnormn}{\limnorm_{n \rightarrow \infty}}
+
+\newcommand{\polyL}{{\mathtt L}}
+\newcommand{\polyH}{{\mathtt H}}
+\newcommand{\polyY}{{\mathtt Y}}
+
+\newcommand{\onecircled}{\text{\ding{202}}} % jednicka v krouzku
+\newcommand{\twocircled}{\text{\ding{203}}} % 2 v krouzku
+\newcommand{\threecircled}{\text{\ding{204}}} % 3 v krouzku
+\newcommand{\fourcircled}{\text{\ding{205}}} % 4 v krouzku
+\newcommand{\fivecircled}{\text{\ding{206}}} % 5 v krouzku
+\newcommand{\sixcircled}{\text{\ding{207}}} % 6 v krouzku
+\newcommand{\sevencircled}{\text{\ding{208}}} % 7 v krouzku
+\newcommand{\eightcircled}{\text{\ding{209}}} % 8 v krouzku
+\newcommand{\ninecircled}{\text{\ding{210}}} % 9 v krouzku
+
+\newcommand{\stackrelONE}{\stackrel{\onecircled}{=}}
+\newcommand{\stackrelTWO}{\stackrel{\twocircled}{=}}
+\newcommand{\stackrelTHREE}{\stackrel{\threecircled}{=}}
+\newcommand{\stackrelFOUR}{\stackrel{\fourcircled}{=}}
+\newcommand{\stackrelFIVE}{\stackrel{\fivecircled}{=}}
+\newcommand{\stackrelSIX}{\stackrel{\sixcircled}{=}}
+\newcommand{\stackrelSEVEN}{\stackrel{\sevencircled}{=}}
+\newcommand{\stackrelEIGHT}{\stackrel{\eightcircled}{=}}
+\newcommand{\stackrelNINE}{\stackrel{\ninecircled}{=}}
+
+\newcommand{\konveD}{{~~\stackrel{\D}{\rightrightarrows}~~}}
+\newcommand{\konveS}{{~~\stackrel{\S}{\rightrightarrows}~~}}
+
+\newcommand{\Proof}{\textit{\underline{Dùkaz:}}}
+\newcommand{\reseni}{\textit{\underline{Øešení:}}}
+\newcommand{\NoProof}{\textit{\underline{Bez dùkazu.}}}
+
+\newcommand{\BE}{\begin{equation}}
+\newcommand{\EE}{\end{equation}}
+
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\leq}{\leqslant}
+
+\def\theequation{\arabic{chapter}.\arabic{equation}}
+
+\newcounter{prik}[chapter]  % citac zavisly na kapitole
+\renewcommand{\theprik}{\thechapter.\arabic{prik}} % zpusob vypisu citace
+\newcommand{\priklad}[1]{\refstepcounter{prik} \paragraph*{Cvièení  \theprik \\ }
+#1}% zvyseni o 1
+
+\newcounter{obra}[chapter]  % citac zavisly na kapitole
+%\newcounter{obra}  % absolutni citac - pocita od zacatku knihy do konce
+\renewcommand{\theobra}{\thechapter.\arabic{obra}} % zpusob vypisu citace
+\newcommand{\obrazek}[1]{\refstepcounter{obra} \paragraph*{\footnotesize Obrázek  \theobra \\ }
+#1}% zvyseni o 1
+
+\definecolor{tyrkys}{rgb}{0,0.8,1}
