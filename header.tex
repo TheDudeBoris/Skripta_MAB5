@@ -343,6 +343,17 @@
 \renewcommand{\geq}{\geqslant}
 \renewcommand{\leq}{\leqslant}
 
+\makeatletter
+\def\sumline{\mathop{\mathchoice{\@sul\displaystyle{-1.5ex}}%odsazeni cary od sumy 
+     {\@sul\textstyle{-0.9ex}}%
+     {\@sul\scriptstyle{-1ex}}%
+     {\@sul\scriptscriptstyle{-1.1ex}}}}
+\def\@sul#1#2{{%
+     \setbox0\hbox{$#1\sum$}%
+     \rlap{\hbox to \wd0{\raisebox{#2}{\rule{\wd0}{0.7pt}}}}\box0 %tloustka cary 
+}}
+\makeatother
+
 \def\theequation{\arabic{chapter}.\arabic{equation}}
 
 \newcounter{prik}[chapter]  % citac zavisly na kapitole
