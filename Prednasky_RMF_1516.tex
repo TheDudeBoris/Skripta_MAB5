@@ -1,0 +1,405 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[final]{epsfig}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{graphics}
+\usepackage{dsfont}
+\usepackage{txfonts}
+\usepackage{pifont} % pro cisla v kolecku
+\usepackage[czech]{babel}
+\usepackage{sans}
+\usepackage{a4}
+\usepackage[cp1250]{inputenc}
+\usepackage{ulem}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage[table]{xcolor}
+
+\pagestyle{empty}
+
+\leftskip -2 cm \rightskip -2 cm \textheight 24 cm \topmargin -2cm
+
+\renewcommand{~}{\,}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\bla}{\bigl\langle}
+\newcommand{\bra}{\bigr\rangle}
+\newcommand{\lla}{\left\langle}
+\newcommand{\rra}{\right\rangle}
+
+\newcommand{\operK}{\widehat{K}}
+\newcommand{\operS}{\widehat{S}}
+
+\renewcommand{\d}{\mathtt{d}}
+\newcommand{\norm}{\overline{\mathit{n}}}
+\newcommand{\e}{\mathtt{e}}
+\renewcommand{\exp}{\mathtt{exp}}
+\renewcommand{\i}{{\mathtt i}}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\radius}{\mathtt{R}}
+
+\newcommand{\Dirichlet}{\mathfrak{D}}
+\newcommand{\Erf}{\mathrm{Erf}}
+
+\newcommand{\test}{\varphi(\x)}
+\newcommand{\testdva}{\psi(\x)}
+\newcommand{\testk}{\varphi_k(\x)}
+\newcommand{\TEST}{\varphi(x)}
+\newcommand{\TESTdva}{\psi(x)}
+\newcommand{\TESTk}{\varphi_k(x)}
+\newcommand{\LA}{{\mathit \Lambda}}
+\newcommand{\limnorm}{\mathop{\mathrm{limnorm}}}
+\newcommand{\limnormn}{\limnorm_{n \rightarrow \infty}}
+
+\newcommand{\x}{{\vec{x}}}
+\newcommand{\y}{{\vec{y}}}
+\newcommand{\z}{{\vec{z}}}
+\newcommand{\f}{{\vec{f}}}
+\newcommand{\F}{{\overrightarrow{f}}}
+\renewcommand{\o}{{\vec{0}}}
+\renewcommand{\a}{{\vec{a}}}
+\newcommand{\aaa}{{\vec{a}}}
+\newcommand{\bbb}{{\vec{b}}}
+\renewcommand{\b}{{\vec{b}}}
+\newcommand{\ccc}{{\vec{c}}}
+\newcommand{\hhh}{{\vec{h}}}
+\newcommand{\h}{{\vec{h}}}
+\newcommand{\ppp}{{\vec{p}}}
+\newcommand{\rrr}{{\vec{r}}}
+\newcommand{\sss}{{\vec{s}}}
+\newcommand{\ttt}{{\vec{t}}}
+\renewcommand{\t}{{\vec{t}}}
+\newcommand{\uuu}{{\vec{u}}}
+\newcommand{\vvv}{{\vec{v}}}
+\newcommand{\www}{{\vec{w}}}
+\newcommand{\alal}{\vec{\alpha}}
+\newcommand{\bebe}{\vec{\beta}}
+\newcommand{\xixi}{{\vec{\xi}}}
+\newcommand{\etet}{{\vec{\eta}}}
+\newcommand{\mumu}{{\vec{\mu}}}
+\newcommand{\nunu}{{\vec{\nu}}}
+
+\newcommand{\const}{\mathtt{C}}
+\newcommand{\cosnt}{\mathtt{C}}
+\newcommand{\donst}{\mathtt{D}}
+\newcommand{\dosnt}{\mathtt{D}}
+\newcommand{\konst}{\mathtt{K}}
+\newcommand{\kosnt}{\mathtt{K}}
+
+\newcommand{\dx}{\mathtt{d}x}
+\newcommand{\dxi}{\mathtt{d}\xi}
+\newcommand{\dtau}{\mathtt{d}\tau}
+\newcommand{\dxixi}{\mathtt{d}\vec{\xi}}
+\newcommand{\dr}{\mathtt{d}r}
+\newcommand{\dxy}{\mathtt{d}x\mathtt{d}y}
+\newcommand{\dt}{\mathtt{d}t}
+\newcommand{\du}{\mathtt{d}u}
+\newcommand{\ds}{\mathtt{d}s}
+\newcommand{\dy}{\mathtt{d}y}
+\newcommand{\dz}{\mathtt{d}z}
+\newcommand{\dxx}{\mathtt{d}\x}
+\newcommand{\dtt}{\mathtt{d}\ttt}
+\newcommand{\dss}{\mathtt{d}\sss}
+\newcommand{\drr}{\mathtt{d}\rrr}
+\newcommand{\dyy}{\mathtt{d}\y}
+\newcommand{\dzz}{\mathtt{d}\z}
+\newcommand{\dmu}{\mathtt{d}\mu}
+\renewcommand{\rho}{\varrho}
+\renewcommand{\phi}{\varphi}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\ecko}{\epsilon}
+\newcommand{\vececko}{\vec{\epsilon}}
+\newcommand{\lam}{{\lambda}}
+
+\newcommand{\skorovsude}{\mathrm{s.v.}}
+
+\newcommand{\OK}{{\mathcal O}}
+
+\renewcommand{\Re}{\mathrm{Re}}
+\renewcommand{\Im}{\mathrm{Im}}
+\newcommand{\bd}{\mathrm{bd}}
+
+\newcommand{\idx}{\mathrm{ind}}
+
+\newcommand{\C}{{\mathbf C}}
+\newcommand{\N}{{\mathbf N}}
+\newcommand{\R}{{\mathbf R}}
+\newcommand{\Q}{{\mathbf Q}}
+\newcommand{\Z}{{\mathbf Z}}
+\newcommand{\E}{{\mathbf E}}
+\newcommand{\Er}{{{\mathbf E}^r}}
+\newcommand{\Es}{{{\mathbf E}^s}}
+\newcommand{\X}{{\mathcal X}}
+\newcommand{\Y}{{\mathcal Y}}
+\newcommand{\ZZZ}{{\mathcal{Z}}}
+
+\newcommand{\Der}{\mathcal{D}}
+\newcommand{\Vp}{\mathrm{Vp}}
+\renewcommand{\P}{\mathcal{P}}
+
+\newcommand{\A}{{\mathscr A}}
+\newcommand{\CC}{\mathscr{C}}
+\newcommand{\Banach}{{\mathfrak B}}
+\renewcommand{\O}{{\mathscr O}}
+\newcommand{\V}{{\mathcal V}}
+\renewcommand{\H}{{\mathscr H}}
+\newcommand{\U}{{\mathcal U}}
+\newcommand{\Uniq}{{\mathfrak R}}
+\newcommand{\Normal}{{\mathfrak N}}
+\renewcommand{\S}{{\mathscr S}}
+\newcommand{\LAP}{{\mathscr P}}
+\newcommand{\matA}{{\mathbb A}}
+\newcommand{\matR}{{\mathbb R}}
+\newcommand{\matP}{{\mathbb P}}
+\newcommand{\matB}{{\mathbb B}}
+\newcommand{\matC}{{\mathbb C}}
+\newcommand{\matM}{{\mathbb M}}
+\newcommand{\matF}{{\mathbb F}}
+\newcommand{\LLL}{{\mathscr L}}
+\newcommand{\LOC}{\mathscr{L}_{\mathrm{loc}}}
+\newcommand{\LLOC}{\mathds{L}_{\mathrm{loc}}}
+\newcommand{\LL}{\mathds{L}}
+\newcommand{\Lim}{\mathds{L}\mathrm{im}}
+\newcommand{\jadroK}{{\mathscr K}}
+\newcommand{\jadroH}{{\mathscr H}}
+\newcommand{\rez}{{\mathscr R}}
+\newcommand{\M}{\mathtt{M}}
+\newcommand{\Mmu}{\mathscr{M}_\mu}
+\newcommand{\Mla}{\mathscr{M}_\lambda}
+\newcommand{\polB}{{B_P}}
+\newcommand{\sgn}{\mathrm{sgn}}
+\newcommand{\tg}{{\mathrm{tg}}}
+\newcommand{\cotg}{{\mathrm{cotg}}}
+\newcommand{\arctg}{{\mathrm{arctg}}}
+\newcommand{\Dom}{{\mathrm{Dom}}}
+\newcommand{\Ran}{{\mathrm{Ran}}}
+\newcommand{\supp}{{\mathrm{supp}}}
+
+\newcommand{\operL}{\widehat{L}}
+\newcommand{\operA}{\widehat{A}}
+\newcommand{\operB}{\widehat{B}}
+\newcommand{\operLL}{\widehat{L^2}}
+\newcommand{\operH}{\widehat{H}}
+\newcommand{\operO}{\widehat{O}}
+
+\newcommand{\grad}{\mathrm{grad}}
+\newcommand{\rot}{\mathrm{rot}}
+\renewcommand{\div}{\mathrm{div}}
+\newcommand{\dist}{\mathrm{dist}}
+\newcommand{\diam}{\mathrm{diam}}
+\newcommand{\PP}{\vec{\wp}}
+\newcommand{\PPP}{\left\langle \vec{\wp} \right\rangle}
+\newcommand{\RR}{\vec{\mathscr{R}}}
+\newcommand{\trans}{\intercal}
+\newcommand{\der}{\mathrm{der}}
+\newcommand{\overphi}{\vec{\varphi}}
+\newcommand{\doverphi}{\dot{\vec{\varphi}}}
+\newcommand{\overpsi}{\vec{\psi}}
+\newcommand{\doverpsi}{\dot{\vec{\psi}}}
+
+\newcommand{\limn}{\lim_{n \rightarrow \infty}}
+\newcommand{\limk}{\lim_{k \rightarrow \infty}}
+\newcommand{\limh}{\lim_{h \rightarrow 0}}
+\newcommand{\D}{{\mathscr{D}}}
+\newcommand{\Dreg}{{\D'_{\mathrm{reg}}}}
+
+\newcommand{\prob}{\mbox{\sf P}}
+\newcommand{\EV}{\mathtt{E}}
+\newcommand{\VAR}{\mathtt{VAR}}
+\newcommand{\SD}{\mathtt{SD}}
+
+\newcommand{\p}{\partial}
+\newcommand{\pp}{\partial^2}
+\newcommand{\uxy}{\frac{\pp u}{\p x\p y}}
+\newcommand{\uxx}{\frac{\pp u}{\p x^2}}
+\newcommand{\uyy}{\frac{\pp u}{\p y^2}}
+\newcommand{\ux}{\frac{\p u}{\p x}}
+\newcommand{\uy}{\frac{\p u}{\p y}}
+
+\newcommand{\FT}{\mathfrak{F}}
+\newcommand{\LT}{\mathfrak{L}}
+\newcommand{\FR}{\mathscr{E}}
+
+\newcommand{\sskonv}{\Rrightarrow}
+
+\newcommand{\polyL}{{\mathtt L}}
+\newcommand{\polyH}{{\mathtt H}}
+\newcommand{\polyY}{{\mathtt Y}}
+
+\newcommand{\konveD}{{~~\stackrel{\D}{\rightrightarrows}~~}}
+
+\newcommand{\Proof}{\textit{\underline{D\r ukaz:}}}
+\newcommand{\reseni}{\textit{\underline{\v Re\v sen\'i:}}}
+\newcommand{\NoProof}{\textit{\underline{Bez d\r ukazu.}}}
+
+\newcommand{\BE}{\begin{equation}}
+\newcommand{\EE}{\end{equation}}
+
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\leq}{\leqslant}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% dela znak podtrzene sumy: OZNACENI \sumline
+
+\makeatletter
+\def\sumline{\mathop{\mathchoice{\@sul\displaystyle{-1.5ex}}%odsazeni cary od sumy 
+     {\@sul\textstyle{-0.9ex}}%
+     {\@sul\scriptstyle{-1ex}}%
+     {\@sul\scriptscriptstyle{-1.1ex}}}}
+\def\@sul#1#2{{%
+     \setbox0\hbox{$#1\sum$}%
+     \rlap{\hbox to \wd0{\raisebox{#2}{\rule{\wd0}{0.7pt}}}}\box0 %tloustka cary 
+}}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\lgreen}{\textcolor{blue}{\bigl(}}
+\newcommand{\rgreen}{\textcolor{blue}{\bigr)}}
+
+\renewcommand{\(}{\bigl(}
+\renewcommand{\)}{\bigr)}
+
+\definecolor{zelena}{rgb}{0.063,0.761,0.078}
+\definecolor{seda}{rgb}{0.5000,0.3906,0.2813}
+\definecolor{cihlova}{rgb}{0.8969,0.1992,0}
+\definecolor{tyrkys}{rgb}{0.1490,0.4667,0.6039}
+
+\newcommand{\PRVNI}{\textcolor{tyrkys}{\LARGE{\text{\ding{202}}}}\normalsize} % jednicka v krouzku
+\newcommand{\DRUHY}{\textcolor{tyrkys}{\LARGE{\text{\ding{203}}}}\normalsize} % 2 v krouzku
+\newcommand{\TRETI}{\textcolor{tyrkys}{\LARGE{\text{\ding{204}}}}\normalsize} % 3 v krouzku
+\newcommand{\CTVRTY}{\textcolor{tyrkys}{\LARGE{\text{\ding{205}}}}\normalsize} % 4 v krouzku
+\newcommand{\PATY}{\textcolor{tyrkys}{\LARGE{\text{\ding{206}}}}\normalsize} % 5 v krouzku
+\newcommand{\SESTY}{\textcolor{tyrkys}{\LARGE{\text{\ding{207}}}}\normalsize} % 6 v krouzku
+\newcommand{\SEDMY}{\textcolor{tyrkys}{\LARGE{\text{\ding{208}}}}\normalsize} % 7 v krouzku
+\newcommand{\OSMY}{\textcolor{tyrkys}{\LARGE{\text{\ding{209}}}}\normalsize} % 8 v krouzku
+\newcommand{\DEVATY}{\textcolor{tyrkys}{\LARGE{\text{\ding{210}}}}\normalsize} % 9 v krouzku
+
+\newcommand{\onecircled}{\text{\large\ding{202}}} % jednicka v krouzku
+\newcommand{\twocircled}{\text{\large\ding{203}}} % 2 v krouzku
+\newcommand{\threecircled}{\text{\large\ding{204}}} % 3 v krouzku
+\newcommand{\fourcircled}{\text{\large\ding{205}}} % 4 v krouzku
+\newcommand{\fivecircled}{\text{\large\ding{206}}} % 5 v krouzku
+\newcommand{\sixcircled}{\text{\large\ding{207}}} % 6 v krouzku
+\newcommand{\sevencircled}{\text{\large\ding{208}}} % 7 v krouzku
+\newcommand{\eightcircled}{\text{\large\ding{209}}} % 8 v krouzku
+\newcommand{\ninecircled}{\text{\large\ding{210}}} % 9 v krouzku
+
+\newcommand{\VETA}{\textcolor{tyrkys}{\textbf{V\v ETA:~}}} % 9 v krouzku
+\newcommand{\DUSL}{\textcolor{tyrkys}{\textbf{D\r USLEDEK:~}}} % 9 v krouzku
+\newcommand{\LEMMA}{\textcolor{tyrkys}{\textbf{LEMMA:~}}} % 9 v krouzku
+
+\begin{document}
+
+\section{Prvn\'i p\v redn\'a\v ska}
+
+
+\begin{enumerate}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Heavisideova funkce a centrovan\'a Heavisideova funkce
+\item Prostor s \' uplnou m\' irou $\{\E^r,\lambda(X),\Mla\}$
+\item $G$ bude v\v zdy zna\v cit oblast a $J$ bude znamenat kompakt
+\item funkce: $f(\x):\R\mapsto\C$
+\item P\v ripomenout symboly $\CC(M)=\CC^0(M),$ $\CC^n(M)$
+\item definice symbol\r u $\CC_0:$ (t\v r\' ida v\v sech spojit\' ych funkc\' i s kompaktn\' im nosi\v cem)
+\item definice symbol\r u $\CC^n_0:$ (t\v r\' ida v\v sech funkc\' i, kter\'e maj\' i kompaktn\' i nosi\v c a spojit\'e derivace a\v z do \v r\'adu $n$ v\v cetn\v e)
+\item $\LLL(G),$ $\LLL^\star(G),$ $\LOC(G)$
+\item p\v ripomenout, \v ze: $$f(x)\in\LLL(E,\mu) \quad \Leftrightarrow \quad|f(x)|\in\LLL(E,\mu)~\wedge f(x)\in \LA_\mu(E).$$
+\item \VETA o ekvivalentn\'i definici t\v r\'idy $\LOC(G)$
+\item snaha o prehilbertovsk\' y prostor $\CC(\langle a,b\rangle)$
+\item snaha o prehilbertovsk\' y prostor $\LLL(G)$ a protip\v r\'iklad $\frac{1}{\sqrt{x}}\in\LLL(0,1),$ ale $\frac{1}{\sqrt{x}}\cdot\frac{1}{\sqrt{x}}=\frac{1}{x}\in\LLL(0,1)$
+\item $\LLL_p(G)$
+\item snaha o prehilbertovsk\' y prostor $\LLL_1(G)$ a protip\v r\'iklad $\frac{1}{\sqrt{x}}\in\LLL_1(0,1),$ ale $\frac{1}{\sqrt{x}}\cdot\frac{1}{\sqrt{x}}=\frac{1}{x}\in\LLL_1(0,1)$
+\item \VETA $f,g\in\LLL_2(G) \quad \Rightarrow \quad fg^\star\in\LLL_1(G)$
+\item ale ani $\LLL_2(G)$ nen\'i prehilbertovsk\' y
+\item Co jsou faktorov\' e funkce
+\item zna\v cen\' i $\LL_2(G)$  a $\LL_2^{(w)}(G):$ v\'aha mus\'i b\'yt spojit\'a a kladn\'a na $G$
+\end{enumerate}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\newpage %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Druh\'a p\v redn\'a\v ska}
+
+\begin{enumerate}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item \VETA $f\in\LLL_2(G) \quad \wedge \quad H\subset G \quad \wedge \quad \mu(H)<\infty \quad \Rightarrow \quad f\in\LLL_1(H)$
+\item \DUSL $\mu(H)<\infty\quad \Rightarrow \quad \LLL_2(H)\subset \LLL_1(H)$
+\item snaha o Hilbert\r uv prostor $\CC(\langle a,b\rangle)$ se standardním skalárním souèinem (nen\'i \'upln\'y)
+\item snaha o Hilbert\r uv prostor $\LL_2(G)$
+\item \VETA $\LL_2(G)$  a $\LL_2^{(w)}(G)$ jsou Hilbertovy prostory
+\item Skalární souèiny na funkcion\'aln\'ich vektorov\'ych prostorech jednorozm\v ern\'ych funkc\'i
+\begin{itemize} \item Legendre $\Theta(x-a)\Theta(b-x),$ $G=(a,b)$  \item Laguerre $\Theta(x)\e^{-x},$ $G=(0,+\infty)$ \item Hermite $\e^{-x^2},$ $G=\R$
+\end{itemize}
+\item Typy konvergence na funkcion\'aln\'ich vektorov\'ych prostorech (bodov\'a, stejnom\v ern\'a, podle normy)
+\item \VETA  o vztahu stejnomìrné konvergence a konvergence podle normy na $\CC(\langle a,b\rangle)$ pro $\langle f|g\rangle_w.$ \textcolor{red}{[Nezmi\v noval jsem. Dok\'az\'ano v MAB3.]}
+\item \VETA  o vztahu stejnomìrné konvergence a konvergence podle normy na $\LLL_2^{(w)}(G),$ kde $\mu(G)<\infty.$ V\'aha mus\'i b\'yt omezen\'a na $G.$
+\item \VETA o spojitosti skalárního souèinu
+\item Konvergence øad podle normy
+\item \VETA o souètu podle normy
+\item Uzav\v ren\' i t\' ematu o konstrukci funkcion\' aln\' ich Hilbertov\' ych prostor\r u.
+\item Domácí úkol: Je $\|f\|_\infty:=\max_{x\in\langle a,b\rangle}|f|$ normou na $\CC(\langle a,b\rangle)?$ A je $\CC(\langle a,b\rangle)$ s touto normou \'upln\'y?
+\item Operace konvoluce na prostoru klasick\'ych funkc\'i -- definice na $\LOC(\Er)$
+\item \VETA  o existenci konvoluce v $\LLL_1(\Er)$
+\item Bilinearita konvoluce v $\LLL_1(\Er)$ (ve cvi\v cen\'i)
+\item Komutativita konvoluce v $\LLL_1(\Er)$
+\item o konvoluci funkc\'i tvaru $\Theta(x)F(x),$ kde $F(x)\in\LOC(\R)$
+\item definice pojm\r u hustota a hustota pravd\v epodobnosti
+
+\end{enumerate}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newpage %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{T\v ret\'i p\v redn\'a\v ska}
+
+\begin{enumerate}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item \VETA  o zachov\'an\'i vlastnost\'i hustoty pravd\v epodobnosti
+\item \VETA $f,g$ jsou hustoty pravd\v epodobnosti a $\int_\R xf(x)~\dx=\mu_1$ a $\int_\R yg(y)~\dy=\mu_2,$ pak $\int_\R z(f\star g)(z)~\dz=\mu_1+\mu_2$
+\item \VETA  o posunut\'i v konvoluci v $\LLL_1(\Er)$
+\item \VETA  o derivaci v konvoluci:  $f(\x)\in\LLL_1(\Er)$ a $g(\x)\in\LLL_1(\Er)\cap \CC_0^1$
+\item ortonormální množina: \v Rekneme, \v ze mno\v zina $S$ z Hilbertova prostoru $\H$ je ortonorm\' aln\' i, pokud pro ka\v zdou funkci $f(\x)\in S$ je $\|f(\x)\|=1$ a z\' arove\v n pro ka\v zd\'e dv\v e funkce $f(\x),g(\x)\in S$ takov\'e, \v ze $f(\x)\neq g(\x)$ plat\' i rovnost $\bla f|g\bra=0.$
+\item \LEMMA prvky ka\v zd\'e ortonormální množiny jsou LN
+\item zmínka o Grammovì-Schmidtovì proceduøe vyrábìjící ON množinu z množiny LN funkcí
+\item \VETA  o Besselovì nerovnosti: Nech\v t $S=\{f_1(\x),f_2(\x),\ldots,f_n(\x)\}$ je (kone\v cn\'a) ortonorm\'aln\'i mno\v zina v Hilbertov\v e prostoru $\H.$ Nech\v t $g(\x)\in\H$ je zvolen libovoln\v e. Ozna\v cme $a_k:=\la g|f_k\ra.$ Pak plat\'i
+%
+\BE \sum_{k=1}^n |a_k|^2 \leq \|g(\x)\|^2. \label{Bessel-ineq}\EE
+\item Definice maximální ortonormální množiny
+\item \VETA Nech\v t $S=\{f_1(\x),f_2(\x),\ldots,f_n(\x),\ldots\}$  je (spo\v cetn\'a) maximální ortonorm\'aln\'i mno\v zina v Hilbertov\v e prostoru $\H.$ Nech\v t je funkce $g(\x)\in\H$ zvolena libovoln\v e. Nech\v t pro ka\v zd\'e $k\in\N$ je  $\la g|f_k\ra=0.$ Pak $g(\x)=o(\x).$
+\item Pøípravná vìta k vìtì o Fourierovì rozvoji
+
+\fbox{\parbox{14cm}{ Nech\v t $S=\{f_1(\x),f_2(\x),\ldots,f_n(\x),\ldots\}$  je (spo\v cetn\'a) ortonorm\'aln\'i mno\v zina v Hilbertov\v e prostoru $\H.$ Nech\v t je funkce $g(\x)\in\H$ zvolena libovoln\v e. Ozna\v cme $a_k=\la g|f_k\ra.$ Pak existuje limita
+%
+$$\limnormn \sum_{k=1}^n a_kf_k(\x)=\sumline_{k=1}^\infty a_kf_k(\x)=:h(\x)\in\H.$$
+%
+Nav\'ic pro ka\v zd\'e $k\in\N$ plat\'i $\la g-h|f_k\ra=0.$}}
+
+
+
+\end{enumerate}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newpage %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\v Ctvrt\'a p\v redn\'a\v ska}
+
+\begin{enumerate}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Definice báze v Hilbertovì prostoru
+\item Definice separability Hilbertova prostoru
+\item  \VETA o Fourierovì rozvoji
+\item \VETA  o Parsevalovì vzorci
+\item \VETA  o Parsevalovì rovnosti
+
+\end{enumerate}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\item
+\item
+\item
+\item
+\item 
