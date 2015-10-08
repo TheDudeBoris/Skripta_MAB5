@@ -1,0 +1,825 @@
+\chapter{Teorie pravd\v epodobnosti}
+
+\section{Axiomatick\'a definice pravd\v epodobnosti}
+
+Zp\r usob\r u, jak vybudovat teorii pravd\v epodobnosti je v\'ice. My se v tomto textu p\v ridr\v z\'ime axiomatick\'e v\'ystavby pojmu pravd\v epodobnost, kdy s v\'yhodou vyu\v zijeme obecn\'e poznatky z teorie m\'iry.
+
+\subsection{Definice}\label{prst}
+
+Nech?je d\'an z\'akladn\'i pravd\v epodobnost\'i prostor $\Omega.$ Nech\v t
+$\mathscr{X}\subset 2^{\Omega}$ je mno\v zinov\'a sigma-algebra a
+$\Omega\in\mathscr{X}$ jej\'i prezident. Pak ka\v zdou sigma-aditivn\'i m\'iru
+$\prob(X): \mathscr{X} \mapsto \la 0, 1\ra$ nazýváme
+\emph{pravdìpodobnostn\'i m\'irou (pravdìpodobností)}\index{pravd\v epodobnost}\index{pravd\v epodobnostn\'i m\'ira} na $\mathscr{X}$, pokud je tzv.
+\emph{normalizovan\'a,}\index{normalizace pravdìpodobnostn\'i m\'iry} tj. plat\'i-li, \v ze $$\prob[\Omega] =1.$$
+
+\subsection{Poznámka}
+
+D\'iky definici \ref{prst} spl\v nuje ka\v zd\'a pravdìpodobnostn\'i m\'ira n\'asleduj\'ic\'i axiomy zn\'am\'e z obecn\'e definice m\'iry (viz definice 3.1.18, str. 167 v \cite{Krbalek_MAB4}):
+\begin{enumerate}
+    \item \emph{axiom nulov\'e mno\v ziny:}\index{axiom nulov\'e mno\v ziny pravdìpodobnostn\'i m\'iry} $\emptyset \in \mathscr{X},$ kde symbol $\emptyset$ reprezentuje nemo\v zn\'y jev,
+    \item \emph{axiom m\'iry nulov\'e mno\v ziny:}\index{axiom m\'iry nulov\'e mno\v ziny} $\prob[\emptyset]=0,$
+    \item \emph{axiom nezápornosti}:\index{axiom nezápornosti pravdìpodobnostn\'i m\'iry} $\forall X \in \mathscr{X}: \prob[X]\geq 0,$
+    \item \emph{axiom monotónie}:\index{axiom monotónie pravdìpodobnostn\'i m\'iry} $X_1 \subset X_2 \quad \Longrightarrow  \quad \prob[X_1] \leq \prob[X_2],$
+    \item \emph{axiom aditivity}:\index{axiom aditivity pravdìpodobnostn\'i m\'iry} $\prob[X_1 \uplus X_2] = \prob[X_1]+\prob[X_2],$
+    \item \emph{axiom normality}:\index{axiom normality pravdìpodobnostn\'i m\'iry} $\prob[\Omega]=1.$
+    \item \emph{axiom $\sigma-$aditivity}\index{axiom $\sigma-$aditivity pravdìpodobnostn\'i m\'iry}: $\prob[\uplus_{\ell=1}^\infty X_\ell]=\sum_{\ell=1}^\infty \prob[X_\ell].$
+\end{enumerate}
+%
+Pro jistotu upozor\v nujeme, \v ze symbol $\uplus$ reprezentuje disjunktn\'i sjednocen\'i.
+
+
+\subsection{Definice}
+
+Nech\v t je d\'an z\'akladn\'i pravd\v epodobnost\'i prostor $\Omega,$ $\sigma-$algebra
+$\mathscr{X}\subset 2^{\Omega}$ $\prob-$m\v e\v riteln\'ych mno\v zin a p\v r\'islu\v sn\'a pravd\v epodobnostn\'i m\'ira $\prob(X): \mathscr{X} \mapsto \la 0, 1\ra.$ Pak trojici $\{\Omega,\mathscr{X},\prob\}$ budeme naz\'yvat \emph{pravd\v epodobnostn\'im prostorem.}\index{pravd\v epodobnostn\'i prostor}
+
+
+\subsection{Definice}
+
+Nech\v t jsou d\'any jevy $A,B\subset\Omega.$ \v Rekneme, \v ze jevy $A$ a $B$ jsou \emph{nez\'avisl\'e,}\index{nez\'avisl\'e jevy} jestli\v ze plat\'i $$\prob[A \cap B]=\prob[A] \cdot \prob[B].$$
+
+
+\subsection{Definice}\label{nahodna velicina}
+
+Nech\v t je d\'an pravd\v epodobnostn\'i prostor $\{\Omega,\mathscr{X},\prob\}.$ Ka\v zd\'e zobrazen\'i $\X:~\Omega \mapsto \R$ takov\'e, \v ze pro ka\v zd\'e $c\in\R$ plat\'i
+%
+\BE \X^{-1}\bigl((-\infty,c\ra\bigr)=\bigl\{\omega\in\Omega:~\X(\omega) \leq c \bigr\} \in \mathscr{X}, \label{nahodicka} \EE
+%
+nazveme \emph{n\'ahodnou veli\v cinou.}\index{n\'ahodn\'a veli\v cina}
+
+
+\subsection{Poznámka}
+
+Vztah \eqref{nahodicka} vlastn\v e po\v zaduje, aby vzory v\v sech interval\r u $(-\infty,c\ra$ byly $\prob-$m\v e\v riteln\'ymi mno\v zinami. Z hlediska obecn\'e teorie m\'iry je definice n\'ahodn\'e veli\v ciny de facto shodn\'a s definic\'i m\v e\v riteln\'e funkce (viz definice 4.1.5, str. 201 ve skriptech \cite{Krbalek_MAB4}).
+
+\subsection{Pozn\'amka}
+Symbolem $\prob[\X<x]$ budeme ozna\v covat pravdìpodobnost, že náhodná velièina $\X$ nabude hodnoty menší než $x.$ Podobn\v e ozna\v cuje symbol $\prob[\X\in A]$ pravdìpodobnost, že náhodná velièina $\X$ nabude hodnoty z mno\v ziny $A.$ Alternativn\v e to zapisujeme t\'e\v z znakem $\prob[A],$ nen\'i-li nutn\'e explicitn\v e zmi\v novat o jakou n\'ahodnou veli\v cinu se jedn\'a. Analogicky dále zavádíme symboly $\prob[\X \geq x]$, $\prob[\X=7],$ $\prob[\N]$ a podobn\v e.
+
+\subsection{Definice}
+Nech\v t je d\'an pravd\v epodobnostn\'i prostor $\{\Omega,\mathscr{X},\prob\}$ a n\'ahodn\'a veli\v cina $\X:~\Omega \mapsto \R.$ Re\'alnou funkci zavedenou pøedpisem $$F_\X(x) := \prob[\X \leq x]$$ naz\'yv\'ame \emph{distribu\v cn\'i funkcí}\index{distribu\v cn\'i funkce} náhodné velièiny $\X$.
+
+\subsection{Poznámka}
+Je-li pravd\v epodobnost $\prob(X): \mathscr{X} \mapsto \la 0, 1\ra$ definov\'ana jako m\'ira, pak distribu\v cn\'i funkce $F_\X(x)$ p\v redstavuje de facto vytvo\v ruj\'ic\'i funkci m\'iry. Jako takov\'a mus\'i spl\v novat n\'asleduj\'ic\'i p\v redpoklady:
+\begin{itemize}
+    \item je neklesající na $\R,$
+    \item $\Ran(F) \subset \la 0,1 \ra,$
+    \item $\lim_{x \rightarrow -\infty} F(x) = 0,$
+    \item $\lim_{x \rightarrow +\infty} F(x) = 1,$
+    \item $F(x)$ je spojitá zprava na $\R,$ tj. pro ka\v zd\'e $c\in\R$ plat\'i $\lim_{x\rightarrow c_+}F(x)=F(c),$
+    \item $F(x)$ má nejvýše spoèetnì mnoho bodù nespojitosti.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Absolutn\v e spojit\'a n\'ahodn\'a veli\v cina}
+
+Nejprve se budeme zab\'yvat speci\'aln\'imi p\v r\'ipady jednorozm\v ern\'ych n\'ahodn\'ych veli\v cin. Vybereme p\v ritom pouze ty, kter\'e maj\'i p\v r\'imou vazbu k teorii, je\v z je n\'apln\'i t\v echto skript, tj. k teorii parci\'aln\'ich diferenci\'aln\'ich rovnic.
+
+\subsection{Definice}
+Nech\v t je d\'an pravd\v epodobnostn\'i prostor $\{\Omega,\mathscr{X},\prob\}$ a n\'ahodn\'a veli\v cina $\X:~\Omega \mapsto \R.$ \v Rekneme, \v ze n\'ahodn\'a veli\v cina $\X$ m\'a \emph{absolutn\v e
+spojit\'e rozd\v elen\'i,}\index{absolutn\v e
+spojit\'e rozd\v elen\'i} existuje-li nez\'aporn\'a funkce $f_\X(t):\R\mapsto\R$
+takov\'a, \v ze pro distribu\v cn\'i funkci $F_\X(x)$ n\'ahodn\'e
+veli\v ciny $\X$ plat\'i $$F_\X(x) = \int^{x}_{-\infty} f_\X(t)~\dt.$$
+
+
+\subsection{Definice}
+Nech\v t je d\'ana n\'ahodn\'a veli\v cina $\X.$ Existuje-li pro ni
+funkce $f_\X(x)$ z p\v rede\v slé definice, pak tuto funkci $f_\X(x)$
+naz\'yv\'ame \emph{hustotou pravdìpodobnosti}\index{hustota pravdìpodobnosti} n\'ahodn\'e veli\v
+ciny $\X.$
+
+\subsection{\'Umluva}
+
+V dal\v s\'im textu p\v redpokl\'ad\'ame, \v ze je pevn\v e zvolen pravd\v epodobnostn\'i prostor $\{\Omega,\mathscr{X},\prob\}.$
+
+\subsection{V\v eta}
+
+Nech\v t m\'a n\'ahodn\'a veli\v cina $\X$ absolutn\v e spojit\'e rozd\v elen\'i. Nech\v t $F_\X(x)$ je jej\'i distribu\v cn\'i funkce a $f_\X(x)$ jej\'i hustota pravd\v epodobnosti. Potom ve v\v sech bodech, kde existuje derivace funkce $F_\X(x),$ plat\'i \BE f_\X(x)=\frac{\d F_\X}{\dx}(x).\label{ReasonWasYou}\EE
+
+\Proof
+
+\begin{itemize}
+\item plyne z vlastnosti integr\'alu a derivace
+\end{itemize}
+
+\subsection{Poznámka}
+Pro hustotu pravdìpodobnosti platí z v\'y\v se uveden\'eho tzv.
+\emph{normaliza\v cn\'i podm\'inka}\index{normaliza\v cn\'i podm\'inka pro hustotu pravd\v epodobnosti} tvaru $$\int_{\R} f_\X(x)~\dx = 1.$$
+Form\'aln\'i souèin $f_\X(x)~\dx$ pak (velmi popul\'arn\v e \v re\v ceno) pøedstavuje
+pravdìpodobnost, že náhodnì vybran\'e $x$ padne do intervalu $(x,
+x+\dx)$.
+
+\subsection{Poznámka}
+
+Ka\v zd\'a nez\'aporn\'a funkce $f(x):\R\mapsto\R,$ pro n\'i\v z
+%
+$$\int_\R f(x)~\dx = 1,$$
+%
+m\r u\v ze b\'yt ch\'ap\'ana jako hustota pravd\v epodobnosti ur\v
+cit\'e jednorozm\v ern\'e n\'ahodn\'e veli\v ciny.
+
+\subsection{V\v eta}
+
+Nech\v t m\'a n\'ahodn\'a veli\v cina $\X$ absolutn\v e spojit\'e rozd\v elen\'i s hustotou pravd\v epodobnosti $f_\X(x).$ Potom pro ka\v zdou mno\v zinu $A=(a,b\ra,$ kde $a,b\in\R^\star$ a $a \leq b,$ plat\'i $$\prob\bigl[\X\in A\bigr]=\int_A f_\X(x)~\dx.$$
+
+\Proof
+
+\begin{itemize}
+\item ozna\v cme $F_\X(x)$ p\v r\'islu\v snou distribu\v cn\'i funkci
+\item pak $$\prob\bigl[a < \X  \leq b\bigr]=F_\X(b)-F_\X(a)=\int_{-\infty}^b f_\X(x)~\dx - \int_{-\infty}^a f_\X(x)~\dx=  \int_a^b f_\X(x)~\dx$$
+\end{itemize}
+
+\subsection{Poznámka}
+
+P\v rede\v sl\'a v\v eta z\r ust\'av\'a v platnosti i pro obecn\'e mno\v ziny $A,$ tedy ne pouze pro intervaly.
+
+
+\subsection{Definice}
+Nech\v t je d\'ana n\'ahodn\'a veli\v cina $\X,$ je\v z m\'a absolutn\v e spojit\'e rozd\v elen\'i, a p\v r\'islu\v
+sn\'a hustota pravd\v epodobnosti $f_\X(x).$ Konverguje-li integr\'al
+$$\int_{\R} x f_\X(x)~\dx,$$ pak jeho hodnotu
+naz\'yv\'ame \emph{støední hodnotou}\index{støední hodnota} n\'ahodn\'e veli\v ciny $\X$
+(\emph{expected value of $\X$})\index{expected value of $\X$} a zna\v c\'ime jedn\'im ze symbol\r u $\EV(\X)$ nebo $\la x \ra.$
+
+\subsection{Definice}
+Nech\v t je d\'ana n\'ahodn\'a veli\v cina $\X,$ p\v r\'islu\v sn\'a hustota pravd\v epodobnosti $f_\X(x)$ a jej\'i st\v redn\'i hodnota  $\la x \ra.$ Konverguje-li integr\'al
+%
+\BE \int_{\R} \bigr(x-\la x \ra\bigr)^2 f_\X(x)~\dx,\label{Bonjour-Filou}\EE
+%
+pak p\v r\'islu\v snou hodnotu naz\'yv\'ame \emph{rozptylem}\index{rozptyl n\'ahodn\'e veli\v ciny $\X$} n\'ahodn\'e veli\v ciny $\X$ (\emph{variance of $\X$})\index{variance of $\X$} a zna\v c\'ime symbolem $\VAR(\X).$
+
+\subsection{V\v eta} \label{vypoctova-veta-pro-rozptyl}
+Nech\v t je d\'ana n\'ahodn\'a veli\v cina $\X$ a jej\'i st\v redn\'i hodnota  $\la x \ra.$ Konverguje-li integr\'al $\int_{\R} x^2 f_\X(x)~\dx,$ pak plat\'i
+%
+$$\VAR(\X)=\int_{\R} x^2 f_\X(x)~\dx-\la x \ra^2 \geq 0,$$
+%
+tj. $\VAR(\X)= \la x^2 \ra - \la x \ra^2 = \EV(\X^2)-\bigl(\EV(\X)\bigr)^2.$\\
+
+\Proof
+
+\begin{itemize}
+\item snadno vypo\v cteme $$ \lla (x-\la x\ra)^2 \rra = \int_{\R} \bigl(x-\la x\ra\bigr)^2 f_\X(x)~\dx = \int_{\R} x^2 f_\X(x)~\dx - 2\int_{\R} x\la x\ra f_\X(x)~\dx + \int_{\R} \la x\ra^2 f_\X(x)~\dx = $$
+$$=\la x^2 \ra - 2\la x \ra \underbrace{\int_{\R} x f_\X(x)~\dx}_{=\la x \ra} + \la x \ra^2 \underbrace{\int_{\R} f_\X(x)~\dx}_{=1} = \la x^2 \ra - \la x \ra^2 = \EV(\X^2)-\EV^2(\X) $$
+
+\item to, \v ze $\VAR(\X) \geq 0,$ plyne bezprost\v redn\v e z faktu, \v ze integrand $(x-\la x\ra)^2$ v defini\v cn\'im vztahu \eqref{Bonjour-Filou} je nez\'apornou funkc\'i
+
+\end{itemize}
+
+
+\subsection{Definice}
+Nech\v t je d\'ana n\'ahodn\'a veli\v cina $\X$ a jej\'i rozptyl $\VAR(\X).$ \emph{Smìrodatnou odchylkou}\index{smìrodatn\'a odchylka} (standard deviation)\index{standard deviation} rozum\'ime hodnotu $$\SD(\X) := \sqrt{\VAR(\X)}.$$
+
+\subsection{Definice}
+Øekneme, že náhodná velièina $\X$ má \emph{rovnomìrné rozdìlení}\index{rovnomìrné rozdìlení} (uniform distribution)\index{uniform distribution} s parametry $a, b \in \R$ $(a<b)$ a oznaèíme  $\X \backsim U_{(a,b)},$ pokud pro jej\'i hustotu pravd\v epodobnosti plat\'i vztah $$ f_\X(x) = \frac{\Theta(x-a) \cdot \Theta(b-x)}{b-a}.$$
+
+\subsection{V\v eta}
+Nech\v t  $\X \backsim U_{(a,b)}.$ Pak $$\la x \ra = \dfrac{a+b}{2}, \quad \VAR(\X)=\dfrac{(b-a)^2}{12}.$$
+
+\Proof
+
+\begin{itemize}
+\item snadno nahl\'edneme, \v ze hustota pravd\v epodobnosti rovnomìrného rozdìlení je spr\'avn\v e normalizovan\'a, nebo\v t
+%
+$$\int_\R f_\X(x)~\dx=\int_a^b \frac{1}{b-a}~\dx=1 $$
+\item d\'ale $$\EV(\X) = \int_\R x~f_\X(x)~\dx=\int_a^b \frac{x}{b-a}~\dx=\frac{1}{b-a}\frac{b^2-a^2}{2}=\dfrac{a+b}{2} $$
+\item pro v\'ypo\v cet rozptylu u\v zijeme nejprve pomocn\'y v\'ypo\v cet $$\EV(\X^2) = \int_\R x^2~f_\X(x)~\dx=\int_a^b \frac{x^2}{b-a}~\dx=\frac{1}{b-a}\frac{b^3-a^3}{3}=\dfrac{a^2+ab+b^2}{3}$$
+\item podle v\v ety \ref{vypoctova-veta-pro-rozptyl} pak snadno
+%
+$$\VAR(\X)=\EV(\X^2)-\EV^2(\X)=\dfrac{a^2+ab+b^2}{3}-\dfrac{(a+b)^2}{4}=\dfrac{(a-b)^2}{12}$$
+\end{itemize}
+
+\subsection{Definice}
+Øekneme, že náhodná velièina $\X$ má \emph{Gaussovo (norm\'aln\'i)
+rozdìlení}\index{Gaussovo rozdìlení}\index{norm\'aln\'i rozdìlení} (Gaussian normal distribution)\index{Gaussian normal distribution} s parametry $\mu, \sigma \in \R$ a oznaèíme  $\X \backsim N_{(\mu,\sigma)},$ pokud pro jej\'i
+hustotu pravd\v epodobnosti plat\'i vztah $$ f_\X(x) =
+\frac{1}{\sqrt{2\pi}\sigma}\e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
+
+\subsection{Vìta}
+Nech? $\X \backsim N_{(\mu,\sigma)}.$ Pak $$\la x \ra = \mu, \quad
+\VAR(\X)=\sigma^{2}.$$
+
+\Proof
+
+\begin{itemize}
+\item snadno nahl\'edneme, \v ze hustota pravd\v epodobnosti Gaussova rozdìlení je spr\'avn\v e normalizovan\'a, nebo\v t
+%
+$$\int_\R f_\X(x)~\dx=\int_\R \frac{1}{\sqrt{2\pi}\sigma}\e^{-\frac{(x-\mu)^2}{2\sigma^2}}~\dx=\left|\begin{array}{c} y=\frac{x-\mu}{\sqrt{2}\sigma}\\ \dy=\frac{\dx}{\sqrt{2}\sigma} \end{array}\right|=\frac{1}{\sqrt{\pi}}\int_\R \e^{-y^2}~\dy \stackrel{\text{\eqref{gaussicek}}}{=}1$$
+
+\item d\'ale $$\EV(\X) = \int_\R x~f_\X(x)~\dx=\int_\R \frac{x}{\sqrt{2\pi}\sigma}\e^{-\frac{(x-\mu)^2}{2\sigma^2}}~\dx=\int_\R \frac{x-\mu}{\sqrt{2\pi}\sigma}\e^{-\frac{(x-\mu)^2}{2\sigma^2}}~\dx+\int_\R \frac{\mu}{\sqrt{2\pi}\sigma}\e^{-\frac{(x-\mu)^2}{2\sigma^2}}~\dx=\mu,$$
+%
+kde jsme s v\'yhodou u\v zili faktu, \v ze prvn\'i z integr\'al\r u je nulov\'y d\'iky lich\'e symetrii integrandu a druh\'y z integr\'al\r u je normaliza\v cn\'im integr\'alem pouze p\v ren\'asoben\'ym konstantou $\mu$
+
+\item pro v\'ypo\v cet rozptylu u\v zijeme nejprve pomocn\'y v\'ypo\v cet $$\EV(\X^2) = \int_\R x^2~f_\X(x)~\dx=\int_\R \frac{x^2}{\sqrt{2\pi}\sigma}\e^{-\frac{(x-\mu)^2}{2\sigma^2}}~\dx=\int_\R \frac{(x-\mu+\mu)^2}{\sqrt{2\pi}\sigma}\e^{-\frac{(x-\mu)^2}{2\sigma^2}}~\dx=$$
+%
+$$= \int_\R \frac{(x-\mu)^2}{\sqrt{2\pi}\sigma}\e^{-\frac{(x-\mu)^2}{2\sigma^2}}~\dx +  \int_\R \frac{2(x-\mu)\mu}{\sqrt{2\pi}\sigma}\e^{-\frac{(x-\mu)^2}{2\sigma^2}}~\dx +  \int_\R\frac{\mu^2}{\sqrt{2\pi}\sigma}\e^{-\frac{(x-\mu)^2}{2\sigma^2}}~\dx= \int_\R\frac{(x-\mu)^2}{\sqrt{2\pi}\sigma}\e^{-\frac{(x-\mu)^2}{2\sigma^2}}~\dx + \mu^2=$$
+%
+$$=\left|\begin{array}{c} y=\frac{x-\mu}{\sqrt{2}\sigma}\\ \dy=\frac{\dx}{\sqrt{2}\sigma} \end{array}\right|=\mu^2+ 2\sigma^2\int_\R \frac{y^2}{\sqrt{\pi}}\e^{-y^2}~\dx = \mu^2+2\frac{\sigma^2}{\sqrt{\pi}}\frac{\sqrt{\pi}}{2}=\mu^2+\sigma^2,$$
+%
+kde bylo vyu\v zito odvozen\'eho vztahu \eqref{going_going_back}
+
+\item podle v\v ety \ref{vypoctova-veta-pro-rozptyl} pak snadno $\VAR(\X)=\EV(\X^2)-\EV^2(\X)=\mu^2+\sigma^2-\mu^2=\sigma^2$
+
+\end{itemize}
+
+\subsection{Definice}
+Øekneme, že náhodná velièina $\X$ má \emph{exponenciální rozdìlení}\index{exponenciální rozd\v elení}
+(exponential distribution)\index{exponential distribution} s parametry $\mu, \be \in \R$ a
+oznaèíme $\X \backsim Exp_{(\mu,\be)},$ pokud pro její hustotu
+pravdìpodobnosti platí vztah $$ f_\X(x) =
+\Theta(x-\mu)\frac{1}{\be}\e^{-\frac{x-\mu}{\be}}.$$
+
+\subsection{Vìta}
+Nech? $\X \backsim Exp_{(\mu,\be)}.$ Pak $$\la x \ra = \mu+\be,
+\quad \VAR(\X)=\be^{2}.$$ \Proof
+
+\begin{itemize}
+\item snadno nahl\'edneme, \v ze hustota pravd\v epodobnosti exponenci\'aln\'iho rozdìlení je spr\'avn\v e normalizovan\'a, nebo\v t
+%
+$$\int_\R f_\X(x)~\dx=\int_\R \Theta(x-\mu)\frac{1}{\be}\e^{-\frac{x-\mu}{\be}}~\dx=\int_\mu^\infty \frac{1}{\be}\e^{-\frac{x-\mu}{\be}}~\dx=\left|\begin{array}{c} y=\frac{x-\mu}{\be}\\ \dy=\frac{\dx}{\be} \end{array}\right|=\int_0^1 \e^{-y}~\dy= 1$$
+
+\item d\'ale $$\EV(\X) = \int_\R x~f_\X(x)~\dx=\int_\R \Theta(x-\mu)\frac{x}{\be}\e^{-\frac{x-\mu}{\be}}~\dx=\int_\mu^\infty \frac{x-\mu+\mu}{\be}\e^{-\frac{x-\mu}{\be}}~\dx=\left|\begin{array}{c} y=\frac{x-\mu}{\be}\\ \dy=\frac{\dx}{\be} \end{array}\right|=$$
+%
+$$=\be \int_0^1 y \e^{-y}~\dy + \mu \int_0^1 \e^{-y}~\dy = \be+\mu$$
+
+%
+
+\item pro v\'ypo\v cet rozptylu u\v zijeme nejprve pomocn\'y v\'ypo\v cet
+
+%
+\begin{multline*}
+\EV(\X^2) = \int_\R x^2~f_\X(x)~\dx=\int_\R \Theta(x-\mu)\frac{x^2}{\be}\e^{-\frac{x-\mu}{\be}}~\dx=\int_\mu^\infty \frac{x^2}{\be}\e^{-\frac{x-\mu}{\be}}~\dx=\left|\begin{array}{c} y=\frac{x-\mu}{\be}\\ \dy=\frac{\dx}{\be} \end{array}\right|{}=\\
+= \int_0^\infty (\mu+\be y)^2 \e^{-y}~\dy=\mu^2 \int_0^\infty \e^{-y}~\dy +2\mu\be \int_0^\infty y\e^{-y}~\dy+\be^2 \int_0^\infty y^2\e^{-y}~\dy \stackrel{\text{\eqref{someone}}}{=}  \mu^2 +2\mu\be+ 2\be^2
+\end{multline*}
+%
+
+\item podle v\v ety \ref{vypoctova-veta-pro-rozptyl} pak snadno
+%
+$$\VAR(\X)=\EV(\X^2)-\EV^2(\X)=\mu^2 +2\mu\be+ 2\be^2 - (\be+\mu)^2=\be^2$$
+
+\end{itemize}
+
+
+\subsection{Definice}
+Øekneme, že náhodná velièina $\X$ má \emph{Gamma rozdìlení}\index{Gamma rozdìlení} (Gamma
+distribution)\index{Gamma distribution} s parametry $\alpha, \be \in \R$ $(\al> 1, \be>0)$ a oznaèíme  $\X
+\backsim Gamma_{(\al,\be)},$ pokud pro její hustotu pravdìpodobnosti
+platí vztah $$ f_\X(x) = \frac{\Theta(x)}{\Gamma(\alpha) \be^{\alpha}}x^{\alpha-1}\e^{-\frac{x}{\be}}.$$
+
+
+\subsection{Vìta}
+Nech? $\X \backsim Gamma_{(\alpha,\be)}.$ Pak $$\la x \ra = \alpha
+\be, \quad \VAR(\X)=\alpha \be^{2}.$$
+
+\Proof
+
+\begin{itemize}
+\item nejprve prov\v e\v r\'ime, zda je skute\v cn\v e normaliza\v cn\'i integr\'al $\int_\R f_\X(x)~\dx$ jednotkov\'y
+\item proto\v ze ale $$\int_\R f_\X(x)~\dx=\int_\R \frac{\Theta(x)}{\Gamma(\alpha) \be^{\alpha}}x^{\alpha-1}\e^{-\frac{x}{\be}} ~\dx = \frac{1}{\Gamma(\alpha) \be^{\alpha}} \int_0^\infty x^{\alpha-1}\e^{-\frac{x}{\be}} ~\dx = \left|\begin{array}{c} x=\be y\\ \dx=\be \dy \end{array}\right|=$$
+%
+$$=\frac{1}{\Gamma(\alpha)} \int_0^\infty y^{\alpha-1}\e^{-y} ~\dy \stackrel{\text{\eqref{gamuuu}}}{=} \frac{1}{\Gamma(\alpha)}\Gamma(\alpha)=1,$$
+%
+je funkce $ f_\X(x) = \frac{\Theta(x)}{\Gamma(\alpha) \be^{\alpha}}x^{\alpha-1}\e^{-\frac{x}{\be}}$ skute\v cn\v e hustotou pravd\v epodobnosti
+\item d\'ale
+%
+$$\EV(\X) = \int_\R x~f_\X(x)~\dx= \frac{1}{\Gamma(\alpha) \be^{\alpha}} \int_0^\infty x^{\alpha}\e^{-\frac{x}{\be}} ~\dx = \left|\begin{array}{c} x=\be y\\ \dx=\be \dy \end{array}\right|=$$
+%
+$$=\frac{\be}{\Gamma(\alpha)} \int_0^\infty y^{\alpha}\e^{-y} ~\dy \stackrel{\text{\eqref{gamuuu}}}{=} \frac{\be}{\Gamma(\alpha)}\Gamma(\alpha+1) \stackrel{\text{\eqref{pink_floyd}}}{=} \al \be $$
+\item st\v redn\'i hodnotou Gamma rozd\v elen\'i je tedy sou\v cin obou parametr\r u rozd\v elen\'i
+\item d\'ale
+%
+$$\EV(\X^2) = \int_\R x^2~f_\X(x)~\dx= \frac{1}{\Gamma(\alpha) \be^{\alpha}} \int_0^\infty x^{\alpha+1}\e^{-\frac{x}{\be}} ~\dx = \left|\begin{array}{c} x=\be y\\ \dx=\be \dy \end{array}\right|=$$
+%
+$$=\frac{\be^2}{\Gamma(\alpha)} \int_0^\infty y^{\alpha+1}\e^{-y} ~\dy \stackrel{\text{\eqref{gamuuu}}}{=} \frac{\be}{\Gamma(\alpha)}\Gamma(\alpha+2) \stackrel{\text{\eqref{pink_floyd}}}{=} \be^2 (\al+1)\al$$
+
+\item odsud u\v z lehce dovozujeme, \v ze rozptylem zkouman\'eho rozd\v elen\'i je hodnota $$\VAR(\X)=\EV(\X^2)-\EV^2(\X)=\be^2 (\al+1)\al-\al^2\be^2=\al\be^2,$$ co\v z bylo dok\'azat
+
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{V\'icerozm\v ern\'a n\'ahodn\'a veli\v cina}
+
+Nyn\'i roz\v s\'i\v r\'ime pojmy n\'ahodn\'e veli\v ciny, distribu\v cn\'i funkce a hustoty pravd\v epodobnosti na v\'icerozm\v ern\'e p\v r\'ipady.
+
+\subsection{Definice}
+
+Nech\v t $\X$ a $\Y$ jsou n\'ahodn\'e veli\v ciny. \emph{Sdru\v zenou distribu\v cn\'i funkci}\index{sdru\v zen\'a distribu\v cn\'i funkce} n\'ahodn\'ych veli\v cin $\X,\Y$ definujeme pro v\v sechna $(x,y)\in\E^2$ p\v redpisem
+%
+\BE F_{\X,\Y}(x,y)=\prob\left(\bigl[\X \leq x\bigr]\bigl[\Y \leq y\bigr]\right). \label{pernicek}\EE
+
+\subsection{Vìta}
+
+Nech\v t $F_{\X,\Y}(x,y)$ je sdru\v zen\'a distribu\v cn\'i funkce n\'ahodn\'eho vektoru $(\X,\Y).$ Potom pro v\v sechna $x_1 \leq x_2$ a $y_1 \leq y_2$ plat\'i nerovnost $$F_{\X,\Y}(x_1,y_1) \leq F_{\X,\Y}(x_1,y_2).$$
+
+\Proof
+
+\begin{itemize}
+\item d\r ukaz plyne p\v r\'imo z defini\v cn\'iho vztahu \eqref{pernicek}, nebo\v t
+%
+ $$F_{\X,\Y}(x_1,y_1)=\prob\left(\bigl[\X \leq x_1\bigr]\bigl[\Y \leq y_1\bigr]\right) \leq \left|\begin{array}{c} x_1 \leq x_2\\ y_1 \leq y_2 \end{array}\right|\leq  \prob\left(\bigl[\X \leq x_1\bigr]\bigl[\Y \leq y_2\bigr]\right) \leq F_{\X,\Y}(x_1,y_2)$$
+\end{itemize}
+
+\subsection{V\v eta}
+
+Nech\v t $F_{\X,\Y}(x,y)$ je sdru\v zen\'a distribu\v cn\'i funkce n\'ahodn\'eho vektoru $(\X,\Y).$ Potom $$\forall y\in\R: \quad \lim_{x\rightarrow -\infty} F_{\X,\Y}(x,y)=0 \quad \wedge \quad \lim_{x\rightarrow \infty} F_{\X,\Y}(x,y)=F_{\Y}(y)$$
+%
+a tak\'e
+%
+$$\forall x\in\R:  \quad \lim_{y\rightarrow -\infty} F_{\X,\Y}(x,y)=0\quad \wedge \quad \lim_{y\rightarrow \infty} F_{\X,\Y}(x,y)=F_{\X}(x).$$
+
+\Proof
+
+\begin{itemize}
+\item d\r ukaz plyne p\v r\'imo z defini\v cn\'iho vztahu \eqref{pernicek} a z definice pravd\v epodobnostn\'i m\'iry, nebo\v t nap\v r. $$\lim_{x\rightarrow -\infty} \prob\left(\bigl[\X \leq x\bigr]\bigl[\Y \leq y\bigr]\right)=0$$
+\item  d\'ale $$ \lim_{x\rightarrow \infty} F_{\X,\Y}(x,y) =  \lim_{x\rightarrow \infty} \prob\left(\bigl[\X \leq x\bigr]\bigl[\Y \leq y\bigr]\right) = \prob\left(\bigl[\X \in \R \bigr]\bigl[\Y \leq y\bigr]\right) = \prob\left(\bigl[\Y \leq y\bigr]\right)$$
+\item v\'yraz na prav\'e stran\v e zjevn\v e konverguje a jeho hodnota z\'avis\'i na prom\v enn\'e $y$
+\item definujme tedy $F_{\Y}(y):= \prob\left(\bigl[\Y \leq y\bigr]\right)$
+\item tato funkce je tud\'i\v z jakousi d\'il\v c\'i distribu\v cn\'i funkc\'i
+\end{itemize}
+
+\subsection{Definice}
+
+Nech\v t $F_{\X,\Y}(x,y)$ je sdru\v zen\'a distribu\v cn\'i funkce n\'ahodn\'eho vektoru $(\X,\Y).$ Potom funkce $F_{\X}(x)$ a $F_{\Y}(y)$ z p\v rede\v sl\'e v\v ety budeme naz\'yvat \emph{margin\'aln\'imi distribu\v cn\'imi funkcemi}\index{margin\'aln\'i distribu\v cn\'i funkce} n\'ahodn\'eho vektoru $(\X,\Y).$ Veli\v ciny  $\X,$ resp. $\Y$ naz\'yv\'ame analogicky \emph{margin\'aln\'imi n\'ahodn\'ymi veli\v cinami.}\index{margin\'aln\'i n\'ahodn\'a veli\v cina}
+
+\subsection{Definice}
+
+\v Rekneme, \v ze n\'ahodn\'e veli\v ciny $\X$ a $\Y$ jsou \emph{(statisticky) nez\'avisl\'e,}\index{statisticky nez\'avisl\'e n\'ahodn\'e veli\v ciny} jestli\v ze jsou jevy
+%
+$$\bigl[a< \X \leq b\bigr],\quad \bigl[c< \Y \leq d\bigr]$$
+%
+nez\'avisl\'e pro v\v sechny $a,b,c,d\in\R^\star,$ pro kter\'e $a \leq b$ a $c \leq d.$
+
+\subsection{Vìta}\label{distribucni_fce_pro_nezavisle}
+
+N\'ahodn\'e veli\v ciny $\X,\Y$ jsou nez\'avisl\'e pr\'av\v e tehdy, kdy\v z pro ka\v zdou dvojici $(x,y)\in\E^2$ plat\'i rovnost $$F_{\X,\Y}(x,y)=F_{\X}(x)\cdot F_{\Y}(y),$$ tj. sdru\v zen\'a distribu\v cn\'i funkce $F_{\X,\Y}(x,y)$ je rovna sou\v cinu tzv. \emph{margin\'aln\'ich distribu\v cn\'ich funkc\'i}\index{margin\'aln\'i distribu\v cn\'i funkce} $F_{\X}(x)$ a $F_{\Y}(y).$\\
+
+\Proof
+
+\begin{itemize}
+\item p\v redpokl\'adejme nejprve, \v ze $\X,\Y$ jsou nez\'avisl\'e n\'ahodn\'e veli\v ciny, tj. pro v\v sechny $a,b,c,d\in\R^\star,$ pro n\v e\v z $a \leq b$ a $c \leq d,$ plat\'i
+%
+$$ \prob\left(\bigl[a< \X \leq b\bigr],\bigl[c< \Y \leq d\bigr]\right) =\prob\left(\bigl[a< \X \leq b\bigr]\right) \cdot \prob\left(\bigl[c< \Y \leq d\bigr]\right)$$
+\item polo\v z\'ime-li v p\v rede\v sl\'em v\'yraze $a=-\infty,$ $b=x,$  $c=-\infty,$ $d=y,$ pak pro libovolnou uspo\v r\'adanou dvojici $(x,y)\in\R^2$ plat\'i sada rovnost\'i
+%
+$$F_{\X,\Y}(x,y)= \prob\left(\bigl[-\infty < \X \leq x\bigr]\bigl[-\infty < \Y \leq y\bigr]\right) =     \prob\left(\bigl[-\infty < \X \leq x\bigr]\right)\cdot  \prob\left(\bigl[-\infty < \Y \leq y\bigr]\right) = F_{\X}(x) \cdot F_{\Y}(y)$$
+
+\item obr\'acenou implikaci prok\'a\v ze sada rovnost\'i
+%
+$$\prob\left(\bigl[a< \X \leq b\bigr],\bigl[c< \Y \leq d\bigr]\right) =F_{\X,\Y}(b,d)-F_{\X,\Y}(b,yc)-F_{\X,\Y}(a,d)+F_{\X,\Y}(a,c)=$$
+%
+$$=F_{\X}(b)F_{\Y}(d)-F_{\X}(b)F_{\Y}(c)-F_{\X}(a)F_{\Y}(d)+F_{\X}(a)F_{\Y}(c)=\bigl(F_{\X}(b)-F_{\X}(a)\bigr)\bigl(F_{\Y}(d)-F_{\Y}(c)\bigr)=$$
+%
+$$=\prob\left(\bigl[a< \X \leq b\bigr]\right) \cdot \prob\left(\bigl[c< \Y \leq d\bigr]\right)$$
+
+\end{itemize}
+
+\subsection{Definice}\label{SASR}
+
+\v Rekneme, \v ze n\'ahodn\'e veli\v ciny $\X_1,\X_2,\ldots,\X_n$ maj\'i \emph{sdru\v zen\'e absolutn\v e spojit\'e rozd\v elen\'i,}\index{sdru\v zen\'e absolutn\v e spojit\'e rozd\v elen\'i} jestli\v ze existuje nez\'aporn\'a funkce $f_{\X_1,\X_2,\ldots,\X_n}(x_1,x_2,\ldots,x_n)$ takov\'a, \v ze
+%
+\BE F_{\X_1,\X_2,\ldots,\X_n}(\x)=\int_{-\infty}^{x_1}\int_{-\infty}^{x_2}\ldots \int_{-\infty}^{x_n} f_{\X_1,\X_2,\ldots,\X_n}(t_1,t_2,\ldots,t_n)~\dtt \label{sdruzena}\EE
+%
+pro v\v sechna $\x\in\E^n.$ Funkci $f_{\X_1,\X_2,\ldots,\X_n}(\x)$ naz\'yv\'ame \emph{sdru\v zenou hustotou pravd\v epodobnosti}\index{sdru\v zen\'a hustota pravd\v epodobnosti} n\'ahodn\'ych veli\v cin $\X_1,\ldots,\X_n.$
+
+\subsection{Poznámka}
+
+Veli\v ciny $\X_1,\X_2,\ldots,\X_n$ z p\v rede\v sl\'e definice n\v ekdy naz\'yv\'ame zjednodu\v sen\v e jako \emph{absolutn\v e spojit\'e.} Nav\'ic ka\v zd\'a nez\'aporn\'a funkce $f(\x):\Er\mapsto\R,$ pro n\'i\v z
+%
+$\int_{\Er} f(\x)~\dxx = 1,$
+%
+m\r u\v ze b\'yt ch\'ap\'ana jako hustota pravd\v epodobnosti ur\v
+cit\'e v\'icerozm\v ern\'e n\'ahodn\'e veli\v ciny.
+
+\subsection{V\v eta}\label{hustota_4_nezavisle}
+
+Nech\v t maj\'i n\'ahodn\'e veli\v ciny $\X_1,\X_2,\ldots,\X_n$ sdru\v zen\'e absolutn\v e spojit\'e rozd\v elen\'i. Potom $\X_1,\X_2,\ldots,\X_n$ jsou nez\'avisl\'e pr\'av\v e tehdy, kdy\v z pro v\v sechna $\x\in\E^n$ plat\'i
+%
+$$f_{\X_1,\X_2,\ldots,\X_n}(\x)=\prod_{i=1}^n f_{\X_i}(x_i).$$
+
+\Proof
+
+\begin{itemize}
+\item d\r ukaz budeme demonstrovat na p\v r\'ipadu $n=2$
+\item chceme tedy dok\'azat, \v ze $\X,\Y$ jsou nez\'avisl\'e pr\'av\v e tehdy, kdy\v z $f_{\X,\Y}(x,y)=f_{\X}(x)\cdot f_{\Y}(y)$
+\item pro d\r ukaz prvn\'i implikace vyjdeme z p\v redpokladu, \v ze $f_{\X,\Y}(x,y)=f_{\X}(x)\cdot f_{\Y}(y)$
+\item pro distribu\v cn\'i funkci $F_{\X,\Y}(x,y)$ pak podle vztahu \eqref{sdruzena} a dost\'av\'ame $$F_{\X,\Y}(x,y)=\int_{-\infty}^{x}\int_{-\infty}^{y} f_{\X,\Y}(t,s)~\dt~\ds=\int_{-\infty}^{x}\int_{-\infty}^{y} f_{\X}(t)f_{\Y}(s)~\dt~\ds$$
+
+\item z Fubiniovy v\v ety pak $$F_{\X,\Y}(x,y)=\left(\int_{-\infty}^{x}f_{\X}(t)~\dt\right)\left(\int_{-\infty}^{y}f_{\Y}(s)~\ds\right)=F_{\X}(x)\cdot  F_{\Y}(y)$$
+\item to ale podle v\v ety \ref{distribucni_fce_pro_nezavisle} implikuje skute\v cnost, \v ze $\X,\Y$ jsou nez\'avisl\'e
+\item pro druhou implikaci p\v redpokl\'adejme, \v ze $\X,\Y$ jsou nez\'avisl\'e n\'ahodn\'e veli\v ciny
+\item z tohoto p\v redpokladu plyne, \v ze $$F_{\X,\Y}(x,y)= F_{\X}(x) \cdot F_{\Y}(y) = \int_{-\infty}^{x}\int_{-\infty}^{y} f_{\X,\Y}(t,s)~\dt~\ds$$
+\item z definice \ref{SASR} odtud ihned vypl\'yv\'a, \v ze $f_{\X,\Y}(x,y)=f_{\X}(x)\cdot f_{\Y}(y)$
+
+
+\end{itemize}
+
+\subsection{Poznámka}
+
+Zcela analogicky vztahu \eqref{ReasonWasYou} plat\'i tak\'e pro v\'icerozm\v ern\'e n\'ahodn\'e veli\v ciny vztah
+%
+$$f_{\X_1,\X_2,\ldots,\X_n}(\x)= \frac{\p^n F_{\X_1,\X_2,\ldots,\X_n}}{\p x_1\p x_2 \ldots \p x_n},$$
+%
+pokud je prav\'a strana definov\'ana. D\'ale tak\'e
+%
+$$\prob\bigl[a_1< \X \leq b_1,a_2< \X \leq b_2,\ldots,a_n< \X \leq b_n\bigr]=\int_{a_1}^{b_1}\int_{a_2}^{b_2}\ldots\int_{a_n}^{b_n} f_{\X_1,\X_2,\ldots,\X_n}(\x)~\dx_n\dx_{n-1}\ldots \dx_2\dx_1.$$
+
+\subsection{Definice}\label{rare}
+Nech\v t je d\'ana v\'icerozm\v ern\'a n\'ahodn\'a veli\v cina $\overrightarrow{\X}=(\X_1,\X_2,\ldots,\X_n)$ maj\'ic\'i sdru\v zen\'e absolutn\v e spojit\'e rozd\v elen\'i a p\v r\'islu\v sn\'a v\'icerozm\v ern\'a hustota pravd\v
+epodobnosti $f(\x).$ Konverguje-li integr\'al druh\'eho druhu
+$$\int_{\R} \x f(\x)~\dxx=\left(\int_{\R} x_1 f(\x)~\dxx,\int_{\R} x_2 f(\x)~\dxx,\ldots,\int_{\R} x_n f(\x)~\dxx\right),$$ pak p\v r\'islu\v
+sn\'y vektor naz\'yv\'ame \emph{støední hodnotou}\index{støední hodnota v\'icerozm\v
+ern\'e n\'ahodn\'e veli\v ciny} v\'icerozm\v
+ern\'e n\'ahodn\'e veli\v ciny $\overrightarrow{\X}$ a zna\v c\'ime jedn\'im ze
+symbol\r u $\EV(\overrightarrow{\X})$ nebo $\la \x \ra.$
+
+\subsection{Lemma}\label{you}
+
+Nech\v t $\A$ je t\v r\'ida v\v sech absolutn\v e spojit\'ych n\'ahodn\'ych veli\v cin $\X,$ pro n\v e\v z existuj\'i st\v redn\'i hodnoty $\EV(\X).$ Pak pro ka\v zd\'e $c\in\R$ a v\v sechny $\X,\Y\in\A$ plat\'i, \v ze
+%
+$$\EV(c\X)=c~\EV(\X), \quad \EV(\X+\Y)=\EV(\X)+\EV(\Y).$$
+
+\subsection{Definice}
+
+Nech\v t jsou d\'any n\'ahodn\'e veli\v ciny $\X$ a $\Y.$ Nech\v t existuj\'i st\v redn\'i hodnoty $\EV(\X)$ a $\EV(\Y).$ Pak \emph{kovarianc\'i n\'ahodn\'ych veli\v cin}\index{kovariance n\'ahodn\'ych veli\v cin} rozum\'ime \v c\'islo
+%
+\BE \COV(\X,\Y):= \EV \Bigl[\bigl(\X-\EV(\X)\bigr)\bigl(\Y-\EV(\Y)\bigr)\Bigr],\label{spirit}\EE
+%
+pokud prav\'a strana existuje.
+
+\subsection{V\v eta}\label{kovariance_nezavislych_velicin_je_skalarni soucin}
+
+Nech\v t $\A$ je t\v r\'ida v\v sech n\'ahodn\'ych veli\v cin $\X,$ pro n\v e\v z existuj\'i st\v redn\'i hodnoty $\EV(\X)$ a rozptyly $\VAR(\X).$ Pak zobrazen\'i definovan\'e p\v redpisem \eqref{spirit} spl\v nuje axiomy skal\'arn\'iho sou\v cinu, tj. kovariance n\'ahodn\'ych veli\v cin je skal\'arn\'im sou\v cinem.\\
+
+\Proof
+
+\begin{itemize}
+\item nejprve podot\'yk\'ame, \v ze prvky t\v r\'idy $\A$ musej\'i b\'yt nyn\'i ch\'ap\'any pon\v ekud obecn\v eji, nebo\v t je t\v reba, aby do $\A$ pat\v rily i n\'ahodn\'e veli\v ciny, je\v z maj\'i nulov\'y rozptyl a nejsou tud\'i\v z absolutn\v e spojit\'e
+\item nejprve prok\'a\v zeme, \v ze zobrazen\'i definovan\'e p\v redpisem \eqref{spirit} spl\v nuje axiom homogenity
+\item pro libovoln\'e $c\in\R$ ale zcela jasn\v e (p\v ri aplikaci lemmatu \ref{you}) plat\'i
+%
+$$ \COV(c\X,\Y):= \EV \Bigl[\bigl(c\X-\EV(c\X)\bigr)\bigl(\Y-\EV(\Y)\bigr)\Bigr]  =c~\EV \Bigl[\bigl(\X-\EV(\X)\bigr)\bigl(\Y-\EV(\Y)\bigr)\Bigr]=c~\COV(\X,\Y)$$
+\item podobn\v e tak\'e pro v\v sechny $\X,\Y,\ZZZ\in\A$ plat\'i, \v ze
+%
+\begin{multline*}
+\COV(\X+\ZZZ,\Y):= \EV \Bigl[\bigl(\X+\ZZZ-\EV(\X+\ZZZ)\bigr)\bigl(\Y-\EV(\Y)\bigr)\Bigr]  =\EV \Bigl[\bigl(\X+\ZZZ-\EV(\X)-\EV(\ZZZ)\bigr)\bigl(\Y-\EV(\Y)\bigr)\Bigr]{}=\\
+=\EV \Bigl[\bigl(\X-\EV(\X)\bigr)\bigl(\Y-\EV(\Y)\bigr)\Bigr]+\EV \Bigl[\bigl(\ZZZ-\EV(\ZZZ)\bigr)\bigl(\Y-\EV(\Y)\bigr)\Bigr]=\COV(\X,\Y)+\COV(\ZZZ,\Y)
+\end{multline*}
+%
+\item symetrie $\COV(\X,\Y)=\COV(\Y,\X)$ je spln\v ena trivi\'aln\v e
+\item zb\'yv\'a tedy prok\'azat axiom pozitivn\'i definitnosti
+\item ozna\v cme $f(x,y)$ sdru\v zenou hustotu pravd\v epodobnosti pro n\'ahodn\'e veli\v ciny $\X,\Y$ a pro v\v sechny $\X\in\A$ zkoumejme kovarianci $\COV(\X,\X)$
+\item jedn\'a se tedy o v\'yraz $ \COV(\X,\Y):= \EV \Bigl[\bigl(\X-\EV(\X)\bigr)^2\Bigr],$ kter\'y je na prvn\'i pohled nez\'aporn\'y, nebo\v t  $$ \COV(\X,\X) = \int_\Er \bigl(x-\EV(x)\bigr)^2f(x,x)~\dx \geq 0,$$ co\v z je spln\v eno kv\r uli nez\'apornosti integrandu
+
+\item posledn\'i, co je t\v reba prov\v e\v rit, je skute\v cnost, \v ze rovnost $ \COV(\X,\X)=0$ nast\'av\'a pouze tehdy, je-li $\X$ nulov\'y prvek t\v r\'idy $\A$
+\item p\v ritom ale integrand $\bigl(x-\EV(x)\bigr)^2f(x,x)$ m\r u\v ze b\'yt zjevn\v e nulov\'y pouze pokud n\'ahodn\'a veli\v cina nab\'yv\'a pouze konstantn\'ich hodnot $\gamma\in\R,$ kdy $\EV(x)=\gamma$
+\item nulov\'ym prvkem t\v r\'idy $\A$ je tedy skupina n\'ahodn\'ych veli\v cin, je\v z maj\'i nulov\'y rozptyl
+\item zde ov\v sem vyvst\'av\'a ot\'azka, jak bude vypadat hustota pravd\v epodobnosti pro takov\'e veli\v ciny
+\item zde mus\'ime s p\v redstihem konstatovat, \v ze takov\'ymi hustotami pravd\v epodobnosti budou zobecn\v en\'e funkce zaveden\'e v dal\v s\'ich kapitol\'ach, speci\'aln\v e Diracova $\delta-$funkce, resp. centrovan\'a Diracova $\delta-$funkce
+\item za takov\'ych okolnost\'i je pak skute\v cn\v e kovariance $\COV(\X,\Y)$ n\'ahodn\'ych veli\v cin skal\'arn\'im sou\v cinem na $\A$
+
+
+\end{itemize}
+
+
+
+\subsection{V\v eta}\label{turner}
+
+Nech\v t jsou d\'any absolutn\v e spojit\'e n\'ahodn\'e veli\v ciny $\X, ~\Y$ a nech\v t existuje jejich kovariance $\COV(\X,\Y).$ Pak plat\'i
+%
+$$\COV(\X,\Y) = \EV\bigl(\X\Y\bigr)-\EV\bigl(\X\bigr)\EV\bigl(\Y\bigr).$$
+
+\Proof
+
+\begin{itemize}
+\item z definice kovariance p\v r\'imo vypl\'yv\'a, \v ze
+%
+\begin{multline*}
+ \COV(\X,\Y) = \int_\R \int_\R \bigl(x-\EV(x)\bigr)\bigl(y-\EV(y)\bigr)f(x,y)~\dx\dy = \int_\R\int_\R xyf(x,y)~\dx\dy {}-\\
+  - \EV(y) \int_\R\int_\R xf(x,y)~\dx\dy - \EV(x) \int_\R\int_\R yf(x,y)~\dx\dy  + \EV(x)\EV(y) \int_\R\int_\R f(x,y)~\dx\dy {}=\\
+  = \EV\bigl(xy\bigr) - \EV\bigl(x\bigr)\EV\bigl(y\bigr) - \EV\bigl(x\bigr)\EV\bigl(y\bigr) + \EV\bigl(x\bigr)\EV\bigl(y\bigr) = \EV\bigl(\X\Y\bigr)-\EV\bigl(\X\bigr)\EV\bigl(\Y\bigr)
+\end{multline*}
+%
+\end{itemize}
+
+
+\subsection{V\v eta}\label{kovariance_nezavislych_velicin}
+
+Nech\v t jsou d\'any absolutn\v e spojit\'e nez\'avisl\'e n\'ahodn\'e veli\v ciny $\X, ~\Y.$ Nech\v t existuje jejich kovariance $\COV(\X,\Y).$ Pak $\COV(\X,\Y)=0.$\\
+
+\Proof
+
+\begin{itemize}
+\item ozna\v cme $h(x,y)$ sdru\v zenou hustotu pravd\v epodobnosti pro n\'ahodn\'e veli\v ciny $\X,\Y$
+\item jeliko\v z $\X$ a $\Y$  jsou nez\'avisl\'e n\'ahodn\'e veli\v ciny, existuj\'i podle v\v ety \ref{hustota_4_nezavisle} funkce $f(x)$ a $g(y)$ tak, \v ze $h(x,y)=f(x)\cdot g(y)$
+\item pak ale z Fubiniovy v\v ety, resp. z v\v ety o separabilit\v e plyne, \v ze  $$\EV\bigl(\X\Y\bigr)= \int_\R\int_\R xyf(x) g(y)~\dx\dy =\int_\R xf(x)~\dx \cdot \int_\R y~g(y)~\dy= \EV\bigl(\X\bigr)\EV\bigl(\Y\bigr)$$
+\item z v\v ety \ref{turner} pak ihned vypl\'yv\'a, \v ze $$\COV(\X,\Y) = \EV\bigl(\X\Y\bigr)-\EV\bigl(\X\bigr)\EV\bigl(\Y\bigr) = \EV\bigl(\X\bigr)\EV\bigl(\Y\bigr) - \EV\bigl(\X\bigr)\EV\bigl(\Y\bigr)=0$$
+\end{itemize}
+
+\subsection{Definice}
+
+Nech\v t jsou d\'any absolutn\v e spojit\'e n\'ahodn\'e veli\v ciny $\X$ a $\Y.$ Nech\v t existuj\'i jejich kovariance $\COV(\X,\Y)$ a sm\v erodatn\'e odchylky $\SD(\X),$ resp. $\SD(\Y).$ Pak \emph{koeficientem korelace n\'ahodn\'ych veli\v cin}\index{koeficient korelace n\'ahodn\'ych veli\v cin} rozum\'ime \v c\'islo
+%
+$$\rho(\X,\Y):= \frac{\COV(\X,\Y)}{\SD(\X)\SD(\Y)}.$$
+
+\subsection{Pozn\'amka}\label{paul_carrack}
+
+Kovariance n\'ahodn\'ych veli\v cin spl\v nuje podle v\v ety \ref{kovariance_nezavislych_velicin_je_skalarni soucin} axiomy skal\'arn\'iho sou\v cinu, a tedy $\sqrt{\COV(\X,\X)}=\VAR(\X)$ je normou n\'ahodn\'e veli\v ciny $\X.$ Odtud a z Schwarzovy-Cauchyovy-Bunjakovského nerovnosti (v\v eta 6.2.3 ve skriptech \cite{Krbalek_MAB3}) tvaru
+%
+$$\bigl|\COV(\X,\Y)\bigr| \leq \SD(\X)\SD(\Y)$$
+%
+ale ihned vypl\'yv\'a, \v ze koeficient korelace n\'ahodn\'ych veli\v cin reprezentuje de facto kosinus \'uhlu n\'ahodn\'ych veli\v ciny $\X$ a $\Y$ (viz pozn\'amka 6.2.8 ve skriptech \cite{Krbalek_MAB3}).
+
+\subsection{V\v eta}
+
+Nech\v t jsou d\'any absolutn\v e spojit\'e n\'ahodn\'e veli\v ciny $\X$ a $\Y.$ Nech\v t existuje jejich koeficient korelace $\rho(\X,\Y).$ Pak plat\'i $$-1 \leq \rho(\X,\Y) \leq 1,$$ p\v ri\v cem\v z rovnosti $\rho(\X,\Y)=1,$ resp. $\rho(\X,\Y)=-1$  nast\'avaj\'i pr\'av\v e tehdy, kdy\v z existuje \v c\'islo $\const>0$ tak, \v ze $$\Y-\EV(\Y)=\const\bigl(\Y-\EV(\Y)\bigr), \quad \text{resp.} \quad \Y-\EV(\Y)=-\const\bigl(\Y-\EV(\Y)\bigr).$$
+
+\Proof
+
+\begin{itemize}
+\item plyne z pozn\'amky \ref{paul_carrack}
+\end{itemize}
+
+\subsection{Definice}\label{wishing}
+
+Nech\v t $\X_1,\X_2,\ldots,\X_n$ je vektor n\'ahodn\'ych veli\v cin. Nech\v t pro v\v sechna $k, \ell\in \widehat{n}$ existuj\'i kovariance $\sigma_{k\ell}=\COV(\X_k,\X_\ell).$ Pak matici
+%
+$$\matS_{\X_1,\X_2,\ldots,\X_n}:=\left(\begin{array}{cccc}
+\sigma_{11}(\x)  & \sigma_{12}(\x)  & \ldots & \sigma_{1r}(\x)  \\
+\sigma_{21}(\x)  & \sigma_{22}(\x)  & \ldots & \sigma_{2r}(\x) \\
+\vdots & \vdots & \ddots & \vdots \\
+\sigma_{r1}(\x)  & \sigma_{r2}(\x)  & \ldots & \sigma_{rr}(\x)
+\end{array}\right)=  \bigl(\sigma_{k\ell}\bigr)_{k,\ell=1}^n$$
+%
+nazveme \emph{kovarianc\'i n\'ahodn\'eho vektoru}\index{kovariance n\'ahodn\'eho vektoru} $\X_1,\X_2,\ldots,\X_n$ nebo \emph{kovarian\v cn\'i matic\'i.}\index{kovarian\v cn\'i matice}
+
+
+\subsection{Pozn\'amka}
+
+Z definice \ref{wishing} vyplývá, \v ze kovarian\v cn\'i matice $\matS_{\X_1,\X_2,\ldots,\X_n}$ je symetrická, na diagonále má rozptyly $\sigma_{\ell\ell}=\COV(\X_\ell,\X_\ell)=\VAR(\X_\ell)$ náhodných velièin $\X_1,\X_2,\ldots,\X_n$ a pokud jsou tyto velièiny nezávislé, pak je $\matS_{\X_1,\X_2,\ldots,\X_n}$ diagonální matic\'i.
+
+
+
+
+
+\section{Konvoluce funkc\'i}
+Prezentovanou teorii pravd\v epodobnosti nyn\'i zu\v zitkujeme p\v ri specifick\'em zaveden\'i pojmu konvoluce funkc\'i. Nejprve p\v redstav\'ime tuto operaci pro hustoty pravd\v epodobnosti, a pot\'e tuto definici roz\v s\'i\v r\'ime na co nej\v sir\v s\'i t\v r\'idu funkc\'i.
+
+\subsection{V\v eta}\label{odvozeni_konvoluce}
+
+Nech\v t jsou d\'any nez\'avisl\'e jednorozm\v ern\'e n\'ahodn\'e veli\v ciny $\X,\Y$ s absolutn\v e spojit\'ym rozd\v elen\'im. Nech\v t $f_\X(x)$ a $f_\Y(y)$ jsou p\v r\'islu\v sn\'e hustoty pravd\v epodobnosti. Pak hustotou pravd\v epodobnosti $f_\ZZZ(z)$ n\'ahodn\'e veli\v ciny $\ZZZ=\X+\Y$ je funkce \BE f_\ZZZ(r)= \int_{-\infty}^\infty f_\X(x)f_\Y(r-x)~\dx. \label{konvicka2} \EE
+
+\Proof
+
+\begin{itemize}
+\item ozna\v cme $F_\ZZZ(z)$ distribu\v cn\'i funkci n\'ahodn\'e veli\v ciny $\ZZZ=\X+\Y$
+\item pro ni plat\'i
+%
+$$F_\ZZZ(z)=\prob\bigl[\ZZZ \leq z\bigr]=\prob\bigl[\X+\Y \leq z\bigr]=\iint_{x+y \leq z} f_{\X,\Y}(x,y)~\dx\dy$$
+
+\item ozna\v cme $M_z=\bigl\{(x,y)\in\E^2:~x+y\leq z\bigr\}$
+\item mno\v zina $M_z$ p\v redstavuje polorovinu v $\E^2$
+\item u\v zijeme-li d\'ale p\v redpokladu, \v ze $\X,\Y$ jsou nez\'avisl\'e, tak platí rovnost
+%
+$$F_\ZZZ(z)=\iint_{M_z} f_\X(x)f_\Y(y)~\dx~\dy= \int_{-\infty}^\infty \int_{-\infty}^{z-x} f_\X(x)f_\Y(y)~\dy~\dx= \left|\begin{array}{c} r=x+y\\ \dr=\dy \end{array}\right|=$$
+%
+$$= \int_{-\infty}^\infty \int_{-\infty}^{z} f_\X(x)f_\Y(r-x)~\dr~\dx= \int_{-\infty}^{z} \left(\int_{-\infty}^\infty f_\X(x)f_\Y(r-x)~\dx \right)\dr= \int_{-\infty}^{z} f_\ZZZ(r)~\dr$$
+\item proto je hledanou hustotou pravd\v epodobnosti funkce $f_\ZZZ(r)= \int_{-\infty}^\infty f_\X(x)f_\Y(r-x)~\dx$
+
+\end{itemize}
+
+\subsection{Pozn\'amka}
+
+Analogicky lze uk\'azat, \v ze pro nez\'avisl\'e v\'icerozm\v ern\'e n\'ahodn\'e veli\v ciny $\XX,\YY$ a $\ZZZZ=\XX+\YY$ plat\'i vztah
+%
+\BE f_{\ZZZZ}(\rrr)= \int_{\E^r} f_{\XX}(\x)f_{\YY}(\rrr-\x)~\dxx. \label{konvicka} \EE
+
+\subsection{Pozn\'amka}
+
+Vztah \eqref{konvicka} je jedn\'im ze z\'akladn\'ich vztah\r u cel\'e teorie o \v re\v sen\'i parci\'aln\'ich diferenci\'aln\'ich rovnic. Jeho platnost nebudeme zu\v zovat pouze na p\v r\'ipad hustot pravd\v epodobnosti, ale zobecn\'ime ho pro obecn\'e v\'icerozm\v ern\'e funkce.
+
+\subsection{Definice}\label{klasa-konvo}
+Nech?jsou dány funkce $f(\x),g(\x)\in \LOC{(\Er)}$. Zobrazení
+$(f\star g)(\x):\LOC{(\Er)} \times \LOC{(\Er)}\mapsto \LOC{(\Er)}$
+definované pøedpisem
+%
+$$(f\star g)(\x):=\int_{\Er}f(\sss)g(\x-\sss)~\dss$$
+%
+nazveme \emph{konvoluc\'i}\index{konvoluce klasick\'ych funkcí} funkcí, pokud pravá strana existuje a
+patøí do t\v r\'idy $\LOC{(\Er)}.$
+
+\subsection{Vìta}\label{existuje_konvo}
+
+Nech?jsou dány funkce $f(\x),g(\x)\in \LLL_1{(\Er)}$. Pak jejich konvoluce $(f\star g)(\x)$ existuje pro skoro v\v sechna $\x\in\Er$ a nav\' ic patøí do t\v r\'idy $\LLL_1{(\Er)}.$ D\'ale 
+%
+\BE \int_{\Er} (f\star g)(\x)~\dxx \leq \|f\|_{\LLL_1} \cdot  \|g\|_{\LLL_1}. \label{zacapa} \EE
+
+\Proof
+
+\begin{itemize}
+\item vyjdeme z p\v redpoklad\r u, \v ze $\int_{\Er} |f(\x)|~\dxx \in\R$ a $\int_{\Er} |g(\x)|~\dxx \in\R$
+
+\item chceme uk\'azat, \v ze tak\'e $\int_{\Er} \bigl|(f\star g)(\x)\bigr|~\dxx \in\R$
+
+\item zkoumejme proto integr\'al $$\int_{\Er} \bigl|(f\star g)(\x)\bigr|~\dxx=$$ $$=\int_{\Er} \left|\int_{\Er}f(\sss)g(\x-\sss)~\dss ~\right|~\dxx \leq \int_{\Er} \int_{\Er} \bigl|f(\sss)g(\x-\sss)\bigr|~\dss~\dxx =\int_{\Er} \left(\int_{\Er} \bigl|g(\x-\sss)\bigr|~\dxx\right) |f(\sss)|~\dss =$$
+%
+$$=  \left|\begin{array}{c} \y = \x -\sss\\ \dyy=\dss \end{array}\right|= \int_{\Er} \left(\int_{\Er} \bigl|g(\y)\bigr|~\dyy\right) |f(\sss)|~\dss= \int_{\Er} \bigl|g(\y)\bigr|~\dyy \cdot  \int_{\Er} \bigl|f(\x)\bigr|~\dxx \in \R$$
+
+\item podle tvrzen\' i Fubiniovy v\v ety plat\'i, \v ze $f(\x-\y)g(\y)\in\LLL_1(\Er)$ pro skoro v\v sechna $\x\in\Er,$ a tedy konvoluce $(f\star g)(\x)$ je definov\'ana pro skoro v\v sechna $\x\in\Er$
+    
+\item a proto\v ze $\|h\|_{\LLL_1}:= \int_{\Er} |h(\x)|~\dxx,$ vych\'az\' i z p\v redchoz\' ich \' uvah tak\'e platnost vztahu (\ref{zacapa})
+
+\item vyu\v z\'iv\'ame p\v ritom v\v ety 4.2.37, 4.3.5 a \ 4.3.7 ze skript \cite{Krbalek_MAB4}
+
+\item pro  funkce nez\'aporn\'e s.v. nav\' ic plat\' i ve vztahu  (\ref{zacapa}) rovnost, tj. $\|f\star g\|_{\LLL_1} = \|f\|_{\LLL_1} \cdot  \|g\|_{\LLL_1}$
+
+\end{itemize}
+
+
+\subsection{Vìta}
+
+Nech?jsou dány hustoty pravdìpodobnosti $f(\x),g(\x):\Er\mapsto\R$. Pak jejich konvoluce $(f\star g)(\x)$ existuje a nav\' ic je také hustotou pravdìpodobnosti. 
+
+\Proof
+
+\begin{itemize}
+
+
+\item o hustotách $f(\x), g(\x)$ víme, že patøí do $\LLL_1(\Er)$ a chceme ukázat, že do $\LLL_1(\Er)$ paøí také jejich konvoluce, a navíc, že tato konvoluce je také hustotou pravdìpodobnosti
+
+\item Díky nerovnosti $$(f\star g)(\x)=\int_{\Er}f(\sss)g(\x-\sss)~\dss\geq0$$
+víme, že je splnìna nezápornost hustoty
+
+\item ovìøme, že $\int_{\Er}(f\star g)(\x)=1$
+
+$$\int_{\Er}\int_{\Er}f(\sss)g(\x-\sss)\dxx\dss = \int_{\Er}f(\sss)\int_{\Er}g(\x-\sss)\dxx\dss = \int_{\Er}f(\sss)\dss\int_{\Er}g(\y)\dyy=1$$
+
+pøièemž jsme v první rovnosti použili Fubiniovu vìtu a ve druhé rovnosti substituci $\y=\x-\sss$
+
+\item integrály $\int_{\Er}f(\sss)\dss$ a $\int_{\Er}g(\y)\dyy$ jsou z definice hustoty rovny jedné a tedy $(f\star g)(\x)$ je opravdu také hustotou pravdìpodobnosti 
+\end{itemize}
+
+\subsection{P\v r\'iklad}\label{Meklenburg}
+
+Nech\v t $$f(x) =
+\frac{1}{\sqrt{2\pi}\sigma_1}\e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}},\quad g(x) =
+\frac{1}{\sqrt{2\pi}\sigma_2}\e^{-\frac{(x-\mu_2)^2}{2\sigma_2^2}}.$$ Vypo\v ct\v eme konvoluci $f(x)~\star~g(x).$ Z definice konvoluce a ze vztahu \eqref{gaussicek} vyvozujeme sadu rovnost\'i
+%
+\begin{multline*}
+f(x)~\star~g(x)=\frac{1}{2\pi\sigma_1\sigma_2}\int_\R  \e^{-\frac{(s-\mu_1)^2}{2\sigma_1^2}}\e^{-\frac{(x-s-\mu_2)^2}{2\sigma_2^2}}~\ds=\left|\begin{array}{c} y=s-\mu_1\\ \dy=\ds \end{array}\right|=\frac{1}{2\pi\sigma_1\sigma_2}\int_\R  \e^{-\frac{y^2}{2\sigma_1^2}}\e^{-\frac{(x-y-\mu_1-\mu_2)^2}{2\sigma_2^2}}~\dy{}=\\
+=\left|\begin{array}{c} \lam :=x-\mu_1-\mu_2 \end{array}\right|= \frac{1}{2\pi\sigma_1\sigma_2}\int_\R  \exp\left[-\frac{\sigma_2y^2+\sigma_1(y-\lam)^2}{2\sigma_1^2\sigma_2^2}\right]\dy{}=\\
+=\frac{1}{2\pi\sigma_1\sigma_2}\int_\R  \exp\left[-\frac{\sigma_1^2+\sigma_2^2}{2\sigma_1^2\sigma_2^2}\left(\bigl(y-\frac{\sigma_1^2}{\sigma_1^2+\sigma_2^2}\lam\bigr)^2+\lam^2\frac{\sigma_1^2\sigma_2^2}{(\sigma_1^2+\sigma_2^2)^2}\right)\right]\dy {}=\\
+=\frac{1}{2\pi\sigma_1\sigma_2}~\e^{-\frac{\lam^2}{2(\sigma_1^2+\sigma_2^2)}}\int_\R  \exp\left[-\frac{\sigma_1^2+\sigma_2^2}{2\sigma_1^2\sigma_2^2}\left(y-\frac{\sigma_1^2}{\sigma_1^2+\sigma_2^2}\lam\right)^2\right]\dy = \frac{1}{2\pi\sigma_1\sigma_2}~\e^{-\frac{\lam^2}{2(\sigma_1^2+\sigma_2^2)}}\int_\R  \e^{-\frac{\sigma_1^2+\sigma_2^2}{2\sigma_1^2\sigma_2^2}z^2}\dz{}=\\
+= \frac{1}{2\pi\sigma_1\sigma_2}~\e^{-\frac{\lam^2}{2(\sigma_1^2+\sigma_2^2)}} \sqrt{\frac{\pi}{\frac{\sigma_1^2+\sigma_2^2}{2\sigma_1^2\sigma_2^2}}}= \sqrt{\frac{\pi}{2(\sigma_1^2+\sigma_2^2)}}~ \e^{-\frac{(x-\mu_1-\mu_2)^2}{2(\sigma_1^2+\sigma_2^2)}}.
+\end{multline*}
+%
+Konvoluc\'i dvou hustot pravd\v epodobnosti Gaussova rozd\v elen\'i je tedy podle dosa\v zen\'eho v\'ysledku op\v et hustota pravd\v epodobnosti Gaussova rozd\v elen\'i. Maj\'i-li vstupuj\'ic\'i hustoty st\v redn\'i hodnoty po \v rad\v e $\mu_1,$ $\mu_2$ a rozptyly $\sigma_1^2,$ $\sigma_2^2,$ m\'a v\'ysledn\'a konvoluce st\v redn\'i hodnotu $\mu_1+\mu_2$ a rozptyl $\sigma_1^2+\sigma_2^2.$ Univerzalitu tohoto tvrzen\'i prok\'a\v zeme v n\'asleduj\'ic\'ich v\v et\'ach.
+
+\subsection{Vìta}
+Nech?$\X,$ resp. $\Y$ jsou nezávislé náhodné velièiny maj\'ic\'i absolutn\v e spojit\'e rozd\v elen\'i. Nech\v t jejich hustoty pravdìpodobnosti jsou $f_\X(x)\in\LLL_1(\R),$ resp. $g_\Y(y)\in\LLL_1(\R)$ a nav\'ic $\la x \ra=\mu_1$ a
+$\la y \ra=\mu_2.$ Potom hustotou pravdìpodobnosti náhodné velièiny
+$\ZZZ=\X+\Y$ je funkce $(f_\X \star g_\Y)(z)$ a platí $\la z
+\ra=\mu_1+\mu_2.$\\
+
+\Proof
+
+\begin{itemize}
+\item oznaème $\ZZZ=\X+\Y$ sou\v cet n\'ahodn\'ych veli\v cin
+
+\item pro p\v r\'islu\v snou hustotu pravdìpodobnosti veli\v ciny $\ZZZ$ byla ve v\v et\v e \ref{odvozeni_konvoluce} odvozena rovnost $$f_\ZZZ(r)= \int_{-\infty}^\infty f_\X(x)f_\Y(r-x)~\dx,$$ kter\'a reprezentuje prvn\'i z dokazovan\'ych tvrzen\'i
+
+\item zb\'yv\'a proto dok\'azat, \v ze st\v redn\'i hodnotou sou\v ctu n\'ahodn\'ych veli\v cin je sou\v cet st\v redn\'ich hodnot t\v echto veli\v cin
+
+\item použitím Fubiniovy vìty, jednoduché substituce a definice støední hodnoty náhodné velièiny dostáváme
+%
+$$\la z \ra=\int_{\R}z\left(\int_{\R}f(x)g(z-x)~\dx\right)~\dz=\int_\R
+f(x)\left(\int_\R z\cdot g(z-x)~\dz\right)~\dx=$$
+%
+$$=\left|\begin{array}{c} y=z-x\\ \dz=\dy \end{array}\right|= \int_\R
+f(x)\left(\int_\R (x+y)\cdot g(y)~\dy\right)~\dx=\int_\R\int_\R
+x~f(x)g(y)~\dy~\dx{}+$$
+%
+$$+\int_\R\int_\R
+y~f(x)g(y)~\dy~\dx=\la x\ra\int_{\R} g(y)~\dy+\la y \ra\int_{\R}
+f(x)~\dx=\la x \ra+\la y \ra$$
+
+\item t\'im je d\r ukaz proveden
+
+\end{itemize}
+
+\subsection{Vìta}
+Nech?$\X,$ resp. $\Y$ jsou nezávislé náhodné velièiny maj\'ic\'i absolutn\v e spojit\'e rozd\v elen\'i. Nech\v t jejich hustoty pravdìpodobnosti jsou $f_\X(x)\in\LLL_1(\R),$ resp. $g_\Y(y)\in\LLL_1(\R)$ a nav\'ic $\VAR(\X)=\sigma_x^2$ a
+$\VAR(\Y)=\sigma_y^2.$ Potom pro rozptyl n\'ahodn\'e veli\v ciny $\ZZZ=\X+\Y$ plat\'i rovnost
+%
+$$\VAR(\ZZZ)=\sigma_x^2+\sigma_y^2.$$
+
+\Proof
+
+\begin{itemize}
+
+\item hustotou pravd\v epodobnosti n\'ahodn\'e veli\v ciny $\ZZZ=\X+\Y$ je funkce vypo\v cetn\'a jako konvoluce $f(x)~\star~g(x),$  tj. $$h(z)= \int_{\R}f(x)g(z-x)~\dx$$
+
+\item snadno se lze tud\'i\v z p\v resv\v ed\v cit, \v ze plat\'i s\'erie n\'asleduj\'ic\'ich rovnost\'i
+
+\begin{multline*}
+\la z^2 \ra=\int_{\R}z^2\left(\int_{\R}f(x)g(z-x)~\dx\right)~\dz=\int_\R
+f(x)\left(\int_\R z^2\cdot g(z-x)~\dz\right)~\dx{}=\\
+%
+=\left|\begin{array}{c} y=z-x\\ \dz=\dy \end{array}\right|= \int_\R
+f(x)\left(\int_\R (x+y)^2\cdot g(y)~\dy\right)~\dx=\int_\R\int_\R
+x^2~f(x)g(y)~\dy~\dx{}+\\
+%
++2\int_\R\int_\R
+xy~f(x)g(y)~\dy~\dx+\int_\R\int_\R
+y^2~f(x)g(y)~\dy~\dx{}=\\
+%
+=\la x^2\ra\int_{\R} g(y)~\dy+2\int_{\R^2} xyf(x)g(y)~\dx\dy + \la y^2 \ra\int_{\R}
+f(x)~\dx=\la x^2 \ra+2 \la xy \ra+ \la y^2 \ra
+\end{multline*}
+
+
+\item jeliko\v z pro nez\'avisl\'e náhodné veli\v ciny plat\'i, \v ze jejich kovariance je nulov\'a (viz v\v eta \ref{kovariance_nezavislych_velicin}), dost\'av\'ame rovnost $$\VAR(\ZZZ)=\la z^2 \ra - \la z \ra^2 = \la x^2 \ra+2 \la xy \ra+ \la y^2 \ra - \la x \ra^2 - 2 \la x \ra\la y \ra -  \la y\ra^2 =$$ $$=\VAR(\X) + \VAR(\Y) + 2~\COV(\X,\Y)=\VAR(\X) + \VAR(\Y) $$
+
+\item ta ale kompletuje d\r ukaz
+
+\end{itemize}
+
+\subsection{Vìta}
+
+Nech\v t jsou d\'any libovoln\'e funkce $f(\x)\in\LLL_1(\Er)$ a $g(\x)\in\LLL_1(\Er)$ a vektor $\b\in\Er.$ Pak plat\'i
+%
+$$ f(\x+\b) \star g(\x) = f(\x) \star g(\x+\b) = \bigl(f \star g\bigr) (\x+\b).$$
+
+\Proof
+
+\begin{itemize}
+\item nen\'i pravd\v epodobn\v e obt\'i\v zn\'e nahl\'ednout, \v ze
+%
+$$ \bigl(f \star g\bigr) (\x+\b) = \int_{\Er} f(\sss)g(\x+\b-\sss)~\dss = f(\x) \star g(\x+\b) $$
+\item d\'ale
+%
+$$ f(\x+\b) \star g(\x) = \int_{\Er} f(\sss+\b)g(\x-\sss)~\dss = \left|\begin{array}{c} \sss+\b=\rrr\\ \dss=\drr \end{array}\right| = \int_{\Er} f(\rrr)g(\x+\b-\rrr)~\drr= f(\x) \star g(\x+\b)$$
+\item p\v ritom existence v\v sech dot\v cen\'ych integr\'al\r u je garantov\'ana v\v etou \ref{existuje_konvo}
+
+
+\end{itemize}
+
+\subsection{Vìta}
+
+Nech\v t jsou d\'any libovoln\'e funkce $f(\x)\in\LLL_1(\Er)$ a $g(\x)\in\LLL_1(\Er)$ a vektor $\b\in\Er.$ Nech\v t je $i\in \widehat{r}$ zvoleno libovoln\v e. Nech\v t d\'ale  $\frac{\p f}{\p x_i} \in\LLL_1(\Er)$ a $\frac{\p g}{\p x_i}\in\LLL_1(\Er).$ Pak plat\'i
+%
+$$ \frac{\p f}{\p x_i} \star g(\x) = f(\x) \star \frac{\p g}{\p x_i} = \frac{\p }{\p x_i}\bigl(f \star g\bigr). $$
+
+\Proof
+
+\begin{itemize}
+\item existence v\v sech dot\v cen\'ych integr\'al\r u je op\v et garantov\'ana v\v etou \ref{existuje_konvo}
+\item d\'ale
+%
+$$ \frac{\p f}{\p x_i} \star g(\x) = \int_{\Er} \frac{\p f}{\p s_i}(\sss) g(\x-\sss)~\dss =  \left|\begin{array}{cc} u=g(\sss) & v'=\frac{\p f}{\p s_i}(\sss) \\ u'=\frac{\p g}{\p(x_i-s_i)}\frac{\p(x_i-s_i)}{\p s_i} & v=f(\sss)\end{array}\right|=$$
+%
+$$=\int_{\E^{r-1}} \Bigl[f(\sss)g(\sss)\Bigr]_{s_i\rightarrow-\infty}^{s_i\rightarrow\infty} \ds_1\ds_2\ldots\ds_{i-1}\ds_{i+1}\ldots\ds_r - \int_{\Er} f(\sss)\frac{\p g}{\p(x_i-s_i)}\frac{\p(x_i-s_i)}{\p s_i}~\dss=$$
+%
+$$=\int_{\Er} f(\sss)\frac{\p g(\x-\sss)}{\p(x_i-s_i)}~\dss = f(\x) \star \frac{\p g}{\p x_i}$$
+
+\item bylo zde p\v ritom vyu\v zito tzv. \emph{nutn\'e podm\'inky konvergence Lebesgueova integr\'alu,}\index{nutn\'a podm\'inka konvergence Lebesgueova integr\'alu} tedy implikace
+%
+$$f(\x)\in\LLL_1(\Er)\quad \Longrightarrow \quad \lim_{\|\x\| \rightarrow \infty} f(\x)=0 \quad \Longrightarrow \quad \forall i\in \widehat{r}:~~\lim_{x_i \rightarrow \infty} f(\x)=0.$$
+
+\end{itemize}
+
+
+
+
+
+
+\section{B\'aze ve funkcion\'aln\'ich Hilbertov\'ych prostorech}
+
+\subsection{Vìta}
+Nech\v t $S=\{f_1(\x),f_2(\x),\ldots,f_n(\x),\ldots\}$  je (spo\v cetn\' a) ortonorm\'aln\'i mno\v zina v Hilbertov\v e prostoru $\H.$ Nech\v t je funkce $g(\x)\in\H$ zvolena libovoln\v e. Ozna\v cme $a_k=\la g|f_k\ra.$ Pak existuje limita
+%
+$$\limnormn \sum_{k=1}^n a_kf_k(\x)=\sumline_{k=1}^\infty a_kf_k(\x)=:h(\x)\in\H.$$
+%
+Nav\'ic pro ka\v zd\'e $k\in\N$ plat\'i $\la g-h|f_k\ra=0.$\\
+
+\Proof
+
+\begin{itemize}
+\item pro funkci $h_n(\x)=\sum_{k=1}^n a_kf_k(\x)$ plat\'i jednoduch\'a rovnost
+%
+\BE
+\bigl\|h_{n+p}(\x)-h_{n}(\x)\bigr\|^2=\left\|\sum_{k=n+1}^{n+p} a_kf_k(\x)\right\|^2
+\leq \sum_{k=n+1}^{n+p} |a_k|^2,\label{cicmunda} \EE
+%
+kde bylo vyu\v zito kolmosti a normality funkc\'i v syst\'emu $S$
+\item z Besselovy nerovnosti plyne, \v ze pro jak\'ekoli $n\in\N$ je $\sum_{k=1}^n |a_k|^2 \leq \|g(\x)\|^2$
+\item proto\v ze $\sum_{k=1}^n |a_k|^2$ je \v radou s nez\'aporn\'ymi \v cleny a je omezen\'a, jist\v e tak\'e konverguje
+\item proto ke ka\v zd\'emu $\ep>0$ existuje $n_0\in\N$ tak, \v ze pro indexy $n>n_0$ a $p\in\N$ je $\sum_{k=n+1}^{n+p} |a_k|^2 < \ep^2$
+\item z nerovnosti \eqref{cicmunda} pak lehce vyvod\'ime, \v ze posloupnost $(h_n(\x))_{n=1}^\infty$ je cauchyovsk\'a
+\item a proto\v ze $\H$ je prostorem Hilbertov\'ym, je $(h_n(\x))_{n=1}^\infty$ rovn\v e\v z konvergentn\'i (ve smyslu normy)
+\item existuje tud\'i\v z $h(\x)=\limnormn h_n(\x)=\sum_{k=1}^\infty a_kf_k(\x)\in\H$
+\item pro pevn\'e $k\in\N$ a $n>k$ je z\v rejm\v e $\la g-h_n| f_k \ra =0$
+\item u\v zijeme-li v p\v rede\v sl\'em vztahu limitn\'i p\v rechod $n \rightarrow \infty$ a aplikujeme-li v\v etu \ref{Hilbert_so_beautiful}, plyne odsud, \v ze $\la g-h| f_k \ra =0$ pro v\v sechny $k\in\N$
+\end{itemize}
+
