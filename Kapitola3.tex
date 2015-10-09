@@ -745,7 +745,7 @@ f(x)~\dx=\la x^2 \ra+2 \la xy \ra+ \la y^2 \ra
 
 \end{itemize}
 
-\subsection{Vìta}
+\subsection{Vìta -- \emph{o posunutí v konvoluci}}
 
 Nech\v t jsou d\'any libovoln\'e funkce $f(\x)\in\LLL_1(\Er)$ a $g(\x)\in\LLL_1(\Er)$ a vektor $\b\in\Er.$ Pak plat\'i
 %
@@ -765,7 +765,7 @@ $$ f(\x+\b) \star g(\x) = \int_{\Er} f(\sss+\b)g(\x-\sss)~\dss = \left|\begin{ar
 
 \end{itemize}
 
-\subsection{Vìta}
+\subsection{Vìta -- \emph{o derivaci konvoluce}}
 
 Nech\v t jsou d\'any libovoln\'e funkce $f(\x)\in\LLL_1(\Er)$ a $g(\x)\in\LLL_1(\Er)$ a vektor $\b\in\Er.$ Nech\v t je $i\in \widehat{r}$ zvoleno libovoln\v e. Nech\v t d\'ale  $\frac{\p f}{\p x_i} \in\LLL_1(\Er)$ a $\frac{\p g}{\p x_i}\in\LLL_1(\Er).$ Pak plat\'i
 %
@@ -796,6 +796,48 @@ $$f(\x)\in\LLL_1(\Er)\quad \Longrightarrow \quad \lim_{\|\x\| \rightarrow \infty
 
 \section{B\'aze ve funkcion\'aln\'ich Hilbertov\'ych prostorech}
 
+\subsection{Definice}
+
+Nech\v t je d\'an Hilbert\r uv prostor $\H.$ Nech\v t $S$ je nepr\'azdn\'a mno\v zina funkc\'i z $\H$ neobsahuj\'ic\'i nulovou funkci (nulov\'y vektor). \v Rekneme, \v ze mno\v zina $S\subset\H$ je \emph{ortogon\'aln\'i}\index{ortogon\'aln\'i mno\v zina} v $\H,$ jestli\v ze pro ka\v zd\'e $f(\x),g(\x)\in S$ takov\'e, \v ze $f(\x)\neq g(\x),$ plat\'i rovnost $\la f|g\ra=0.$ Mno\v zinu $S\subset\H$ nazveme \emph{ortonorm\'aln\'i,}\index{ortonorm\'aln\'i mno\v zina} je-li ortogon\'aln\'i a plat\'i-li nav\'ic, \v ze pro ka\v zd\'e $f(\x)\in S$ je $\|f(\x)\|=1.$
+
+\subsection{Definice}
+
+Nech\v t je d\'an Hilbert\r uv prostor $\H$ se skal\'arn\'im sou\v cinem $\la.|.\ra:\H\times\H\mapsto\C.$ Nech\v t $\nu(f)$ je v\'yrokov\'a formule na $\H.$ \v Rekneme, \v ze nepr\'azdn\'a mno\v zina $S$ funkc\'i z $\H$ je \emph{maxim\'aln\'i mno\v zinou s vlastnost\'i $\nu,$}\index{maxim\'aln\'i mno\v zinou s danou vlastnost\'i} jestli\v ze pro v\v sechny funkce $f(\x)\in\H$ plat\'i, \v ze $\nu(f)=1,$ tj. v\'yrok "funkce $f(\x)$ m\'a vlastnost $\nu$" je pravdiv\'y pro v\v sechny funkce $f(\x)\in\H,$ a je-li $T\subset\H$ mno\v zina, jej\'i\v z v\v sechny prvky spl\v nuj\'i tou\v z vlastnost, pak $T \subset S.$
+
+\subsection{V\v eta}
+Nech\v t je mno\v zina $S\subset\H$ ortogon\'aln\'i v $\H.$ Pak jsou v\v sechny jej\'i prvky line\'arn\v e nez\'avisl\'e.\\
+
+\Proof
+
+\begin{itemize}
+\item postupujeme metodou sporu
+\item dok\'a\v zeme tedy obm\v en\v enou verzi tohoto tvrzen\'i, a sice, \v ze jsou-li prvky mno\v ziny $S$ line\'arn\v e z\'avisl\'e, pak $S$ nem\r u\v ze b\'yt ortogon\'aln\'i
+\item p\v redpokl\'adejme tedy, \v ze pro nenulov\'e funkce $f_1(\x),f_2(\x),\ldots,f_n(\x)\in S$ existuje netrivi\'aln\'i kombinace konstant $(\const_1,\const_2,\ldots,\const_n)\neq \o$ tak, \v ze $\sum_{k=1}^n \const_k f_k(\x)=\o$
+\item \v rekn\v eme, \v ze nap\v r. $\const_\ell\neq 0$
+\item pak pro $\alpha_k:=\const_k/\const_\ell$ plat\'i: $$f_\ell(\x)=-\sum_{k=1,k\neq\ell}^n \alpha_k f_k(\x)$$
+\item aplikujeme-li na tuto rovnost skal\'arn\'i n\'asoben\'i funkc\'i $f_\ell(\x)$ a u\v zijeme-li (pro spor) p\v redpokladu, \v ze v\v sechny dot\v cen\'e funkce jsou po dvou ortogon\'aln\'i, dost\'av\'ame rovnost $$ \la f_\ell|f_\ell \ra = -\sum_{k=1,k\neq\ell}^n \alpha_k \la f_k|f_\ell \ra = 0$$
+\item z axiomu pozitivn\'i definitnosti ale odtud vypl\'yv\'a, \v ze $f_\ell(x)=o(\x),$ co\v z je z\v reteln\'y spor
+\end{itemize}
+
+\subsection{V\v eta -- \emph{Besselova nerovnost}}\index{Besselova nerovnost}
+
+Nech\v t $S=\{f_1(\x),f_2(\x),\ldots,f_n(\x)\}$ je ortonorm\'aln\'i mno\v zina v Hilbertov\v e prostoru $\H.$ Nech\v t $g(\x)\in\H$ je zvolen libovoln\v e. Ozna\v cme $a_k:=\la f_k|g\ra.$ Pak plat\'i
+%
+\BE \sum_{k=1}^n |a_k|^2 \leq \|g(\x)\|^2. \label{Bessel-ineq}\EE
+
+\Proof
+
+\begin{itemize}
+\item zvolme funkci $g(\x) \in\H$ libovoln\v e
+\item pak plat\'i s\'erie rovnost\'i , resp. nerovnost\'i
+
+ $$0 \leq \left\|g-\sum_{k=1}^n a_kf_k\right\|^2 = \left\langle \left. g-\sum_{k=1}^n a_kf_k~\right|~g-\sum_{k=1}^n a_kf_k \right\rangle=\|g(\x)\|^2- \sum_{k=1}^n a_k^\star \la g|f_k\ra- \sum_{k=1}^n a_k \la f_k|g\ra +$$ $$+ \sum_{k=1}^n\sum_{\ell=1}^n a_k^\star a_\ell \la f_\ell|f_k\ra=\|g(\x)\|^2- \sum_{k=1}^n a_k^\star a_k- \sum_{k=1}^n a_k a_k^\star + \sum_{k=1}^n a_k^\star a_k=\|g\|^2 - \sum_{k=1}^n |a_k|^2$$
+
+\end{itemize}
+
+
+
+
 \subsection{Vìta}
 Nech\v t $S=\{f_1(\x),f_2(\x),\ldots,f_n(\x),\ldots\}$  je (spo\v cetn\' a) ortonorm\'aln\'i mno\v zina v Hilbertov\v e prostoru $\H.$ Nech\v t je funkce $g(\x)\in\H$ zvolena libovoln\v e. Ozna\v cme $a_k=\la g|f_k\ra.$ Pak existuje limita
 %
@@ -822,4 +864,3 @@ kde bylo vyu\v zito kolmosti a normality funkc\'i v syst\'emu $S$
 \item pro pevn\'e $k\in\N$ a $n>k$ je z\v rejm\v e $\la g-h_n| f_k \ra =0$
 \item u\v zijeme-li v p\v rede\v sl\'em vztahu limitn\'i p\v rechod $n \rightarrow \infty$ a aplikujeme-li v\v etu \ref{Hilbert_so_beautiful}, plyne odsud, \v ze $\la g-h| f_k \ra =0$ pro v\v sechny $k\in\N$
 \end{itemize}
-
