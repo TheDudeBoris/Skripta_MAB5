@@ -39,7 +39,7 @@ $$F_\ZZZ(z)=\prob\bigl[\ZZZ \leq z\bigr]=\prob\bigl[\X+\Y \leq z\bigr]=\iint_{x+
 
 \item ozna\v cme $M_z=\bigl\{(x,y)\in\E^2:~x+y\leq z\bigr\}$
 \item mno\v zina $M_z$ p\v redstavuje polorovinu v $\E^2$
-\item u\v zijeme-li d\'ale p\v redpokladu, \v ze $\X,\Y$ jsou nez\'avisl\'e, tak platÌ rovnost
+\item u\v zijeme-li d\'ale p\v redpokladu, \v ze $\X,\Y$ jsou nez\'avisl\'e, tak plat√≠ rovnost
 %
 $$F_\ZZZ(z)=\iint_{M_z} f_\X(x)f_\Y(y)~\dx~\dy= \int_{-\infty}^\infty \int_{-\infty}^{z-x} f_\X(x)f_\Y(y)~\dy~\dx= \left|\begin{array}{c} r=x+y\\ \dr=\dy \end{array}\right|=$$
 %
@@ -59,18 +59,18 @@ Analogicky lze uk\'azat, \v ze pro nez\'avisl\'e v\'icerozm\v ern\'e n\'ahodn\'e
 Vztah \eqref{konvicka} je jedn\'im ze z\'akladn\'ich vztah\r u cel\'e teorie o \v re\v sen\'i parci\'aln\'ich diferenci\'aln\'ich rovnic. Jeho platnost nebudeme zu\v zovat pouze na p\v r\'ipad hustot pravd\v epodobnosti, ale zobecn\'ime ho pro obecn\'e v\'icerozm\v ern\'e funkce.
 
 \subsection{Definice}\label{klasa-konvo}
-Nech?jsou d·ny funkce $f(\x),g(\x)\in \LOC{(\Er)}$. ZobrazenÌ
+Nech≈• jsou d√°ny funkce $f(\x),g(\x)\in \LOC{(\Er)}$. Zobrazen√≠
 $(f\star g)(\x):\LOC{(\Er)} \times \LOC{(\Er)}\mapsto \LOC{(\Er)}$
-definovanÈ p¯edpisem
+definovan√© p≈ôedpisem
 %
 $$(f\star g)(\x):=\int_{\Er}f(\sss)g(\x-\sss)~\dss$$
 %
-nazveme \emph{konvoluc\'i}\index{konvoluce klasick\'ych funkcÌ} funkcÌ, pokud prav· strana existuje a
-pat¯Ì do t\v r\'idy $\LOC{(\Er)}.$
+nazveme \emph{konvoluc\'i}\index{konvoluce klasick\'ych funkc√≠} funkc√≠, pokud prav√° strana existuje a
+pat≈ô√≠ do t\v r\'idy $\LOC{(\Er)}.$
 
-\subsection{VÏta}\label{existuje_konvo}
+\subsection{Vƒõta}\label{existuje_konvo}
 
-Nech?jsou d·ny funkce $f(\x),g(\x)\in \LLL_1{(\Er)}$. Pak jejich konvoluce $(f\star g)(\x)$ existuje pro skoro v\v sechna $\x\in\Er$ a nav\' ic pat¯Ì do t\v r\'idy $\LLL_1{(\Er)}.$ D\'ale 
+Nech≈• jsou d√°ny funkce $f(\x),g(\x)\in \LLL_1{(\Er)}$. Pak jejich konvoluce $(f\star g)(\x)$ existuje pro skoro v\v sechna $\x\in\Er$ a nav\' ic pat≈ô√≠ do t\v r\'idy $\LLL_1{(\Er)}.$ D\'ale 
 %
 \BE \int_{\Er} (f\star g)(\x)~\dxx \leq \|f\|_{\LLL_1} \cdot  \|g\|_{\LLL_1}. \label{zacapa} \EE
 
@@ -96,34 +96,34 @@ $$=  \left|\begin{array}{c} \y = \x -\sss\\ \dyy=\dss \end{array}\right|= \int_{
 \end{itemize}
 
 
-\subsection{VÏta}
+\subsection{Vƒõta}
 
-Nech?jsou d·ny hustoty pravdÏpodobnosti $f(\x),g(\x):\Er\mapsto\R$. Pak jejich konvoluce $(f\star g)(\x)$ existuje a nav\' ic je takÈ hustotou pravdÏpodobnosti. 
+Nech≈• jsou d√°ny hustoty pravdƒõpodobnosti $f(\x),g(\x):\Er\mapsto\R$. Pak jejich konvoluce $(f\star g)(\x)$ existuje a nav\' ic je tak√© hustotou pravdƒõpodobnosti. 
 
 \Proof
 
 \begin{itemize}
 
 
-\item o hustot·ch $f(\x), g(\x)$ vÌme, ûe pat¯Ì do $\LLL_1(\Er)$ a chceme uk·zat, ûe do $\LLL_1(\Er)$ pa¯Ì takÈ jejich konvoluce, a navÌc, ûe tato konvoluce je takÈ hustotou pravdÏpodobnosti
+\item o hustot√°ch $f(\x), g(\x)$ v√≠me, ≈æe pat≈ô√≠ do $\LLL_1(\Er)$ a chceme uk√°zat, ≈æe do $\LLL_1(\Er)$ pa≈ô√≠ tak√© jejich konvoluce, a nav√≠c, ≈æe tato konvoluce je tak√© hustotou pravdƒõpodobnosti
 
-\item DÌky nerovnosti $$(f\star g)(\x)=\int_{\Er}f(\sss)g(\x-\sss)~\dss\geq0$$
-vÌme, ûe je splnÏna nez·pornost hustoty
+\item D√≠ky nerovnosti $$(f\star g)(\x)=\int_{\Er}f(\sss)g(\x-\sss)~\dss\geq0$$
+v√≠me, ≈æe je splnƒõna nez√°pornost hustoty
 
-\item ovÏ¯me, ûe $\int_{\Er}(f\star g)(\x)=1$
+\item ovƒõ≈ôme, ≈æe $\int_{\Er}(f\star g)(\x)=1$
 
 $$\int_{\Er}\int_{\Er}f(\sss)g(\x-\sss)\dxx\dss = \int_{\Er}f(\sss)\int_{\Er}g(\x-\sss)\dxx\dss = \int_{\Er}f(\sss)\dss\int_{\Er}g(\y)\dyy=1$$
 
-p¯iËemû jsme v prvnÌ rovnosti pouûili Fubiniovu vÏtu a ve druhÈ rovnosti substituci $\y=\x-\sss$
+p≈ôiƒçem≈æ jsme v prvn√≠ rovnosti pou≈æili Fubiniovu vƒõtu a ve druh√© rovnosti substituci $\y=\x-\sss$
 
-\item integr·ly $\int_{\Er}f(\sss)\dss$ a $\int_{\Er}g(\y)\dyy$ jsou z definice hustoty rovny jednÈ a tedy $(f\star g)(\x)$ je opravdu takÈ hustotou pravdÏpodobnosti 
+\item integr√°ly $\int_{\Er}f(\sss)\dss$ a $\int_{\Er}g(\y)\dyy$ jsou z definice hustoty rovny jedn√© a tedy $(f\star g)(\x)$ je opravdu tak√© hustotou pravdƒõpodobnosti 
 \end{itemize}
 
 \subsection{P\v r\'iklad}\label{Meklenburg}
 
 Nech\v t $$f(x) =
 \frac{1}{\sqrt{2\pi}\sigma_1}\e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}},\quad g(x) =
-\frac{1}{\sqrt{2\pi}\sigma_2}\e^{-\frac{(x-\mu_2)^2}{2\sigma_2^2}}.$$ Vypo\v ct\v eme konvoluci $f(x)~\star~g(x).$ Z definice konvoluce a ze vztahu \eqref{gaussicek} vyvozujeme sadu rovnost\'i
+\frac{1}{\sqrt{2\pi}\sigma_2}\e^{-\frac{(x-\mu_2)^2}{2\sigma_2^2}}.$$ Vypo\v ct\v eme konvoluci $f(x)~\star~g(x).$ Z definice konvoluce a ze vztahu $\int_{\R}e^{ax^2}\dx=\sqrt{\frac{\pi}{a}}$ plynou n√°sleduj√≠c√≠ rovnosti.
 %
 \begin{multline*}
 f(x)~\star~g(x)=\frac{1}{2\pi\sigma_1\sigma_2}\int_\R  \e^{-\frac{(s-\mu_1)^2}{2\sigma_1^2}}\e^{-\frac{(x-s-\mu_2)^2}{2\sigma_2^2}}~\ds=\left|\begin{array}{c} y=s-\mu_1\\ \dy=\ds \end{array}\right|=\frac{1}{2\pi\sigma_1\sigma_2}\int_\R  \e^{-\frac{y^2}{2\sigma_1^2}}\e^{-\frac{(x-y-\mu_1-\mu_2)^2}{2\sigma_2^2}}~\dy{}=\\
@@ -135,22 +135,22 @@ f(x)~\star~g(x)=\frac{1}{2\pi\sigma_1\sigma_2}\int_\R  \e^{-\frac{(s-\mu_1)^2}{2
 %
 Konvoluc\'i dvou hustot pravd\v epodobnosti Gaussova rozd\v elen\'i je tedy podle dosa\v zen\'eho v\'ysledku op\v et hustota pravd\v epodobnosti Gaussova rozd\v elen\'i. Maj\'i-li vstupuj\'ic\'i hustoty st\v redn\'i hodnoty po \v rad\v e $\mu_1,$ $\mu_2$ a rozptyly $\sigma_1^2,$ $\sigma_2^2,$ m\'a v\'ysledn\'a konvoluce st\v redn\'i hodnotu $\mu_1+\mu_2$ a rozptyl $\sigma_1^2+\sigma_2^2.$ Univerzalitu tohoto tvrzen\'i prok\'a\v zeme v n\'asleduj\'ic\'ich v\v et\'ach.
 
-\subsection{VÏta}
-Nech?$\X,$ resp. $\Y$ jsou nez·vislÈ n·hodnÈ veliËiny maj\'ic\'i absolutn\v e spojit\'e rozd\v elen\'i. Nech\v t jejich hustoty pravdÏpodobnosti jsou $f_\X(x)\in\LLL_1(\R),$ resp. $g_\Y(y)\in\LLL_1(\R)$ a nav\'ic $\la x \ra=\mu_1$ a
-$\la y \ra=\mu_2.$ Potom hustotou pravdÏpodobnosti n·hodnÈ veliËiny
-$\ZZZ=\X+\Y$ je funkce $(f_\X \star g_\Y)(z)$ a platÌ $\la z
+\subsection{Vƒõta}
+Nech≈• $\X,$ resp. $\Y$ jsou nez√°visl√© n√°hodn√© veliƒçiny maj\'ic\'i absolutn\v e spojit\'e rozd\v elen\'i. Nech\v t jejich hustoty pravdƒõpodobnosti jsou $f_\X(x)\in\LLL_1(\R),$ resp. $g_\Y(y)\in\LLL_1(\R)$ a nav\'ic $\la x \ra=\mu_1$ a
+$\la y \ra=\mu_2.$ Potom hustotou pravdƒõpodobnosti n√°hodn√© veliƒçiny
+$\ZZZ=\X+\Y$ je funkce $(f_\X \star g_\Y)(z)$ a plat√≠ $\la z
 \ra=\mu_1+\mu_2.$\\
 
 \Proof
 
 \begin{itemize}
-\item oznaËme $\ZZZ=\X+\Y$ sou\v cet n\'ahodn\'ych veli\v cin
+\item oznaƒçme $\ZZZ=\X+\Y$ sou\v cet n\'ahodn\'ych veli\v cin
 
-\item pro p\v r\'islu\v snou hustotu pravdÏpodobnosti veli\v ciny $\ZZZ$ byla ve v\v et\v e \ref{odvozeni_konvoluce} odvozena rovnost $$f_\ZZZ(r)= \int_{-\infty}^\infty f_\X(x)f_\Y(r-x)~\dx,$$ kter\'a reprezentuje prvn\'i z dokazovan\'ych tvrzen\'i
+\item pro p\v r\'islu\v snou hustotu pravdƒõpodobnosti veli\v ciny $\ZZZ$ byla ve v\v et\v e \ref{odvozeni_konvoluce} odvozena rovnost $$f_\ZZZ(r)= \int_{-\infty}^\infty f_\X(x)f_\Y(r-x)~\dx,$$ kter\'a reprezentuje prvn\'i z dokazovan\'ych tvrzen\'i
 
 \item zb\'yv\'a proto dok\'azat, \v ze st\v redn\'i hodnotou sou\v ctu n\'ahodn\'ych veli\v cin je sou\v cet st\v redn\'ich hodnot t\v echto veli\v cin
 
-\item pouûitÌm Fubiniovy vÏty, jednoduchÈ substituce a definice st¯ednÌ hodnoty n·hodnÈ veliËiny dost·v·me
+\item pou≈æit√≠m Fubiniovy vƒõty, jednoduch√© substituce a definice st≈ôedn√≠ hodnoty n√°hodn√© veliƒçiny dost√°v√°me
 %
 $$\la z \ra=\int_{\R}z\left(\int_{\R}f(x)g(z-x)~\dx\right)~\dz=\int_\R
 f(x)\left(\int_\R z\cdot g(z-x)~\dz\right)~\dx=$$
@@ -167,8 +167,8 @@ f(x)~\dx=\la x \ra+\la y \ra$$
 
 \end{itemize}
 
-\subsection{VÏta}
-Nech?$\X,$ resp. $\Y$ jsou nez·vislÈ n·hodnÈ veliËiny maj\'ic\'i absolutn\v e spojit\'e rozd\v elen\'i. Nech\v t jejich hustoty pravdÏpodobnosti jsou $f_\X(x)\in\LLL_1(\R),$ resp. $g_\Y(y)\in\LLL_1(\R)$ a nav\'ic $\VAR(\X)=\sigma_x^2$ a
+\subsection{Vƒõta}
+Nech≈• $\X,$ resp. $\Y$ jsou nez√°visl√© n√°hodn√© veliƒçiny maj\'ic\'i absolutn\v e spojit\'e rozd\v elen\'i. Nech\v t jejich hustoty pravdƒõpodobnosti jsou $f_\X(x)\in\LLL_1(\R),$ resp. $g_\Y(y)\in\LLL_1(\R)$ a nav\'ic $\VAR(\X)=\sigma_x^2$ a
 $\VAR(\Y)=\sigma_y^2.$ Potom pro rozptyl n\'ahodn\'e veli\v ciny $\ZZZ=\X+\Y$ plat\'i rovnost
 %
 $$\VAR(\ZZZ)=\sigma_x^2+\sigma_y^2.$$
@@ -198,13 +198,13 @@ f(x)~\dx=\la x^2 \ra+2 \la xy \ra+ \la y^2 \ra
 \end{multline*}
 
 
-\item jeliko\v z pro nez\'avisl\'e n·hodnÈ veli\v ciny plat\'i, \v ze jejich kovariance je nulov\'a (viz v\v eta \ref{kovariance_nezavislych_velicin}), dost\'av\'ame rovnost $$\VAR(\ZZZ)=\la z^2 \ra - \la z \ra^2 = \la x^2 \ra+2 \la xy \ra+ \la y^2 \ra - \la x \ra^2 - 2 \la x \ra\la y \ra -  \la y\ra^2 =$$ $$=\VAR(\X) + \VAR(\Y) + 2~\COV(\X,\Y)=\VAR(\X) + \VAR(\Y) $$
+\item jeliko\v z pro nez\'avisl\'e n√°hodn√© veli\v ciny plat\'i, \v ze jejich kovariance je nulov\'a (viz v\v eta \ref{kovariance_nezavislych_velicin}), dost\'av\'ame rovnost $$\VAR(\ZZZ)=\la z^2 \ra - \la z \ra^2 = \la x^2 \ra+2 \la xy \ra+ \la y^2 \ra - \la x \ra^2 - 2 \la x \ra\la y \ra -  \la y\ra^2 =$$ $$=\VAR(\X) + \VAR(\Y) + 2~\COV(\X,\Y)=\VAR(\X) + \VAR(\Y) $$
 
 \item ta ale kompletuje d\r ukaz
 
 \end{itemize}
 
-\subsection{VÏta -- \emph{o posunutÌ v konvoluci}}
+\subsection{Vƒõta -- \emph{o posunut√≠ v konvoluci}}
 
 Nech\v t jsou d\'any libovoln\'e funkce $f(\x)\in\LLL_1(\Er)$ a $g(\x)\in\LLL_1(\Er)$ a vektor $\b\in\Er.$ Pak plat\'i
 %
@@ -224,7 +224,7 @@ $$ f(\x+\b) \star g(\x) = \int_{\Er} f(\sss+\b)g(\x-\sss)~\dss = \left|\begin{ar
 
 \end{itemize}
 
-\subsection{VÏta -- \emph{o derivaci konvoluce}}
+\subsection{Vƒõta -- \emph{o derivaci konvoluce}}
 
 Nech\v t jsou d\'any libovoln\'e funkce $f(\x)\in\LLL_1(\Er)$ a $g(\x)\in\LLL_1(\Er)$ a vektor $\b\in\Er.$ Nech\v t je $i\in \widehat{r}$ zvoleno libovoln\v e. Nech\v t d\'ale  $\frac{\p f}{\p x_i} \in\LLL_1(\Er)$ a $\frac{\p g}{\p x_i}\in\LLL_1(\Er).$ Pak plat\'i
 %
