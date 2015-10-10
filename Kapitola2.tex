@@ -740,6 +740,12 @@ $$\LL_w(G)=\bigl\{f(\x)\in\digamma(G):~\int_G |f(\x)|^2 w(\x)~\dmu(\x)<+\infty\b
 %
 kde $0<w(\x)\in\CC(G),$ spole\v cn\v e se skal\'arn\'im sou\v cinem zaveden\'ym vztahem  $\int_G f(\x)g^\star(\x)w(\x)~\dxx$ je Hilbertov\'ym prostorem.\\
 
+\subsection{P\v r\'iklad}
+Skal\'arn\'i sou\v ciny na funkcion\'aln\'ich vektorov\'ych prostorech jednorozm\v ern\'ych funkc\'i
+\begin{itemize} \item Legendre $\Theta(x-a)\Theta(b-x),$ $G=(a,b)$  \item Laguerre $\Theta(x)\e^{-x},$ $G=(0,+\infty)$ \item Hermite $\e^{-x^2},$ $G=\R$
+\end{itemize}
+\textcolor{red}{dualita s 2.2.9}
+
 \subsection{Definice}
 
 \v Rekneme, \v ze funkce $f(\x):\Er\mapsto\R$ je analytick\'a na $G,$ jestli\v ze pro ka\v zd\'e $\ccc\in G$ existuje okol\'i $\U_\ep(\ccc)$ tak, \v ze pro v\v sechna $\x\in \U_\ep(\ccc)$ plat\'i rovnost
@@ -749,7 +755,7 @@ $$f(\x)=\sum_{n=0}^{\infty} \frac{\d^n f_{\ccc} (\x) }{n!},$$
 kde symbol $\d^n f_{\ccc} (\x)$ p\v redstavuje $n-$t\'y tot\'aln\'i diferenci\'al v bod\v e funkce $f(\x)$ v bod\v e $\ccc.$ T\v r\'idu v\v sech analytick\'ych funkc\'i na oblasti $G$ ozna\v cujeme symbolem $\A_G.$ \textcolor{red}{Tady mi to nesedi s poznamkami, overit.}
 
 \subsection{Zna\v cen\'i}
-Nad\'ale budeme zna\v cit funkcion\'aln\'i Hilbert\o uv prostor symbolem $\H$, p\v ri\v cem\v z p\v redpokl\'ad\'ame prostor faktorov\'ych funkc\'i $\LL_2$ nebo $\LL_2^{(w)}$.
+Nad\'ale budeme zna\v cit funkcion\'aln\'i Hilbert\r uv prostor symbolem $\H$, p\v ri\v cem\v z p\v redpokl\'ad\'ame prostor faktorov\'ych funkc\'i $\LL_2$ nebo $\LL_2^{(w)}$.
 
 \subsection{Pozn\'amka}
 Rozli\v sujeme 3 typy konvergence:
@@ -758,6 +764,78 @@ Rozli\v sujeme 3 typy konvergence:
 \item stejnom\v ern\'a: $f_n(\x)\overset{G}{\skonv}f(\x)\Leftrightarrow (\forall \ep >0)(\exists n_0\in\N)(n>n_0 \wedge\x\in G\Rightarrow |f_n(\x)-f(\x)|<\ep)$
 \item podle normy: $f_n(\x)\nkonv f(\x) \Leftrightarrow (\forall \ep >0)(\exists n_0\in\N)(n>n_0 \wedge \|f_n(\x)-f(\x)\|<\ep)$  
 \end{itemize}
+Poznamenejme, \v ze ve v\'yrazu $\|f_n(\x)-f(\x)\|$ je skryt Lebesgue\r uv integr\'al, kter\'y konverguje i tam, kde na mno\v zin\v e nulov\'e m\'iry nekonverguje.
+
+\subsection{V\v eta}
+Nech\'t $f_n(\x)\overset{\langle a,b\rangle}{\skonv}f(\x)$ a $\langle f|g\rangle_w.$ je skal\'arn\'i sou\v cin dle definice \ref{skalarnisoucin} pro $\CC(\langle a,b\rangle)$. Pak $f_n(\x)\nkonv(\x)$.\\
+
+\NoProof
+
+\subsection{V\v eta}
+$f_n(\x)\overset{G}{\skonv}f(\x) \wedge \mu(G)<+\infty \Rightarrow f_n(\x)\overset{\LLL_2^{(w)}(G)}{\skonv}f(\x).$ Je-li v\'aha omezen\'a na $G.$\\
+
+\Proof
+\begin{itemize}
+\item $\|f_n(\x)-f(\x)\|^2=\la f_n(\x)-f(\x)|f_n(\x)-f(\x)\ra=\int_G |f_n(\x)-f(\x)|^2~\dxx\leq\mu(G)\sup |f_n(\x)-f(\x)|^2\leq \dfrac{1}{2}\ep<\ep$
+\item $(\forall\ep>0)(\exists n_0\in\N)\Bigg((n\leq n_0 \wedge \x\in G)\Rightarrow |f_n(\x)-f(\x)|<\sqrt{\dfrac{\ep}{2\mu(G)}}\Bigg)$
+\end{itemize}
+
+\subsection{V\v eta -- \emph{o spojitosti skal\'arn\'iho sou\v cinu}}\index{v\v eta o spojitosti skal\'arn\'iho sou\v cinu}\label{Hilbert_so_beautiful}
+
+Nech\v t je d\'an Hilbert\r uv prostor $\H$ nad t\v elesem $\C.$  Nech\v t je d\'ana posloupnost funkc\'i $(f_n(\x))_{n=1}^\infty$ z prostoru $\H,$ kter\'a konverguje podle normy k funkci $f(\x)\in\H,$ a funkce $g(\x)\in\H.$ Pak plat\'i
+%
+$$\limn \la f_n|g \ra = \la f|g \ra, \quad \limn \la g|f_n \ra = \la g|f \ra.$$
+
+\Proof
+\begin{itemize}
+\item $|\la f_n(\x)|g(\x) \ra - \la f(\x)|g(\x) \ra| = |\la f_n(\x)-f(\x)|g(\x) \ra| \leq \|f_n(\x)-f(\x)\|\cdot\|g(\x)\|<\ep$
+\item $\|f_n(\x)-f(\x)\|<\dfrac{\ep}{\|g(\x)\|}$
+\item Toto plat\'i ve v\v sech p\v ripadech krom\v e $\|g(\x)\|=0$, co\v z je v\v sak trivi\'aln\'i
+\end{itemize}
+
+
+\subsection{Definice}
+Nech\v t $\sum_{n=1}^{+\infty}{f_n(\x)}$ je funkcion\'aln\'i \v rada, a $s_n(\x)$ jej\'i \v n-t\'y c\'aste\v cn\'y sou\v cet. Pak ozna\v c\'ime:
+
+\begin{itemize}
+\item sou\v cet podle normy $\sumline_{n=1}^{+\infty}{f_n(\x)}$
+\item limitu podle normy $\limnormn s_n(\x)=s(\x)\in\H$
+\item tedy $\sumline_{n=1}^{+\infty}{f_n(\x)}=s(\x)\in\H$
+\end{itemize}
+
+
+\subsection{V\v eta}
+$f_n(\x), s(\x), g(\x)\in\H $ a $\sumline_{n=1}^{+\infty}{f_n(\x)}=s(\x)$. Pak plat\'i
+\[
+\sum_{n=1}^{+\infty}\la f_n(\x)|g(\x) \ra = \la s(\x)|g(\x) \ra \equiv \Bigg\langle \sumline_{n=1}^{+\infty} f_n(\x)|g(\x)\Bigg\rangle.
+\] 
+
+\Proof\\
+\textcolor{red}{dodelam (prejit na posloupnost castecnych souctu)}
+
+       
+			
+			
+			
+\subsection{Pozn\'amka}
+Domácí úkol: Je $\|f\|_\infty:=\max_{x\in\langle a,b\rangle}|f|$ normou na $\CC(\langle a,b\rangle)?$ A je $\CC(\langle a,b\rangle)$ s touto normou \'upln\'y?
+\subsection{Pozn\'amka}
+Operace konvoluce na prostoru klasick\'ych funkc\'i -- definice na $\LOC(\Er)$
+\subsection{V\v eta}
+o existenci konvoluce v $\LLL_1(\Er)$
+\subsection{Pozn\'amka}
+Bilinearita konvoluce v $\LLL_1(\Er)$ (ve cvi\v cen\'i)
+\subsection{Pozn\'amka}
+Komutativita konvoluce v $\LLL_1(\Er)$
+\subsection{Pozn\'amka}
+o konvoluci funkc\'i tvaru $\Theta(x)F(x),$ kde $F(x)\in\LOC(\R)$
+\subsection{Pozn\'amka}
+definice pojm\r u hustota a hustota pravd\v epodobnosti
+
+
+
+
+
 
 
 \subsection{V\v eta} \label{Konvoluce_hustot}
@@ -834,7 +912,7 @@ $f(\x)\in \LLL_1(\Er), g(\x)\in \LLL_1(\Er) \cap \CC_0^1$. Pak plat\' i $\dfrac{
 \end{itemize}
 
 \subsection{Pozn\'amka}
-Pov\v simn\v eme si, \v ze se v\v eta jev\' i na prvn\' i pohled nevyv\'a\v zen\'a, je to z d\o uvodu po\v zadavku na diferencovatelnost pouze pro $g$. Z\'arove\v n si pov\v simn\v eme absence dodatku "pokud lev\'a (prav\'a) strana existuje". U konvoluce pozorujeme tzv. vyhlazovac\'i efekt, kdy pokud je $g(x)$ hladk\'a, pak existuje konvoluce i jej\'i derivace bez ohledu na to, jak nespojit\'a je funkce $f(x)$.
+Pov\v simn\v eme si, \v ze se v\v eta jev\' i na prvn\' i pohled nevyv\'a\v zen\'a, je to z d\r uvodu po\v zadavku na diferencovatelnost pouze pro $g$. Z\'arove\v n si pov\v simn\v eme absence dodatku "pokud lev\'a (prav\'a) strana existuje". U konvoluce pozorujeme tzv. vyhlazovac\'i efekt, kdy pokud je $g(x)$ hladk\'a, pak existuje konvoluce i jej\'i derivace bez ohledu na to, jak nespojit\'a je funkce $f(x)$.
 
 \subsection{P\v r\'iklad}
 Spo\v c\'itejme konvoluci dvou Gaussov\'zch funkc\'i. Polo\v zme $f(x)= \dfrac{1}{\sqrt{2\pi}\sigma_1}e^{-\dfrac{(x-\mu_1)^2}{2\sigma_1^2}}$ a $g(x)= \dfrac{1}{\sqrt{2\pi}\sigma_2}e^{-\dfrac{(x-\mu_2)^2}{2\sigma_2^2}}$.
