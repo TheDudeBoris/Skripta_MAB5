@@ -288,7 +288,7 @@ $$\LLL_p\bigl(G)=\left\lbrace f(\x):\Er\mapsto\C:\int_G \bigl|f(\x)\bigr|^p~\dmu
 
 \subsection{Vìta}
 
-Nech?$f(\x), g(\x)\in \LLL_2(G).$ Potom $f(\x)g^\star(\x)\in\LLL_1(G).$\\
+Nech\'t $f(\x), g(\x)\in \LLL_2(G).$ Potom $f(\x)g^\star(\x)\in\LLL_1(G).$\\
 
 \Proof
 
@@ -621,6 +621,7 @@ $f(\x) \in \LLL_2(G) \wedge H \subset G \wedge \mu(H)<+\infty \quad \Rightarrow 
 \subsection{Dùsledek}
 
 Pro $H\in\Mla$, pro kter\'e $\mu(H) < \infty$, plat\'i $\LLL_2(H)\overset{\neq}{\subset}\LLL_1(H)$
+\textcolor{red}{Znak pro nerovnou inkluzi}
 
 \subsection{Pozn\'amka}
 V\'ime, \v ze $\CC(\la a,b\ra)$ je prehilbertovsk\'ym prostorem a \v ze skal\'arn\'i sou\v cin je definov\'an integr\'alem $\int_a^b f(x)g^\star(x)w(x)\dx = \la f|g\ra_w$. Zkoumejme, je-li tak\'e prostorem Hilbertovsk\'ym.
@@ -734,7 +735,7 @@ posloupnosti $\bigl(f_k(x)\bigr)_{k=1}^\infty.$
 
 \subsection{D\r usledek}
 
-Nech\v t $w(\x)\in\CC(\overline{G})$ je nenulov\'a a nez\'aporn\'a funkce. Faktorov\'y prostor
+Nech\v t $w(\x)\in\CC(G)$ je nenulov\'a a nez\'aporn\'a funkce. Faktorov\'y prostor
 %
 $$\LL_w(G)=\bigl\{f(\x)\in\digamma(G):~\int_G |f(\x)|^2 w(\x)~\dmu(\x)<+\infty\bigr\},$$
 %
@@ -767,17 +768,17 @@ Rozli\v sujeme 3 typy konvergence:
 Poznamenejme, \v ze ve v\'yrazu $\|f_n(\x)-f(\x)\|$ je skryt Lebesgue\r uv integr\'al, kter\'y konverguje i tam, kde na mno\v zin\v e nulov\'e m\'iry nekonverguje.
 
 \subsection{V\v eta}
-Nech\'t $f_n(\x)\overset{\langle a,b\rangle}{\skonv}f(\x)$ a $\langle f|g\rangle_w.$ je skal\'arn\'i sou\v cin dle definice \ref{skalarnisoucin} pro $\CC(\langle a,b\rangle)$. Pak $f_n(\x)\nkonv(\x)$.\\
+Nech\v t $f_n(\x)\overset{\langle a,b\rangle}{\skonv}f(\x)$ a $\langle f|g\rangle_w.$ je skal\'arn\'i sou\v cin dle definice \ref{skalarnisoucin} pro $\CC(\langle a,b\rangle)$. Pak $f_n(\x)\nkonv(\x)$.\\
 
 \NoProof
 
 \subsection{V\v eta}
-$f_n(\x)\overset{G}{\skonv}f(\x) \wedge \mu(G)<+\infty \Rightarrow f_n(\x)\overset{\LLL_2^{(w)}(G)}{\skonv}f(\x).$ Je-li v\'aha omezen\'a na $G.$\\
+$f_n(\x)\overset{G}{\skonv}f(\x) \wedge \mu(G)<+\infty \Rightarrow f_n(\x)\overset{\LLL_2^{(w)}(G)}{\nkonv}f(\x).$ Je-li v\'aha omezen\'a na $G.$\\
 
 \Proof
 \begin{itemize}
 \item $\|f_n(\x)-f(\x)\|^2=\la f_n(\x)-f(\x)|f_n(\x)-f(\x)\ra=\int_G |f_n(\x)-f(\x)|^2~\dxx\leq\mu(G)\sup |f_n(\x)-f(\x)|^2\leq \dfrac{1}{2}\ep<\ep$
-\item $(\forall\ep>0)(\exists n_0\in\N)\Bigg((n\leq n_0 \wedge \x\in G)\Rightarrow |f_n(\x)-f(\x)|<\sqrt{\dfrac{\ep}{2\mu(G)}}\Bigg)$
+\item $(\forall\ep>0)(\exists n_0\in\N)\Bigg((n\geq n_0 \wedge \x\in G)\Rightarrow |f_n(\x)-f(\x)|<\sqrt{\dfrac{\ep}{2\mu(G)}}\Bigg)$
 \end{itemize}
 
 \subsection{V\v eta -- \emph{o spojitosti skal\'arn\'iho sou\v cinu}}\index{v\v eta o spojitosti skal\'arn\'iho sou\v cinu}\label{Hilbert_so_beautiful}
