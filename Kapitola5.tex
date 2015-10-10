@@ -1,0 +1,72 @@
+\chapter{B\'aze ve funkcion\'aln\'ich Hilbertov\'ych prostorech}
+
+\section{V\'ychoz\'i pojmy}
+
+\subsection{Definice}
+
+Nech\v t je d\'an Hilbert\r uv prostor $\H.$ Nech\v t $S$ je nepr\'azdn\'a mno\v zina funkc\'i z $\H$ neobsahuj\'ic\'i nulovou funkci (nulov\'y vektor). \v Rekneme, \v ze mno\v zina $S\subset\H$ je \emph{ortogon\'aln\'i}\index{ortogon\'aln\'i mno\v zina} v $\H,$ jestli\v ze pro ka\v zd\'e $f(\x),g(\x)\in S$ takov\'e, \v ze $f(\x)\neq g(\x),$ plat\'i rovnost $\la f|g\ra=0.$ Mno\v zinu $S\subset\H$ nazveme \emph{ortonorm\'aln\'i,}\index{ortonorm\'aln\'i mno\v zina} je-li ortogon\'aln\'i a plat\'i-li nav\'ic, \v ze pro ka\v zd\'e $f(\x)\in S$ je $\|f(\x)\|=1.$
+
+\subsection{Definice}
+
+Nech\v t je d\'an Hilbert\r uv prostor $\H$ se skal\'arn\'im sou\v cinem $\la.|.\ra:\H\times\H\mapsto\C.$ Nech\v t $\nu(f)$ je v\'yrokov\'a formule na $\H.$ \v Rekneme, \v ze nepr\'azdn\'a mno\v zina $S$ funkc\'i z $\H$ je \emph{maxim\'aln\'i mno\v zinou s vlastnost\'i $\nu,$}\index{maxim\'aln\'i mno\v zinou s danou vlastnost\'i} jestli\v ze pro v\v sechny funkce $f(\x)\in\H$ plat\'i, \v ze $\nu(f)=1,$ tj. v\'yrok "funkce $f(\x)$ m\'a vlastnost $\nu$" je pravdiv\'y pro v\v sechny funkce $f(\x)\in\H,$ a je-li $T\subset\H$ mno\v zina, jej\'i\v z v\v sechny prvky spl\v nuj\'i tou\v z vlastnost, pak $T \subset S.$
+
+\subsection{V\v eta}
+Nech\v t je mno\v zina $S\subset\H$ ortogon\'aln\'i v $\H.$ Pak jsou v\v sechny jej\'i prvky line\'arn\v e nez\'avisl\'e.\\
+
+\Proof
+
+\begin{itemize}
+\item postupujeme metodou sporu
+\item dok\'a\v zeme tedy obm\v en\v enou verzi tohoto tvrzen\'i, a sice, \v ze jsou-li prvky mno\v ziny $S$ line\'arn\v e z\'avisl\'e, pak $S$ nem\r u\v ze b\'yt ortogon\'aln\'i
+\item p\v redpokl\'adejme tedy, \v ze pro nenulov\'e funkce $f_1(\x),f_2(\x),\ldots,f_n(\x)\in S$ existuje netrivi\'aln\'i kombinace konstant $(\const_1,\const_2,\ldots,\const_n)\neq \o$ tak, \v ze $\sum_{k=1}^n \const_k f_k(\x)=\o$
+\item \v rekn\v eme, \v ze nap\v r. $\const_\ell\neq 0$
+\item pak pro $\alpha_k:=\const_k/\const_\ell$ plat\'i: $$f_\ell(\x)=-\sum_{k=1,k\neq\ell}^n \alpha_k f_k(\x)$$
+\item aplikujeme-li na tuto rovnost skal\'arn\'i n\'asoben\'i funkc\'i $f_\ell(\x)$ a u\v zijeme-li (pro spor) p\v redpokladu, \v ze v\v sechny dot\v cen\'e funkce jsou po dvou ortogon\'aln\'i, dost\'av\'ame rovnost $$ \la f_\ell|f_\ell \ra = -\sum_{k=1,k\neq\ell}^n \alpha_k \la f_k|f_\ell \ra = 0$$
+\item z axiomu pozitivn\'i definitnosti ale odtud vypl\'yv\'a, \v ze $f_\ell(x)=o(\x),$ co\v z je z\v reteln\'y spor
+\end{itemize}
+
+\subsection{V\v eta -- \emph{Besselova nerovnost}}\index{Besselova nerovnost}
+
+Nech\v t $S=\{f_1(\x),f_2(\x),\ldots,f_n(\x)\}$ je ortonorm\'aln\'i mno\v zina v Hilbertov\v e prostoru $\H.$ Nech\v t $g(\x)\in\H$ je zvolen libovoln\v e. Ozna\v cme $a_k:=\la f_k|g\ra.$ Pak plat\'i
+%
+\BE \sum_{k=1}^n |a_k|^2 \leq \|g(\x)\|^2. \label{Bessel-ineq}\EE
+
+\Proof
+
+\begin{itemize}
+\item zvolme funkci $g(\x) \in\H$ libovoln\v e
+\item pak plat\'i s\'erie rovnost\'i , resp. nerovnost\'i
+
+ $$0 \leq \left\|g-\sum_{k=1}^n a_kf_k\right\|^2 = \left\langle \left. g-\sum_{k=1}^n a_kf_k~\right|~g-\sum_{k=1}^n a_kf_k \right\rangle=\|g(\x)\|^2- \sum_{k=1}^n a_k^\star \la g|f_k\ra- \sum_{k=1}^n a_k \la f_k|g\ra +$$ $$+ \sum_{k=1}^n\sum_{\ell=1}^n a_k^\star a_\ell \la f_\ell|f_k\ra=\|g(\x)\|^2- \sum_{k=1}^n a_k^\star a_k- \sum_{k=1}^n a_k a_k^\star + \sum_{k=1}^n a_k^\star a_k=\|g\|^2 - \sum_{k=1}^n |a_k|^2$$
+
+\end{itemize}
+
+
+
+
+\subsection{Vìta}
+Nech\v t $S=\{f_1(\x),f_2(\x),\ldots,f_n(\x),\ldots\}$  je (spo\v cetn\' a) ortonorm\'aln\'i mno\v zina v Hilbertov\v e prostoru $\H.$ Nech\v t je funkce $g(\x)\in\H$ zvolena libovoln\v e. Ozna\v cme $a_k=\la g|f_k\ra.$ Pak existuje limita
+%
+$$\limnormn \sum_{k=1}^n a_kf_k(\x)=\sumline_{k=1}^\infty a_kf_k(\x)=:h(\x)\in\H.$$
+%
+Nav\'ic pro ka\v zd\'e $k\in\N$ plat\'i $\la g-h|f_k\ra=0.$\\
+
+\Proof
+
+\begin{itemize}
+\item pro funkci $h_n(\x)=\sum_{k=1}^n a_kf_k(\x)$ plat\'i jednoduch\'a rovnost
+%
+\BE
+\bigl\|h_{n+p}(\x)-h_{n}(\x)\bigr\|^2=\left\|\sum_{k=n+1}^{n+p} a_kf_k(\x)\right\|^2
+\leq \sum_{k=n+1}^{n+p} |a_k|^2,\label{cicmunda} \EE
+%
+kde bylo vyu\v zito kolmosti a normality funkc\'i v syst\'emu $S$
+\item z Besselovy nerovnosti plyne, \v ze pro jak\'ekoli $n\in\N$ je $\sum_{k=1}^n |a_k|^2 \leq \|g(\x)\|^2$
+\item proto\v ze $\sum_{k=1}^n |a_k|^2$ je \v radou s nez\'aporn\'ymi \v cleny a je omezen\'a, jist\v e tak\'e konverguje
+\item proto ke ka\v zd\'emu $\ep>0$ existuje $n_0\in\N$ tak, \v ze pro indexy $n>n_0$ a $p\in\N$ je $\sum_{k=n+1}^{n+p} |a_k|^2 < \ep^2$
+\item z nerovnosti \eqref{cicmunda} pak lehce vyvod\'ime, \v ze posloupnost $(h_n(\x))_{n=1}^\infty$ je cauchyovsk\'a
+\item a proto\v ze $\H$ je prostorem Hilbertov\'ym, je $(h_n(\x))_{n=1}^\infty$ rovn\v e\v z konvergentn\'i (ve smyslu normy)
+\item existuje tud\'i\v z $h(\x)=\limnormn h_n(\x)=\sum_{k=1}^\infty a_kf_k(\x)\in\H$
+\item pro pevn\'e $k\in\N$ a $n>k$ je z\v rejm\v e $\la g-h_n| f_k \ra =0$
+\item u\v zijeme-li v p\v rede\v sl\'em vztahu limitn\'i p\v rechod $n \rightarrow \infty$ a aplikujeme-li v\v etu \ref{Hilbert_so_beautiful}, plyne odsud, \v ze $\la g-h| f_k \ra =0$ pro v\v sechny $k\in\N$
+\end{itemize}

@@ -768,7 +768,7 @@ Rozli\v sujeme 3 typy konvergence:
 Poznamenejme, \v ze ve v\'yrazu $\|f_n(\x)-f(\x)\|$ je skryt Lebesgue\r uv integr\'al, kter\'y konverguje i tam, kde na mno\v zin\v e nulov\'e m\'iry nekonverguje.
 
 \subsection{V\v eta}
-Nech\v t $f_n(\x)\overset{\langle a,b\rangle}{\skonv}f(\x)$ a $\langle f|g\rangle_w.$ je skal\'arn\'i sou\v cin dle definice \ref{skalarnisoucin} pro $\CC(\langle a,b\rangle)$. Pak $f_n(\x)\nkonv(\x)$.\\
+Nech\v t $f_n(\x)\overset{\langle a,b\rangle}{\skonv}f(\x)$ a $\langle f|g\rangle_w$ je skal\'arn\'i sou\v cin dle definice \ref{skalarnisoucin} pro $\CC(\langle a,b\rangle)$. Pak $f_n(\x)\nkonv(\x)$.\\
 
 \NoProof
 
@@ -814,125 +814,7 @@ $f_n(\x), s(\x), g(\x)\in\H $ a $\sumline_{n=1}^{+\infty}{f_n(\x)}=s(\x)$. Pak p
 \Proof\\
 \textcolor{red}{dodelam (prejit na posloupnost castecnych souctu)}
 
-       
-			
-			
-			
-\subsection{Pozn\'amka}
-Domácí úkol: Je $\|f\|_\infty:=\max_{x\in\langle a,b\rangle}|f|$ normou na $\CC(\langle a,b\rangle)?$ A je $\CC(\langle a,b\rangle)$ s touto normou \'upln\'y?
-\subsection{Pozn\'amka}
-Operace konvoluce na prostoru klasick\'ych funkc\'i -- definice na $\LOC(\Er)$
-\subsection{V\v eta}
-o existenci konvoluce v $\LLL_1(\Er)$
-\subsection{Pozn\'amka}
-Bilinearita konvoluce v $\LLL_1(\Er)$ (ve cvi\v cen\'i)
-\subsection{Pozn\'amka}
-Komutativita konvoluce v $\LLL_1(\Er)$
-\subsection{Pozn\'amka}
-o konvoluci funkc\'i tvaru $\Theta(x)F(x),$ kde $F(x)\in\LOC(\R)$
-\subsection{Pozn\'amka}
-definice pojm\r u hustota a hustota pravd\v epodobnosti
-
-
-
-
-
-
-
-\subsection{V\v eta} \label{Konvoluce_hustot}
-
-$f(\x), g(\x):\Er\mapsto\R$ jsou hustoty, pak $\(f\ast g\)(\x)$ je rovn\v e\v z hustotou a v\v zdy existuje.\\
-
-\Proof
-
-\begin{itemize}
-\item $f(\x), g(\x)\in \LLL_\onecircled(\Er) \Rightarrow \(f\ast g\)(\x)\in \LLL_1(\Er)$
-
-\item nez\'apornost:\[\(f\ast g\)(\x)=\int_\Er f(\s)g(\x - \s)~\dss \geq 0 \quad\forall x \in \Er,\]
-nebo\v t z definice hustot je integr\' al v\v et\v s\' i nebo roven $0$ a existuje
-
-\item \[
-\int_\Er \(f\ast g\)(\x)~\dxx = \int_\Er\int_\Er f(\s)g(\x - \s)~\dss~\dxx = \int_\Er f(\s)\int_\Er g(\x - \s)~\dxx~\dss = 
-\]
-\[
-=\Bigg|\begin{array}{l}\y=\x -\s\\\dyy=\dxx\end{array}\Bigg|=\int_\Er f(\s)\int_\Er g(\y)~\dyy~\dss =1\int_\Er f(\s)~\dss = 1
-\]
-\end{itemize}
-
-\subsection{Pozn\'amka}
-St\v redn\' i hodnota z $r, f(r)$ je $\la r\ra =\int_\R rf(r)~\dr$.
-
-\subsection{V\v eta} \label{Konvoluce_hustot_a_stredni hodnoty}
-Nech\v t $f(x), g(x):\R\mapsto\R$ jsou hustoty. Nech\v t $\int_\R xf(x)~\dx = \mu_1$ a $\int_\R xg(x)~\dx = \mu_2$. Pak $\int_\R \(f\ast g\)(x)~\dx = \mu_1 + \mu_2$.\\
-
-\Proof
-
-\begin{itemize}
-\item teoretick\' e po\v zadavky ji\v z byly dok\' az\' any v p\v redchoz\' i v\v et\v e
- 
-\item \[
-\int_\R x\(f\ast g\)(x)~\dx = \int_\R x\int_\R f(s)g(x - s)~\ds~\dx = \int_\R f(s)\int_\R xg(x - s)~\dx~\ds = 
-\]
-\[
-=\Bigg|\begin{array}{l}y=x -s\\\dy=\dx\end{array}\Bigg|=\int_\R f(s)\int_\R (y+s)g(y)~\dy~\ds = \int_\R^2 f(s)yg(y)~\ds~\dy + \int_\R^2 f(s)sg(y)~\dy~\ds =
-\]
-\[
-=\Big|\text{V\v eta o separabilit\v e}\Big|=\int_\R f(s)~\ds \int_\R yg(y)~\dy + \int_\R sf(s)~\ds \int_\R g(y)~\dy = \mu_1 + \mu_2
-\]
-\end{itemize}
-
-
-\subsection{V\v eta -- \emph{o posunut\' i v konvoluci}}\index{v\v eta o posunut\' i v konvoluci}\label{posunuti_v_konvoluci}
-
-$f(\x), g(\x)\in \LLL_1(\Er), \mumu \in \Er$. Pak plat\' i: $(f\star g)(\x - \mumu)= f(\x)\star g(\x- \mumu) =f(\x - \mumu)\star g(\x)$\\
-
-\subsection{Pozn\'amka}
-Zde pou\v z\' iva\' ame afinn\' i transformaci, tud\' i\v z za ka\v zd\' e $\x$ dosad\' ime $\x - \mumu$. Souvislost s p\v redchoz\' i v\v etou je takov\'a, \v ze lze posunout st\v redn\' i hodnotu v p\v r\' ipad\v e, \v ze za $f,g$ zvol\' ime hustoty.
-
-
-\subsection{V\v eta -- \emph{o derivaci konvoluce}}\index{v\v eta o derivaci konvoluce}\label{derivace_konvoluce}
-
-$f(\x)\in \LLL_1(\Er), g(\x)\in \LLL_1(\Er) \cap \CC_0^1$. Pak plat\' i $\dfrac{\partial}{\partial x_k}(f\star g)= f(\x)\star \dfrac{g}{x_k}(\x)$.\\
-
-\Proof
-\begin{itemize}
-\item $\dfrac{\partial}{\partial x_k}(f\star g)= \dfrac{\partial}{\partial x_k}\int_\Er f(\s)g(\x - \s)~\dss$
- 
-\item pou\v zijeme v\v etu o derivaci integr\' alu s parametrem
-
-\item $\dfrac{\mathtt{d}}{\mathtt{d}\alpha}\int_\Er f(\x |\alpha)~\dxx \rightarrow \dfrac{\mathtt{d}}{\mathtt{d}\alpha_k}\int_\Er f(\x |\alpha_1,\alpha_2,\dots,\alpha_n)~\dxx$
-
-\item ov\v e\v rme p\v redpoklady v\v ety:
-		\begin{itemize}
-		\item v\'yraz v integr\'alu mus\' i konvergovat, co\v z je spln\v eno
-		\item m\v e\v ritelnost je spln\v ena, jeliko\v z v\'yraz je z $\LLL_1$
-		\item diferencovatelnost, v\'yraz nahrad\'ime integrabiln\'i majorantou: $\Bigg|f(\s)\dfrac{\partial g}{\partial x_k}(\x -\s)\Bigg| \leq K\Big|f(\s)\Big| \in \LLL(\E)$,\\ a vyu\v zijeme vlastnost, \v ze funkce na kompaktu nab\'yv\'a maxima
-		\end{itemize}
-
-\item $\int_\Er f(\s)\dfrac{\partial g}{\partial x_k}(\x - \s)~\dss= \Biggl(f\star \dfrac{\partial g}{\partial x_k}\Biggr)(\x)$
-\end{itemize}
-
-\subsection{Pozn\'amka}
-Pov\v simn\v eme si, \v ze se v\v eta jev\' i na prvn\' i pohled nevyv\'a\v zen\'a, je to z d\r uvodu po\v zadavku na diferencovatelnost pouze pro $g$. Z\'arove\v n si pov\v simn\v eme absence dodatku "pokud lev\'a (prav\'a) strana existuje". U konvoluce pozorujeme tzv. vyhlazovac\'i efekt, kdy pokud je $g(x)$ hladk\'a, pak existuje konvoluce i jej\'i derivace bez ohledu na to, jak nespojit\'a je funkce $f(x)$.
-
 \subsection{P\v r\'iklad}
-Spo\v c\'itejme konvoluci dvou Gaussov\'zch funkc\'i. Polo\v zme $f(x)= \dfrac{1}{\sqrt{2\pi}\sigma_1}e^{-\dfrac{(x-\mu_1)^2}{2\sigma_1^2}}$ a $g(x)= \dfrac{1}{\sqrt{2\pi}\sigma_2}e^{-\dfrac{(x-\mu_2)^2}{2\sigma_2^2}}$.
-Pak \textcolor{red}{ dopo\v c\'it\'am pozd\v eji.}
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Domácí úkol: Je $\|f\|_\infty:=\max_{x\in\langle a,b\rangle}|f|$ normou na $\CC(\langle a,b\rangle)?$ A je $\CC(\langle a,b\rangle)$ s touto normou \'upln\'y?
 
 
