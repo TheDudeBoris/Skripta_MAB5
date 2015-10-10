@@ -78,8 +78,8 @@ $$\int_{J} f(\x)~\dmu(\x)\in\R.$$
 \item $\bd(K)$ je $\mu-$nulová množina, nebo?se jedná o pláš?r-rozmìrné koule, a z teorie Lebesgueova integrálu tudíž platí, že $\int_{K} f(\x)~\dmu(\x)=\int_{\U_\ep(\c)} f(\x)~\dmu(\x)$, a navíc jsme $\c$ volili libovolnì. 
 \item pro dùkaz obr\'acen\'e implikace p\v redpokl\'adejme, \v ze  $f(\x)$ je lok\'aln\v e integrabiln\'i na $G$
 \item zvolme $K$ jako libovolnou kompaktn\'i množinu, která je podmno\v zinou oblasti $G$
-\item podle teorie míry jistì $K\in\Mmu$, nebo?$\Er\setminusK\in\SSS_r\subset\Mmu$, a $\Mmu$ je $\sigma$-algebra
-\item Borelova v\v eta ale øíká, že z ka\v zd\'eho otev\v ren\'eho pokryt\'i kompaktn\'i mno\v ziny lze vybrat pokryt\'i kone\v cn\'e, tj. existuje soustava oblast\'i $\{G_k: k\in \widehat{n}\}$ tak, \v ze $\cup_{k=1}^n G_k \supset K$ a $G_k=\U_{\ep}(\x_k)$ pro jist\'e body $\x_k\in K$
+\item podle teorie m\'iry jist\v e $K\in\Mmu $, nebo\v t $\Er\setminusK\in\SSS_r\subset\Mmu $, a $\Mmu$ je $\sigma$-algebra \textcolor{red}{zde je nedefinovany prikaz \textbackslash setminusK, co ma znamenat?}
+\item Borelova v\v eta ale \v r\'ik\'a, že z ka\v zd\'eho otev\v ren\'eho pokryt\'i kompaktn\'i mno\v ziny lze vybrat pokryt\'i kone\v cn\'e, tj. existuje soustava oblast\'i $\{G_k: k\in \widehat{n}\}$ tak, \v ze $\cup_{k=1}^n G_k \supset K$ a $G_k=\U_{\ep}(\x_k)$ pro jist\'e body $\x_k\in K$
 \item v\v sechny integr\'aly $\int_{\U_\ep(\x_k)} f(\x)~\dmu(\x)$ ale existuj\'i z p\v redpokladu t\'eto implikace
 \item d\'ale tak\'e existuj\'i (jak v\'ime z teorie Lebesgueova integr\'alu v\v sechny integr\'aly) $\int_{\U_\ep(\x_k)\cap \U_\ep(\x_\ell)} f(\x)~\dmu(\x)$ pro $k,\ell\in \widehat{n}$
 \item existuj\'i rovn\v e\v z integr\'aly $\int_{\U_\ep(\x_k) \cap K} f(\x)~\dmu(\x),$ co\v z spole\v cn\v e garantuje existenci integrálu $\int_{K} f(\x)~\dmu(\x)$
@@ -603,20 +603,162 @@ $$\LL_2^{(w)}(G)=\bigl\{f(\x)\in\digamma(G):~\int_G |f(\x)|^2 w(\x)~\dmu(\x)<+\i
 %
 spole\v cn\v e se skal\'arn\'im sou\v cinem zaveden\'ym vztahem  $\int_G f(\x)g^\star(\x)w(\x)~\dxx$ je Hilbertov\'ym prostorem.\\
 
-
-\subsection{Vìta}
-
-$f \in \LLL_2(G) \wedge H \in G \wedge \mu(H)<\infty \quad \Rightarrow \quad f\in \LLL_1(H)$
-\textcolor{red}{okomentovat, pøípadnì dokázat}
-
-\subsection{Dùsledek}
-
-$\mu(H) < \infty \quad \Rightarrow \quad \LLL_2(H)\subset\LLL_1(H)$
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Zde jsem zacal ja - Petr
+\subsection{Vìta}
+
+$f(\x) \in \LLL_2(G) \wedge H \subset G \wedge \mu(H)<+\infty \quad \Rightarrow \quad f(\x)\in \LLL_1(H)$\\
+
+\Proof
+
+\begin{itemize}
+\item chceme $\int_H |f(\x)|~\dxx \in \R$
+\item $\int_H |f(\x)|~\dxx = \int_G |f(\x)|\chi_H(\x)~\dxx \leq \overbrace{\dfrac{1}{2}\int_G |f(\x)|^2~\dxx}^{\in \R} + \overbrace{\dfrac{1}{2}\int_G \chi_H(\x)~\dxx}^{\dfrac{1}{2}\lambda(H)}$
+\end{itemize}
+
+\subsection{Dùsledek}
+
+Pro $H\in\Mla$, pro kter\'e $\mu(H) < \infty$, plat\'i $\LLL_2(H)\overset{\neq}{\subset}\LLL_1(H)$
+
+\subsection{Pozn\'amka}
+V\'ime, \v ze $\CC(\la a,b\ra)$ je prehilbertovsk\'ym prostorem a \v ze skal\'arn\'i sou\v cin je definov\'an integr\'alem $\int_a^b f(x)g^\star(x)w(x)\dx = \la f|g\ra_w$. Zkoumejme, je-li tak\'e prostorem Hilbertovsk\'ym.
+
+\textcolor{red}{Doplnit obrazek}
+
+Tato posloupnost, a\v ckoli je Cauchyovsk\'a, (viz obr\'azek) nem\'a limitu v $\CC(\la a,b\ra)$, co\v z je spor s definic\'i limity. T\'im p\'adem je $\CC(\la a,b\ra)$ ne\'upln\'ym, tedy nehilbertovsk\'ym prostorem.
+
+\subsection{P\v r\'iklad}
+Posloupnost $a_n=\Bigl(1+\dfrac{1}{n}\Bigr)^n \in \Q$. Posloupnost $\(a_n)_{n=1}^\infty$ je Cauchyovsk\'a, ale $\limn a_n \overset{\Q}{=}$ neexistuje.
+
+\subsection{V\v eta}
+
+Faktorov\'y prostor $\LL_2(G)$ spole\v cn\v e se skal\'arn\'im
+sou\v cinem zaveden\'ym vztahem (\ref{skalarnisoucin}) je \'upln\'y, tj. jedn\'a se o Hilbert\r uv prostor.\\
+
+\Proof\\
+
+Jeliko\v z ji\v z bylo prok\'az\'ano, \v ze $\LL_2(G)$ je
+vektorov\'y prostor nad $\C,$ zb\'yv\'a dok\'azat \'uplnost.
+Vyberme tedy z~~libovoln\'e cauchyovsk\'e posloupnosti
+$\bigl(f_k(\x)\bigr)_{k=1}^\infty$ podposloupnost
+$\bigl(f_{k_\ell}(\x)\bigr)_{\ell=1}^\infty,$ je\v z konverguje
+skoro v\v sude na $G.$ To je d\'iky cauchyovskosti mo\v zn\'e.
+C\'ilem d\r ukazu je de facto prok\'azat, \v ze
+$\bigl(f_k(\x)\bigr)_{k=1}^\infty$ je konvergentn\'i v
+$\LL_2(G).$ Prvn\'i \v clen podposloupnosti
+$\bigl(f_{k_\ell}(\x)\bigr)_{\ell=1}^\infty$ vyberme tak, aby pro
+v\v sechna $m>k_1$ platilo
+%
+$$\|f_{k_1}(\x)-f_m(\x)\| < \frac{1}{2}.$$
+%
+To je op\v et d\'iky cauchyovskosti mo\v zn\'e. Druh\'y \v clen podposloupnosti vyberme tak,
+aby pro v\v sechna $m>k_2$ platilo
+%
+$$\|f_{k_2}(\x)-f_m(\x)\| < \frac{1}{2^2}.$$
+%
+Analogicky vyberme $\ell-$t\'y \v clen podposloupnosti tak, aby
+pro v\v sechna $m>k_\ell$ platilo
+%
+$$\|f_{k_\ell}(\x)-f_m(\x)\| < \frac{1}{2^\ell}.$$
+%
+Ozna\v c\'ime-li nyn\'i
+%
+$$g_k(\x)=\sum_{s=1}^k \bigl|f_{k_s+1}(\x)-f_{k_s}(\x)\bigr|,$$
+
+$$g(\x)=\sum_{s=1}^\infty \bigl|f_{k_s+1}(\x)-f_{k_s}(\x)\bigr|,$$
+%
+bude
+%
+$$\|g_k(\x)\|\leq \sum_{s=1}^k
+\bigl\|f_{k_s+1}(\x)-f_{k_s}(\x)\bigr\| < \sum_{s=1}^k
+\frac{1}{2^s} <1.$$
+%
+Je proto $\int_M |g_n(\x)|^2~\dmu(\x)<1$ a podle Leviho v\v ety
+tak\'e
+%
+$$\int_M |g(\x)|^2~\dmu(\x)=\limk \int_M |g_k(\x)|^2~\dmu(\x) \leq
+1$$
+%
+a $g(\x)$ je kone\v cn\'a skoro v\v sude na $M.$ Nav\'ic \v rada
+$\sum_{s=1}^k \bigl|f_{k_s+1}(\x)-f_{k_s}(\x)\bigr|$ m\'a pro
+skoro v\v sechna $\x\in M$ kone\v cn\'y sou\v cet  a tud\'i\v z i
+\v rada $\sum_{s=1}^k \bigl(f_{k_s+1}(\x)-f_{k_s}(\x)\bigr)$ je
+konvergentn\'i, a tedy tak\'e posloupnost
+%
+$$f_{k}(\x)=\sum_{s=1}^{k-1}
+\bigl(f_{k_s+1}(\x)-f_{k_s}(\x)\bigr)+f_{k_1}(\x).$$
+%
+Ozna\v cme $f(\x)$ jej\'i limitu. Ta je samoz\v rejm\v e m\v e\v
+riteln\'a jako limita posloupnosti m\v e\v riteln\'ych funkc\'i.\\
+
+Ve druh\'e \v c\'asti d\r ukazu uk\'a\v zeme, \v ze posloupnost
+$\bigl(f_{k_\ell}(\x)\bigr)_{k=1}^\infty$  konverguje pr\'av\v e k
+t\'eto funkci $f(\x)$ v $\LL_2(G).$ P\v redn\v e z cauchyovskosti
+posloupnosti $\bigl(f_{k_\ell}(\x)\bigr)_{\ell=1}^\infty$  plyne
+cauchyovskost podposloupnosti
+$\bigl(f_{k_\ell}(\x)\bigr)_{k=1}^\infty,$ a tedy pro $\epsilon=1$
+existuje $k_0\in\N$ takov\'e, \v ze pro $\ell>k_0$ a $m>k_0$ je
+%
+$$\int_M \bigl|f_{k_\ell}(\x)-f_{k_m}(\x)\bigr|^2~\dmu(\x)<1.$$
+%
+Podle Fatouovy v\v ety (viz v\v eta 2.1.7, str. 26 v \cite{Krbalek_RMF}) je
+%
+$$\int_M \bigl|f_{k_\ell}(\x)-f(\x)\bigr|^2~\dmu(\x)<1,$$
+%
+odkud plyne, \v ze funkce $f(\x)$ rozepsan\'a jako
+$\bigl(f(\x)-f_{k_\ell}(\x)\bigr)+f_{k_\ell}(\x)$ pat\v r\'i do
+$\LL_2(G).$ Provedeme-li stejnou \'uvahu s libovoln\v e mal\'ym
+$\epsilon,$ z\'isk\'ame
+%
+$$\int_M \bigl|f_{k_\ell}(\x)-f(\x)\bigr|^2~\dmu(\x)<\epsilon^2,$$
+%
+co\v z neznamen\'a nic jin\'eho, ne\v z \v ze
+%
+$$\lim_{\ell \rightarrow \infty} f_{k_\ell}(\x)=f(\x).$$
+
+V posledn\'i \v c\'asti d\r ukazu uk\'a\v zeme, \v ze k funkci
+$f(\x)$ konverguje cel\'a posloupnost
+$\bigl(f_k(\x)\bigr)_{k=1}^\infty.$ To ov\v sem plyne ihned z
+nerovnost\'i
+%
+$$\bigl\|f(\x)-f_k(\x)\bigr\| \leq
+\bigl\|f(\x)-f_{k_\ell}(\x)\bigr\| +
+\bigl\|f_{k_\ell}(\x)-f_k(\x)\bigr\|,$$
+%
+nebo\v t prvn\'i \v clen napravo m\r u\v zeme ud\v elat libovoln\v
+e mal\'ym (pro velk\'a $k_\ell$) d\'iky dok\'azan\'e konvergenci
+zmi\v novan\'e podposloupnosti a druh\'y d\'iky cauchyovskosti
+posloupnosti $\bigl(f_k(x)\bigr)_{k=1}^\infty.$
+
+\subsection{D\r usledek}
+
+Nech\v t $w(\x)\in\CC(\overline{G})$ je nenulov\'a a nez\'aporn\'a funkce. Faktorov\'y prostor
+%
+$$\LL_w(G)=\bigl\{f(\x)\in\digamma(G):~\int_G |f(\x)|^2 w(\x)~\dmu(\x)<+\infty\bigr\},$$
+%
+kde $0<w(\x)\in\CC(G),$ spole\v cn\v e se skal\'arn\'im sou\v cinem zaveden\'ym vztahem  $\int_G f(\x)g^\star(\x)w(\x)~\dxx$ je Hilbertov\'ym prostorem.\\
+
+\subsection{Definice}
+
+\v Rekneme, \v ze funkce $f(\x):\Er\mapsto\R$ je analytick\'a na $G,$ jestli\v ze pro ka\v zd\'e $\ccc\in G$ existuje okol\'i $\U_\ep(\ccc)$ tak, \v ze pro v\v sechna $\x\in \U_\ep(\ccc)$ plat\'i rovnost
+%
+$$f(\x)=\sum_{n=0}^{\infty} \frac{\d^n f_{\ccc} (\x) }{n!},$$
+%
+kde symbol $\d^n f_{\ccc} (\x)$ p\v redstavuje $n-$t\'y tot\'aln\'i diferenci\'al v bod\v e funkce $f(\x)$ v bod\v e $\ccc.$ T\v r\'idu v\v sech analytick\'ych funkc\'i na oblasti $G$ ozna\v cujeme symbolem $\A_G.$ \textcolor{red}{Tady mi to nesedi s poznamkami, overit.}
+
+\subsection{Zna\v cen\'i}
+Nad\'ale budeme zna\v cit funkcion\'aln\'i Hilbert\o uv prostor symbolem $\H$, p\v ri\v cem\v z p\v redpokl\'ad\'ame prostor faktorov\'ych funkc\'i $\LL_2$ nebo $\LL_2^{(w)}$.
+
+\subsection{Pozn\'amka}
+Rozli\v sujeme 3 typy konvergence:
+\begin{itemize}
+\item bodov\'a: $f_n(\x)\overset{G}{\bkonv}f(\x)$
+\item stejnom\v ern\'a: $f_n(\x)\overset{G}{\skonv}f(\x)\Leftrightarrow (\forall \ep >0)(\exists n_0\in\N)(n>n_0 \wedge\x\in G\Rightarrow |f_n(\x)-f(\x)|<\ep)$
+\item podle normy: $f_n(\x)\nkonv f(\x) \Leftrightarrow (\forall \ep >0)(\exists n_0\in\N)(n>n_0 \wedge \|f_n(\x)-f(\x)\|<\ep)$  
+\end{itemize}
+
 
 \subsection{V\v eta} \label{Konvoluce_hustot}
 
